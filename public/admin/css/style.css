@@ -1,0 +1,258 @@
+/* base */
+*{
+    box-sizing: border-box;
+}
+.container-fluid{
+    padding: 0;
+    max-width: 100%;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    font-size: 1.5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    max-width: 100%;
+}
+div{
+    width: 100%;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.icon{
+    margin-right: 1rem;
+}
+/* aside */
+.aside{
+    background-color: rgb(34, 34, 34);
+    /* padding: 0; */
+    padding-right: 0;
+    position: fixed;
+    height: 100%;
+    width: 30rem !important;
+}
+.aside__h1{
+    color: white;
+    font-size: 3rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 2rem 0;
+    background-color: black;
+    margin: 0;
+}
+.aside__list{
+    margin: 1rem 0;
+}
+.aside__list-title{
+    font-size: 1.8rem;
+    color: white;
+    text-transform: uppercase;
+    opacity: 0.8;
+    padding: 1.5rem 2rem;
+}
+.aside__list-link{
+    display: block;
+    color: white;
+    opacity: 0.7;
+    padding: 1.5rem 2rem;
+    padding-left: 3rem;
+    transition: .2s all linear;
+}
+.aside__list-link:hover{
+    background-color: black;
+    opacity: 1;
+    color: white;
+}
+.row--thu1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.aside__list-2{
+    display: none;
+}
+.aside__list-2 .aside__list-link{
+    padding: 1.3rem 0;
+    padding-left: 3rem;
+}
+.aside__list-2.active{
+    display: block;
+}
+.even .aside__list-link.active{
+    background-color: black;
+    opacity: 1;
+}
+
+/* main */
+.main{
+    margin-left: 30rem;
+}
+/* header */
+.header__row{
+    justify-content: space-between;
+    align-items: center;
+}
+.header{
+    border-bottom: 1px solid #ccc;
+    padding: 1rem 0;
+}
+.search-text{
+    padding: .5rem;
+    width: 30rem;
+    outline: none;
+}
+.btn-search{
+    height: 3.5rem;
+    width: 4rem;
+    position: relative;
+    top:-2px;
+}
+.header__account{
+    padding: 2rem;
+    border-radius: 5px;
+    /* position: relative; */
+}
+.col-auto{
+    position: relative;
+}
+.header__account:hover{
+    background-color: #eee;
+    cursor: pointer;
+}
+.account__text--1{
+    font-weight: 600;
+}
+.header__menu2{
+    position: absolute;
+    right: 0;
+    top: 5.5rem;
+    width: 20rem;
+    border: 1px solid #ccc;
+    background-color: white;
+    display: none;
+    cursor: text;
+}
+.header__imgs{
+    display: flex;
+    align-items: center;
+}
+.header__img{
+    width: 40%;
+}
+.header__decs{
+    text-align: center;
+}
+.header__logout{
+    display: block;
+    padding: 1rem;
+    margin-top: 2rem;
+    text-decoration: none;
+    color: #212121;
+    font-weight: 600;
+}
+.header__logout:hover{
+    color: white;
+    background-color: rgb(136, 136, 136);
+}
+.header__account:hover .header__menu2{
+    display: block;
+}
+/* main2 */
+.listNew__header{
+    border-bottom: 1px solid #ccc;
+    padding: 2rem 1rem;
+}
+.chucNang__header-khung{
+    display: flex;
+    align-items: center;
+}
+.chucNang__header-h3{
+    width: 40%;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+.chucNang__header-h4{
+    font-size: 2rem;
+    font-weight: 600;
+}
+.listNew__main{
+    display: flex;
+    align-items: flex-start;
+}
+.listNew__item{
+    max-width: 50%;
+    flex: 0 0 50%;
+    margin-top: 2rem;
+    padding: 0 1.5rem;
+    margin-bottom: 2rem;
+}
+.listNew__btn{
+    border: none;
+    background-color: #ccc;
+    outline: none;
+    padding: 1rem;
+    text-align: left;
+    width: 100%;
+    font-weight: 600;
+    transition: .2s all linear;
+}
+.listNew__btn:hover{
+    background-color: #ccc;
+    border: none;
+    outline: none;
+}
+.listNew__khung{
+    padding: 1rem;
+    border: 1px solid #ccc;
+    overflow: hidden;
+    display: block;
+}
+.listNew__khung.active{
+    display: none;
+}
+.listNew__btn.active{
+    background-color: #eee;
+}
+.listNew__khung input,
+.listNew__khung textarea,
+.listNew__khung button
+{
+    font-size: large;
+}
+
+.chucNang__header-kCn a,
+.chucNang__header-kCn button{
+    font-size: 1.6rem;
+}
+
+.listNew__item.full-width{
+    max-width: 100%;
+    flex: 0 0 100%;
+}
+
+/* form thêm mới */
+.tinTuc-wrapper label,
+.tinTuc-wrapper input,
+.tinTuc-wrapper button,
+.tinTuc-wrapper textarea,
+.tinTuc-wrapper select{
+    font-size: 1.6rem;
+}
+
+.tinTuc-wrapper label {
+    font-weight: 600;
+}
+
+.page-item .page-link{
+    cursor: pointer;
+}

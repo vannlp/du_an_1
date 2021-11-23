@@ -1,0 +1,154 @@
+.menu_user{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    background-color: #0082e6;
+    width: 100%;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sanPham{
+    display: flex;
+}
+label.logo_nav{
+    color: white;
+    font-size: 30px;
+    margin: 20px 20px;
+    font-weight: bold;
+}
+.menu_user ul{
+    
+    margin-right: 20px;
+}
+.menu_user ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+.menu_user ul li a{
+    color: white;
+    font-size: 17px;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin: 10px
+}
+.menu_user ul li a:hover {
+    background-color: #1b9bff;
+    padding: 5px;
+    border-radius: 10px;
+}
+.user_img{
+    width: 500px;
+    height: 400px;
+    margin: 30px 30px;
+}
+.user_img img{
+    max-width: 100%;
+    border-radius: 10px 10px;
+    margin: 5px 20px;
+    box-shadow: 0px 5px 5px 5px #ccc;
+}
+.user_text{
+    width: 500px;
+    border-right: 1px solid #ccc;
+}
+.user_text h3{
+    margin: 30px 10px;
+}
+.user_text p{
+    margin: 30px 30px;
+}
+/* Đổi mật khẩu */
+.user_input{
+    width: 100%;
+}
+.user_input h3, p{
+    margin: 10px 10px;
+}
+.user_input input{
+    width: 95%;
+    padding: 15px 15px;
+    margin: 10px 10px;
+    border: none;
+    border-radius: 5px 5px;
+    background-color: #f2f2f2;
+    box-shadow: 0px 1px 5px #ccc;
+}
+.user_input button{
+    padding: 10px 10px;
+    margin: 10px 10px;
+    border-radius: 5px 5px;
+    outline: none;
+    font-weight: bold;
+    color: white;
+    background-color: #0082e6;
+    cursor: pointer;
+}
+.user_input button:hover{
+    background-color: #1b9bff;
+}
+/* Đăng nhập */
+.login-wrapper{
+    margin-top: 10px;
+    margin-bottom: 30px;
+    background-color: white;
+    border-radius: 5px 5px;
+    position: relative;
+    min-height: 400px;
+    
+}
+.signup-wrapper{
+    min-height: 600px;
+}
+.login-wrapper h3{
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+.login-layout{
+    background-image: url('https://img.freepik.com/free-photo/grunge-paint-background_1409-1337.jpg?size=626&ext=jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 80%;
+    position: absolute;
+    background-color: #ccc;
+    padding: 20px 20px;
+    border-radius: 10px 10px;
+}
+.login{
+    margin-top: 20px;
+}
+.form-group{
+    font-weight: bold;
+    margin: 10px 0px;
+}
+.form-group input{
+    border-radius: 5px 5px;
+}
+.form-group button{
+    padding: 10px 10px;
+    margin: 10px 10px;
+    border-radius: 5px 5px;
+    outline: none;
+    font-weight: bold;
+    color: white;
+    background-color: #0082e6;
+    cursor: pointer;
+}
+.form-group button:hover{
+    background-color: #1b9bff;
+}
+.form-controll{
+    width: 100%;
+    padding: 10px 10px;
+    overflow: none;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+}

@@ -1,0 +1,380 @@
+.product{
+    background-color: #fff;
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.productImg__wrapper{
+    max-width: 40%;
+    flex: 0 0 40%;
+    border-right: 1px solid #ccc;
+    padding: 10px;
+}
+
+.productImg__big{
+    width: 100%;
+}
+
+.productImg__big img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.productImg__small {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.productImg__small img{
+    max-width: 20%;
+    height: auto;
+    flex: 0 0 20%;
+    margin: 10px 0;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.productImg__small img.action{
+    border: 1px solid rgb(83, 83, 253);
+    border-radius: 3px;
+}
+
+.productDesc__wrapper {
+    padding: 20px 10px;
+    max-width: 60%;
+    flex: 0 0 60%;
+}
+
+.porduct__heading h3{
+    color: #212121;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.product__danhGia {
+    display: flex;
+}
+
+.product__danhGia .product__sao{
+    padding-right: 10px ;
+    border-right: 1px #eee solid;
+}
+
+.product__danhGia .product__sao i{
+    color: #ccc;
+}
+
+.product__danhGia span {
+    padding: 0 10px;
+}
+
+.product__sao>.action{
+    color: orangered !important;
+}
+
+.productMota__wrapper {
+    display: flex;
+}
+
+.productMota__left {
+    max-width: 60%;
+    flex: 0 0 60%;
+}
+
+.productMota__right{
+    max-width: calc(40% - 20px);
+    flex: 0 0 calc(40% - 20px);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-left: 20px;
+    padding: 20px 10px;
+}
+
+.product__price-wrapper {
+    padding: 20px;
+    background-color: #eee;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.product__price-wrapper span:first-child{
+    color: red;
+    font-weight: 700;
+}
+
+.product__price-wrapper small{
+    color: gray;
+    text-decoration: line-through solid #212121;
+}
+
+.product__price-wrapper span:last-child{
+    padding: 0px 5px; 
+    border: 1px solid red;
+    background-color: rgba(248, 58, 58, 0.164);
+    border-radius: 5px;
+}
+
+.product__muaHang {
+    padding: 10px 0;
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+}
+
+.product__soLuong-wrapper{
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+}
+
+.btn-soLuong button{
+    border: 1px solid #eee;
+    background-color: transparent;
+    padding: 10px 20px;
+    font-weight: 700;
+    font-size: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.btn-soLuong input{
+    width: 50px;
+    padding: 10px 20px;
+    height: 45px;
+    position: relative;
+    top: -2px;
+    border: 1px solid #eee;
+    outline: none;
+    margin: 0 -5px;
+}
+
+.product__btn-mua{
+    margin-top: 20px;
+    text-decoration: none;
+    padding: 15px 20px;
+    background-color: red;
+    color: #fff;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.product__right-title{
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.product__right-title img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.product__right-title span{
+    font-weight: 500;
+}
+
+.product__right-action{
+    padding: 20px 0;
+    text-align: center;
+}
+
+.product__right-btn{
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 1px solid rgb(132, 132, 250);
+    display: inline-block;
+    border-radius: 5px;
+    color: #212121;
+    font-weight: 500;
+}
+
+.moTa-product{
+    padding: 20px 20px;
+    border-radius: 5px;
+    background-color: #fff;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.moTa-product h3{
+    margin-bottom: 20px;
+}
+
+.nhanXet{
+    padding: 20px 20px;
+    border-radius: 5px;
+    background-color: #fff;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.nhanXet h3{
+    margin-bottom: 20px;
+}
+
+.danhGia-wrapper textarea{
+    width: 100%;
+    border: 1px solid #ccc;
+    outline: none;
+    padding: 10px;
+}
+
+.danhGia-sao{
+    margin: 20px 0;
+}
+
+.danhGia-sao i{
+    color: #ccc;
+}
+
+.danhGia-sao .action{
+    color: orangered;
+}
+
+.danhGia-wrapper button{
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: rgb(61, 61, 250);
+    color: #fff;
+}
+
+.danhGia-list{
+    margin: 20px 0;
+}
+
+
+.danhGia-list-title{
+    display: flex;
+    align-items: flex-start;
+    max-width: 20%;
+    flex: 0 0 20%;
+    margin-right: 20px;
+}
+
+.danhGia-list-desc{
+    max-width: 70%;
+    flex: 0 0 70%;
+}
+
+.danhGia-list-title img{
+    width: 25%;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.danhGia-list-title span{
+    font-weight: 500;
+}
+
+.danhGia-list-desc>div:first-child{
+    margin-bottom: 10px;
+}
+
+.danhGia-list-item{
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+    display: flex;
+    padding: 20px 0;
+}
+
+@media screen and (max-width: 855px){
+    .product{
+        flex-direction: column-reverse;
+    }
+
+    .productImg__wrapper{
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+
+    .productDesc__wrapper{
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+
+    .danhGia-list-title{
+        max-width: 50%;
+        flex: 0 0 50%;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .productMota__wrapper{
+        flex-direction: column;
+    }
+
+    .productMota__left,
+    .productMota__right{
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+
+    .productMota__right{
+        margin-left: 0;
+    }    
+}
+
+/* Sản phẩm tương tự */
+.product-tuongTu-wrapper{
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.product-tuongTu-item{
+    text-decoration: none;
+    color: #212121;
+    padding: 20px;
+    display: inline-block;
+}
+
+.product-tuongTu-item:hover{
+    /* border: 1px solid #ccc; */
+    /* background-color: #eee; */
+    box-shadow: 0 0 20px #0000001f;
+    border-radius: 5px;
+}
+
+.slick-arrow{
+    position: absolute;
+    padding: 30px 15px;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 0 6px;
+    color: #fff;
+    border-radius: 4px;
+    transition: 1s;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-weight: 700;
+}
+.slick-prev{
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+.slick-next{
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+
+
+
