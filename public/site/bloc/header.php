@@ -2,13 +2,13 @@
     <section class="top-head">
         <div class="container">
             <div class="top-head-row">
-                <a class="logo-wrapper" href="#">
+                <a class="logo-wrapper" href="?c=index">
                     <h1>LifeSign</h1>
                 </a>
                 <div class="top-header__main-wrapper">
-                    <form action="#" class="search-wrapper" method="get">
-                        <input type="search" name="" placeholder="Nhập tên sản phẩm hoặc danh mục" id="" />
-                        <button>
+                    <form action="?c=timkiem&a=index" class="search-wrapper" method="post">
+                        <input type="search" name="tim-kiem" placeholder="Nhập tên sản phẩm hoặc danh mục" id="" />
+                        <button type="submit" name="btn-timkiem">
                             <i class="fas fa-search"></i><span>Tìm kiếm</span>
                         </button>
                     </form>

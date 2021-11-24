@@ -1,0 +1,31 @@
+.showsearch{
+    margin-bottom: 30px;
+    display: flex;
+}
+.menuProduct{
+    width: 25%;
+    border-right: 1px solid #ccc;
+}
+.searchDanhmuc{
+    border-bottom: 1px solid #ccc ;
+    margin-top: 15px;
+    margin-left: 5px;
+}
+.searchDanhmuc ul li{
+    display: flex;
+    margin: 10px 5px;
+}
+.searchDanhmuc ul li a{
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+}
+
+
+.showProduct{
+    width: 75%;
+}
+.searchOutput{
+    margin: 15px 10px;
+    border-bottom: 1px solid #ccc;
+}

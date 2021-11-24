@@ -80,25 +80,25 @@
                     $check[$i] = 'checked';
                 }
                 echo '
-            <div class="box">
-                <a href="' . URL_WEB . '?c=chitiet&a=index&id=' . $sanPham[1] . '">
-                    <img src="' . URL_PUBLIC . 'site/img/product/realme3pro.png" class="product" />
-                    <h3 class="name">
-                        <b>' . $sanPham[3] . '</b>
-                    </h3>
-                    <div class="rating">
-                        <span class="fa fa-star ' . $check[0] . '"></span>
-                        <span class="fa fa-star ' . $check[1] . '"></span>
-                        <span class="fa fa-star ' . $check[2] . '"></span>
-                        <span class="fa fa-star ' . $check[3] . '"></span>
-                        <span class="fa fa-star ' . $check[4] . '"></span> |
-                        <span>Đã bán 1000+</span>
-                    </div>
-                    <p href="" class="buy1"><b>' . $sanPham[6] . '</b></p>
-                </a>
-            </div>
-            ';
-            }
+                <div class="box">
+                    <a href="' . URL_WEB . '?c=chitiet&a=index&id=' . $sanPham[0] . '">
+                        <img src="' . URL_PUBLIC . 'site/img/product/realme3pro.png" class="product" />
+                        <h3 class="name">
+                            <b>' . $sanPham[3] . '</b>
+                        </h3>
+                        <div class="rating">
+                            <span class="fa fa-star ' . $check[0] . '"></span>
+                            <span class="fa fa-star ' . $check[1] . '"></span>
+                            <span class="fa fa-star ' . $check[2] . '"></span>
+                            <span class="fa fa-star ' . $check[3] . '"></span>
+                            <span class="fa fa-star ' . $check[4] . '"></span> |
+                            <span>Đã bán 1000+</span>
+                        </div>
+                        <p href="" class="buy1"><b>' . $sanPham[6] . '</b></p>
+                    </a>
+                </div>
+                ';
+                }
             ?>
             <!-- Kết thúc khung sản phẩm -->
         </div>
