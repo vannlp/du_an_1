@@ -125,30 +125,9 @@ label.logo_nav{
 .login{
     margin-top: 20px;
 }
-.form-group{
-    font-weight: bold;
-    margin: 10px 0px;
-}
-.form-group input{
-    border-radius: 5px 5px;
-}
-.form-group button{
-    padding: 10px 10px;
-    margin: 10px 10px;
-    border-radius: 5px 5px;
-    outline: none;
-    font-weight: bold;
-    color: white;
-    background-color: #0082e6;
-    cursor: pointer;
-}
-.form-group button:hover{
-    background-color: #1b9bff;
-}
-.form-controll{
-    width: 100%;
-    padding: 10px 10px;
-    overflow: none;
-    border: 1px solid #ccc;
-    margin-top: 10px;
+
+.quanLy__main{
+    background-color: #fff;
+    padding: 20px 10px;
+    margin-bottom: 20px;
 }

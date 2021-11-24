@@ -38,35 +38,16 @@
         <h1>Danh Mục</h1>
         <div class="danhMuc">
             <!--  -->
-            <div class="item_danhMuc">
-                <img src="<?= URL_PUBLIC ?>site/img/demo.jpg" alt="" srcset="" />
-                <p>Tên Sản Phẩm</p>
-            </div>
-            <!--  -->
-            <div class="item_danhMuc">
-                <img src="<?= URL_PUBLIC ?>site/img/demo.jpg" alt="" srcset="" />
-                <p>Tên Sản Phẩm</p>
-            </div>
-            <div class="item_danhMuc">
-                <img src="<?= URL_PUBLIC ?>site/img/demo.jpg" alt="" srcset="" />
-                <p>Tên Sản Phẩm</p>
-            </div>
-            <div class="item_danhMuc">
-                <img src="<?= URL_PUBLIC ?>site/img/demo.jpg" alt="" srcset="" />
-                <p>Tên Sản Phẩm</p>
-            </div>
-            <div class="item_danhMuc">
-                <img src="<?= URL_PUBLIC ?>site/img/demo.jpg" alt="" srcset="" />
-                <p>Tên Sản Phẩm</p>
-            </div>
-            <div class="item_danhMuc">
-                <img src="<?= URL_PUBLIC ?>site/img/demo.jpg" alt="" srcset="" />
-                <p>Tên Sản Phẩm</p>
-            </div>
-            <div class="item_danhMuc">
-                <img src="<?= URL_PUBLIC ?>site/img/demo.jpg" alt="" srcset="" />
-                <p>Tên Sản Phẩm</p>
-            </div>
+            <?php
+            foreach ($data['danhMuc'] as $danhMuc) {
+                echo '
+                    <a href="#" class="item_danhMuc">
+                        <img src="' . URL_PUBLIC . 'site/img/' . $danhMuc[3] . '" alt="" />
+                        <p>' . $danhMuc[1] . '</p>
+                    </a>
+                    ';
+            }
+            ?>
             <!--  -->
         </div>
     </div>
@@ -84,143 +65,42 @@
         <h1>Sản Phẩm</h1>
         <div class="container-c">
             <!-- khung sản phẩm -->
+            <?php
+
+            foreach ($data['sanPham'] as $sanPham) {
+                $sosoa = $sanPham[9];
+                $check = [
+                    0 => '',
+                    1 => '',
+                    2 => '',
+                    3 => '',
+                    4 => '',
+                ];
+                for ($i = 0; $i < $sosoa; $i++) {
+                    $check[$i] = 'checked';
+                }
+                echo '
             <div class="box">
-                <a href="chitiet.html">
-                    <img src="<?= URL_PUBLIC ?>site/img/demo.jpg" class="product" />
+                <a href="' . URL_WEB . '?c=chitiet&a=index&id=' . $sanPham[1] . '">
+                    <img src="' . URL_PUBLIC . 'site/img/product/realme3pro.png" class="product" />
                     <h3 class="name">
-                        <b>Tên Sản Phẩm là gì đó thật là dài thòn lòn luôn má ơi</b>
+                        <b>' . $sanPham[3] . '</b>
                     </h3>
                     <div class="rating">
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span> |
+                        <span class="fa fa-star ' . $check[0] . '"></span>
+                        <span class="fa fa-star ' . $check[1] . '"></span>
+                        <span class="fa fa-star ' . $check[2] . '"></span>
+                        <span class="fa fa-star ' . $check[3] . '"></span>
+                        <span class="fa fa-star ' . $check[4] . '"></span> |
                         <span>Đã bán 1000+</span>
                     </div>
-                    <p href="" class="buy1"><b>Giá 300.000 VND</b></p>
+                    <p href="" class="buy1"><b>' . $sanPham[6] . '</b></p>
                 </a>
             </div>
+            ';
+            }
+            ?>
             <!-- Kết thúc khung sản phẩm -->
-            <div class="box">
-                <a href="#">
-                    <img src="<?= URL_PUBLIC ?>site/img/demo.jpg" class="product" />
-                    <h3 class="name">
-                        <b>Tên Sản Phẩm là gì đó thật là dài thòn lòn luôn má ơi</b>
-                    </h3>
-                    <div class="rating">
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span> |
-                        <span>Đã bán 1000+</span>
-                    </div>
-                    <p href="" class="buy1"><b>Giá 300.000 VND</b></p>
-                </a>
-            </div>
-            <div class="box">
-                <a href="#">
-                    <img src="<?= URL_PUBLIC ?>site/img/demo.jpg" class="product" />
-                    <h3 class="name">
-                        <b>Tên Sản Phẩm là gì đó thật là dài thòn lòn luôn má ơi</b>
-                    </h3>
-                    <div class="rating">
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span> |
-                        <span>Đã bán 1000+</span>
-                    </div>
-                    <p href="" class="buy1"><b>Giá 300.000 VND</b></p>
-                </a>
-            </div>
-            <div class="box">
-                <a href="#">
-                    <img src="<?= URL_PUBLIC ?>site/img/demo.jpg" class="product" />
-                    <h3 class="name">
-                        <b>Tên Sản Phẩm là gì đó thật là dài thòn lòn luôn má ơi</b>
-                    </h3>
-                    <div class="rating">
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span> |
-                        <span>Đã bán 1000+</span>
-                    </div>
-                    <p href="" class="buy1"><b>Giá 300.000 VND</b></p>
-                </a>
-            </div>
-            <div class="box">
-                <a href="#">
-                    <img src="<?= URL_PUBLIC ?>site/img/demo.jpg" class="product" />
-                    <h3 class="name">
-                        <b>Tên Sản Phẩm là gì đó thật là dài thòn lòn luôn má ơi</b>
-                    </h3>
-                    <div class="rating">
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span> |
-                        <span>Đã bán 1000+</span>
-                    </div>
-                    <p href="" class="buy1"><b>Giá 300.000 VND</b></p>
-                </a>
-            </div>
-            <div class="box">
-                <a href="#">
-                    <img src="<?= URL_PUBLIC ?>site/img/demo.jpg" class="product" />
-                    <h3 class="name">
-                        <b>Tên Sản Phẩm là gì đó thật là dài thòn lòn luôn má ơi</b>
-                    </h3>
-                    <div class="rating">
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span> |
-                        <span>Đã bán 1000+</span>
-                    </div>
-                    <p href="" class="buy1"><b>Giá 300.000 VND</b></p>
-                </a>
-            </div>
-            <div class="box">
-                <a href="#">
-                    <img src="<?= URL_PUBLIC ?>site/img/demo.jpg" class="product" />
-                    <h3 class="name">
-                        <b>Tên Sản Phẩm là gì đó thật là dài thòn lòn luôn má ơi</b>
-                    </h3>
-                    <div class="rating">
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span> |
-                        <span>Đã bán 1000+</span>
-                    </div>
-                    <p href="" class="buy1"><b>Giá 300.000 VND</b></p>
-                </a>
-            </div>
-            <div class="box">
-                <a href="#">
-                    <img src="<?= URL_PUBLIC ?>site/img/demo.jpg" class="product" />
-                    <h3 class="name">
-                        <b>Tên Sản Phẩm là gì đó thật là dài thòn lòn luôn má ơi</b>
-                    </h3>
-                    <div class="rating">
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span> |
-                        <span>Đã bán 1000+</span>
-                    </div>
-                    <p href="" class="buy1"><b>Giá 300.000 VND</b></p>
-                </a>
-            </div>
         </div>
     </div>
     <!-- Sản Phẩm -->

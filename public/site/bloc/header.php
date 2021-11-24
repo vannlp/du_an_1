@@ -15,15 +15,26 @@
                     <div class="account-wrapper">
                         <i class="far fa-user header__icon header__icon--primary"></i>
                         <div class="account-action">
-                            <div class="account-dndk">
-                                <a href="?c=account&a=login" class="header_text">Đăng nhập</a>
-                                <span>/</span>
-                                <a href="#" class="header_text">Đăng ký</a>
-                            </div>
-                            <div class="account-2">
-                                <span class="header_text header_text--secondary">Tài khoản</span>
-                                <i class="fas fa-angle-down header__icon"></i>
-                            </div>
+                            <?php
+                            if (!isset($_SESSION['login'])) {
+                                echo '
+                                    <a href="?c=account&a=login" class="header_text">Đăng nhập</a>
+                                    <span>/</span>
+                                    <a href="?c=account&a=signup" class="header_text">Đăng ký</a>
+                                ';
+                            } else {
+                                echo '
+                                    <div class="account-2">
+                                        <span class="header_text header_text--secondary">Tài khoản</span>
+                                        <i class="fas fa-angle-down header__icon"></i>
+                                        <span>/<span>
+                                        <a href="?c=san_pham&a=add_san_pham" class="header_text">Đăng sản phẩm</a>
+                                        <span>/<span>
+                                        <a href="?c=account&a=logout" class="header_text">Đăng xuất</a>
+                                    </div>
+                                    ';
+                            }
+                            ?>
                         </div>
                     </div>
                     <a class="cart-wrapper" href="#">

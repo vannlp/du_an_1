@@ -42,4 +42,31 @@ class accountController
         }
         header('location: /index.php');
     }
+
+    public function signup()
+    {
+        $thong_bao = '';
+        if (isset($_POST['btn-signup'])) {
+            if ($_POST['matkhau'] == $_POST['matkhau1']) {
+                $signup = [
+                    'hoten' => $_POST['hoten'],
+                    'email' => $_POST['email'],
+                    'tenDN' => $_POST['tenDN'],
+                    'matkhau' => md5($_POST['matkhau'])
+                ];
+                $ktdy = $this->nguoi_dungModel->set_nguoi_dung($signup);
+                $thong_bao = "Đăng ký thành công";
+                if (!$ktdy) {
+                    $thong_bao = "Đăng ký thất bại";
+                } else {
+                    $thong_bao = "Đăng ký thành công";
+                }
+            } else {
+                $thong_bao = "Mật khẩu nhập lại không chính xác";
+            }
+        }
+        view('account/signupView', 'site', [
+            'thong_bao' => $thong_bao
+        ]);
+    }
 }

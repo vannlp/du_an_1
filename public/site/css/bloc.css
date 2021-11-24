@@ -117,6 +117,10 @@ body{
     cursor: pointer;
 }
 
+.account-2>span{
+    color: white;
+}
+
 .account-wrapper>.header__icon{
     margin-right: 10px;
 }
@@ -312,4 +316,74 @@ body{
     .footer-wrapper{
         width: 100%;
     }
+}
+
+.form-group{
+    font-weight: bold;
+    margin: 10px 0px;
+}
+.form-group input{
+    border-radius: 5px 5px;
+}
+.form-group button{
+    padding: 10px 10px;
+    margin: 10px 10px;
+    border-radius: 5px 5px;
+    outline: none;
+    font-weight: bold;
+    color: white;
+    background-color: #0082e6;
+    cursor: pointer;
+    border: none;
+}
+.form-group button:hover{
+    background-color: #1b9bff;
+}
+.form-controll{
+    width: 100%;
+    padding: 10px 10px;
+    overflow: none;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+}
+
+.form-control{
+    width: 100%;
+    padding: 10px 10px;
+    overflow: none;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+}
+
+.button{
+    padding: 10px 10px;
+    /* margin: 10px 10px; */
+    border-radius: 5px 5px;
+    outline: none;
+    font-weight: bold;
+    /* color: white; */
+    /* background-color: #0082e6; */
+    cursor: pointer;
+    border: none;
+}
+
+.button--blue{
+    color: white;
+    background-color: #0082e6;
+}
+
+.xoay{
+    border: 5px solid #0082e6;
+    background-color: transparent;
+    border-radius: 50%;
+    height: 30px;
+    display: inline-block;
+    width: 30px;
+    border-top: 5px solid transparent;
+    animation: hieu_ung_xoay 1s linear infinite;
+}
+
+@keyframes hieu_ung_xoay{
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
 }
