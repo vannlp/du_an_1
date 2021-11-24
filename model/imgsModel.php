@@ -17,7 +17,8 @@ class imgsModel extends DB
     function update_img_sanpham($id_sanpham, $data = [])
     {
         for ($i = 0; $i < count($data); $i++) {
-            $sql = "UPDATE imgs set id_sanpham = '$id_sanpham' where id_img=" . $data[$i] . "";
+            $id = $data[$i];
+            $sql = "UPDATE imgs set id_sanpham = '$id_sanpham' where id_img=$id";
             $this->setData($sql);
         }
     }

@@ -34,9 +34,13 @@ class san_phamController
             if ($_POST['gia_giam'] != '') {
                 $data['gia_giam'] = $_POST['gia_giam'];
             }
-
+            // print_r($data);
             // xu ly phan hinh anh
             $arrImg = explode(';', $_POST['img_mo_ta']);
+            // print_r($arrImg);
+            $isSucces = $this->sanphamModel->insert_san_pham($data);
+            // echo $isSucces;
+            $this->imgsModel->update_img_sanpham($id_sanpham, $arrImg);
         }
 
 

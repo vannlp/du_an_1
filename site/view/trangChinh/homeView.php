@@ -59,6 +59,13 @@
     <a href="" class="news-item"><img src="<?= URL_PUBLIC ?>site/img/demo.jpg" class="" /></a>
 </div>
 
+<style>
+    .buy1>b:first-child {
+        text-decoration: line-through #ccc;
+        color: #212121;
+    }
+</style>
+
 <div class="container sanPham">
     <!-- Sản phẩm -->
     <div class="main-product danhMucAll">
@@ -82,7 +89,7 @@
                 echo '
             <div class="box">
                 <a href="' . URL_WEB . '?c=chitiet&a=index&id=' . $sanPham[1] . '">
-                    <img src="' . URL_PUBLIC . 'site/img/product/realme3pro.png" class="product" />
+                    <img src="' . URL_PUBLIC . 'site/img/' . $sanPham[5] . '" class="product" />
                     <h3 class="name">
                         <b>' . $sanPham[3] . '</b>
                     </h3>
@@ -94,7 +101,10 @@
                         <span class="fa fa-star ' . $check[4] . '"></span> |
                         <span>Đã bán 1000+</span>
                     </div>
-                    <p href="" class="buy1"><b>' . $sanPham[6] . '</b></p>
+                    <p class="buy1">
+                        <b>' . number_format($sanPham[6]) . '</b>
+                        <b>' . number_format($sanPham[7]) . '</b>
+                    </p>
                 </a>
             </div>
             ';
