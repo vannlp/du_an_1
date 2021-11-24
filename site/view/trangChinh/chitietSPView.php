@@ -9,34 +9,47 @@
         </div>
 
         <div class="productImg__small">
-            <img src="https://cdn.tgdd.vn/Products/Images/42/213031/iphone-12-do-1-1-org.jpg" alt="" />
-            <img src="https://cdn.tgdd.vn/Products/Images/42/213031/iphone-12-den-1-1-org.jpg" alt="" />
-            <img src="https://cdn.tgdd.vn/Products/Images/42/213031/iphone-12-xanh-la-1-1-org.jpg" alt="" />
-            <img src="https://cdn.tgdd.vn/Products/Images/42/213031/iphone-12-xanh-la-2-org.jpg" alt="" />
-            <img src="https://cdn.tgdd.vn/Products/Images/42/213031/iphone-12-xanh-la-3-org.jpg" alt="" />
+            <img src="<?php echo URL_PUBLIC.'site/img/product/realme3pro.png' ?>" alt="" />
+            <img src="<?php echo URL_PUBLIC.'site/img/product/realme3pro1.png' ?>" alt="" />
         </div>
     </div>
 
     <div class="productDesc__wrapper">
         <div class="porduct__heading">
-            <h3>Điện Thoại iPhone 12 (6GB/64GB) - Hàng Chính Hãng</h3>
-            <div class="product__danhGia">
+            <?php foreach($data['sanPhamID'] as $sanPham) ?>
+            <h3><?php echo $sanPham[3] ?></h3>
+            <div class="">
                 <div class="product__sao">
-                    <i class="fas fa-star action"></i>
-                    <i class="fas fa-star action"></i>
-                    <i class="fas fa-star action"></i>
-                    <i class="fas fa-star action"></i>
-                    <i class="fas fa-star"></i>
+                    <?php 
+                    $sosoa = $sanPham[9];
+                    $check = [
+                        0=>'',
+                        1=>'',
+                        2=>'',
+                        3=>'',
+                        4=>'',
+                    ];
+                    for($i = 0; $i < $sosoa; $i++){
+                        $check[$i] = 'action';
+                    } ?>
+                    <div class="rating">
+                        <span class="fa fa-star <?php echo $check[0] ?>"></span>
+                        <span class="fa fa-star <?php echo $check[1] ?>"></span>
+                        <span class="fa fa-star <?php echo $check[2] ?>"></span>
+                        <span class="fa fa-star <?php echo $check[3] ?>"></span>
+                        <span class="fa fa-star <?php echo $check[4] ?>"></span></span> |
+                        <span>Đã bán 82</span>
+                    </div>
                 </div>
-                <span>Đã bán 82</span>
+                
             </div>
         </div>
 
         <div class="productMota__wrapper">
             <div class="productMota__left">
                 <div class="product__price-wrapper">
-                    <span>3.650.000 VND</span>
-                    <small>3.790.000 VND</small>
+                    <span><?php echo $sanPham[6] ?> VND</span>
+                    <small><?php echo $sanPham[7] ?> VND</small>
                     <span>-4%</span>
                 </div>
                 <div class="product__muaHang">
@@ -68,10 +81,7 @@
     <h3>Mô Tả Sản Phẩm</h3>
     <div>
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
-            amet maiores rem asperiores eos corrupti, dolor nostrum delectus
-            animi provident. Ipsam suscipit repudiandae pariatur nulla? Cum
-            mollitia ut repellendus temporibus.
+        <?php echo $sanPham[4] ?>
         </p>
     </div>
 </section>
