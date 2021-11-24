@@ -12,9 +12,12 @@ class chitietController
     {
         if(isset($_GET['id'])){
             $id = $_GET['id'];
+            $iddm = $_GET['iddm'];
             $sanPhamID = $this->sanPhamIDModel->get_sanPham($id);
+            $sanPhamLQ = $this->sanPhamIDModel->get_id_dm_by_id_sanPham($iddm);
             view('trangChinh/chitietSPView', 'site', [
-                'sanPhamID'=>$sanPhamID
+                'sanPhamID'=>$sanPhamID,
+                'sanPhamLQ'=>$sanPhamLQ
             ]);
         }
     }

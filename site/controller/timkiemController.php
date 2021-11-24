@@ -20,7 +20,7 @@ class timkiemController
             }  
         }
         else{
-            $tukhoa = "Bạn chưa tìm gì bằng ô tìm kiếm 1";
+            $tukhoa = "Bạn chưa tìm gì";
             $sanPham = $this->timkiemModel->tim_kiem_all(); 
         }
         $dmSP = $this->dmSPModel->get_dm_sp_all();

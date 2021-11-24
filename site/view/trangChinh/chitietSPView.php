@@ -91,193 +91,41 @@
         <div class="product-tuongTu-wrapper">
             <h3>Sản phẩm tương tự</h3>
             <div class="product-tuongTu-slider">
-                <a href="#" class="product-tuongTu-item">
-                    <img src="https://salt.tikicdn.com/cache/200x200/ts/product/16/75/dd/65cb93e9e792b114b8d1682f49c607e4.jpg.webp" alt="" />
-                    <h4>Title sản phẩm</h4>
-                    <div class="product-tuongTu-danhGia">
-                        <div class="product__sao">
-                            <i class="fas fa-star action"></i>
-                            <i class="fas fa-star action"></i>
-                            <i class="fas fa-star action"></i>
-                            <i class="fas fa-star action"></i>
-                            <i class="fas fa-star"></i>
+                <?php 
+                foreach($data['sanPhamLQ'] as $sanPhamLQ){
+                    $sosoa = $sanPham[9];
+                    $check = [
+                        0 => '',
+                        1 => '',
+                        2 => '',
+                        3 => '',
+                        4 => '',
+                    ];
+                    for ($i = 0; $i < $sosoa; $i++) {
+                        $check[$i] = 'action';
+                    }
+                    echo'
+                    <a href="#" class="product-tuongTu-item">
+                        <img src="https://salt.tikicdn.com/cache/200x200/ts/product/16/75/dd/65cb93e9e792b114b8d1682f49c607e4.jpg.webp" alt="" />
+                        <h4>'.$sanPhamLQ[3].'</h4>
+                        <div class="product-tuongTu-danhGia">
+                            <div class="product__sao">
+                                <span class="fa fa-star ' . $check[0] . '"></span>
+                                <span class="fa fa-star ' . $check[1] . '"></span>
+                                <span class="fa fa-star ' . $check[2] . '"></span>
+                                <span class="fa fa-star ' . $check[3] . '"></span>
+                                <span class="fa fa-star ' . $check[4] . '"></span> |
+                                <span>Đã bán 1000+</span>
+                            </div>
+                            <span>Đã bán 20</span>
                         </div>
-                        <span>Đã bán 20</span>
-                    </div>
-                    <div class="product-tuongTu-price">
-                        <span>3.990.000VND</span>
-                    </div>
-                </a>
-                <a href="#" class="product-tuongTu-item">
-                    <img src="https://salt.tikicdn.com/cache/200x200/ts/product/16/75/dd/65cb93e9e792b114b8d1682f49c607e4.jpg.webp" alt="" />
-                    <h4>Title sản phẩm</h4>
-                    <div class="product-tuongTu-danhGia">
-                        <div class="product__sao">
-                            <i class="fas fa-star action"></i>
-                            <i class="fas fa-star action"></i>
-                            <i class="fas fa-star action"></i>
-                            <i class="fas fa-star action"></i>
-                            <i class="fas fa-star"></i>
+                        <div class="product-tuongTu-price">
+                            <span>'.$sanPhamLQ[6].'</span>
                         </div>
-                        <span>Đã bán 20</span>
-                    </div>
-                    <div class="product-tuongTu-price">
-                        <span>3.990.000VND</span>
-                    </div>
-                </a>
-                <a href="#" class="product-tuongTu-item">
-                    <img src="https://salt.tikicdn.com/cache/200x200/ts/product/16/75/dd/65cb93e9e792b114b8d1682f49c607e4.jpg.webp" alt="" />
-                    <h4>Title sản phẩm</h4>
-                    <div class="product-tuongTu-danhGia">
-                        <div class="product__sao">
-                            <i class="fas fa-star action"></i>
-                            <i class="fas fa-star action"></i>
-                            <i class="fas fa-star action"></i>
-                            <i class="fas fa-star action"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <span>Đã bán 20</span>
-                    </div>
-                    <div class="product-tuongTu-price">
-                        <span>3.990.000VND</span>
-                    </div>
-                </a>
-                <a href="#" class="product-tuongTu-item">
-                    <img src="https://salt.tikicdn.com/cache/200x200/ts/product/16/75/dd/65cb93e9e792b114b8d1682f49c607e4.jpg.webp" alt="" />
-                    <h4>Title sản phẩm</h4>
-                    <div class="product-tuongTu-danhGia">
-                        <div class="product__sao">
-                            <i class="fas fa-star action"></i>
-                            <i class="fas fa-star action"></i>
-                            <i class="fas fa-star action"></i>
-                            <i class="fas fa-star action"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <span>Đã bán 20</span>
-                    </div>
-                    <div class="product-tuongTu-price">
-                        <span>3.990.000VND</span>
-                    </div>
-                </a>
-                <a href="#" class="product-tuongTu-item">
-                    <img src="https://salt.tikicdn.com/cache/200x200/ts/product/16/75/dd/65cb93e9e792b114b8d1682f49c607e4.jpg.webp" alt="" />
-                    <h4>Title sản phẩm</h4>
-                    <div class="product-tuongTu-danhGia">
-                        <div class="product__sao">
-                            <i class="fas fa-star action"></i>
-                            <i class="fas fa-star action"></i>
-                            <i class="fas fa-star action"></i>
-                            <i class="fas fa-star action"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <span>Đã bán 20</span>
-                    </div>
-                    <div class="product-tuongTu-price">
-                        <span>3.990.000VND</span>
-                    </div>
-                </a>
-                <a href="#" class="product-tuongTu-item">
-                    <img src="https://salt.tikicdn.com/cache/200x200/ts/product/16/75/dd/65cb93e9e792b114b8d1682f49c607e4.jpg.webp" alt="" />
-                    <h4>Title sản phẩm</h4>
-                    <div class="product-tuongTu-danhGia">
-                        <div class="product__sao">
-                            <i class="fas fa-star action"></i>
-                            <i class="fas fa-star action"></i>
-                            <i class="fas fa-star action"></i>
-                            <i class="fas fa-star action"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <span>Đã bán 20</span>
-                    </div>
-                    <div class="product-tuongTu-price">
-                        <span>3.990.000VND</span>
-                    </div>
-                </a>
-                <a href="#" class="product-tuongTu-item">
-                    <img src="https://salt.tikicdn.com/cache/200x200/ts/product/16/75/dd/65cb93e9e792b114b8d1682f49c607e4.jpg.webp" alt="" />
-                    <h4>Title sản phẩm</h4>
-                    <div class="product-tuongTu-danhGia">
-                        <div class="product__sao">
-                            <i class="fas fa-star action"></i>
-                            <i class="fas fa-star action"></i>
-                            <i class="fas fa-star action"></i>
-                            <i class="fas fa-star action"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <span>Đã bán 20</span>
-                    </div>
-                    <div class="product-tuongTu-price">
-                        <span>3.990.000VND</span>
-                    </div>
-                </a>
-                <a href="#" class="product-tuongTu-item">
-                    <img src="https://salt.tikicdn.com/cache/200x200/ts/product/16/75/dd/65cb93e9e792b114b8d1682f49c607e4.jpg.webp" alt="" />
-                    <h4>Title sản phẩm</h4>
-                    <div class="product-tuongTu-danhGia">
-                        <div class="product__sao">
-                            <i class="fas fa-star action"></i>
-                            <i class="fas fa-star action"></i>
-                            <i class="fas fa-star action"></i>
-                            <i class="fas fa-star action"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <span>Đã bán 20</span>
-                    </div>
-                    <div class="product-tuongTu-price">
-                        <span>3.990.000VND</span>
-                    </div>
-                </a>
-                <a href="#" class="product-tuongTu-item">
-                    <img src="https://salt.tikicdn.com/cache/200x200/ts/product/16/75/dd/65cb93e9e792b114b8d1682f49c607e4.jpg.webp" alt="" />
-                    <h4>Title sản phẩm</h4>
-                    <div class="product-tuongTu-danhGia">
-                        <div class="product__sao">
-                            <i class="fas fa-star action"></i>
-                            <i class="fas fa-star action"></i>
-                            <i class="fas fa-star action"></i>
-                            <i class="fas fa-star action"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <span>Đã bán 20</span>
-                    </div>
-                    <div class="product-tuongTu-price">
-                        <span>3.990.000VND</span>
-                    </div>
-                </a>
-                <a href="#" class="product-tuongTu-item">
-                    <img src="https://salt.tikicdn.com/cache/200x200/ts/product/16/75/dd/65cb93e9e792b114b8d1682f49c607e4.jpg.webp" alt="" />
-                    <h4>Title sản phẩm</h4>
-                    <div class="product-tuongTu-danhGia">
-                        <div class="product__sao">
-                            <i class="fas fa-star action"></i>
-                            <i class="fas fa-star action"></i>
-                            <i class="fas fa-star action"></i>
-                            <i class="fas fa-star action"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <span>Đã bán 20</span>
-                    </div>
-                    <div class="product-tuongTu-price">
-                        <span>3.990.000VND</span>
-                    </div>
-                </a>
-                <a href="#" class="product-tuongTu-item">
-                    <img src="https://salt.tikicdn.com/cache/200x200/ts/product/16/75/dd/65cb93e9e792b114b8d1682f49c607e4.jpg.webp" alt="" />
-                    <h4>Title sản phẩm</h4>
-                    <div class="product-tuongTu-danhGia">
-                        <div class="product__sao">
-                            <i class="fas fa-star action"></i>
-                            <i class="fas fa-star action"></i>
-                            <i class="fas fa-star action"></i>
-                            <i class="fas fa-star action"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <span>Đã bán 20</span>
-                    </div>
-                    <div class="product-tuongTu-price">
-                        <span>3.990.000VND</span>
-                    </div>
-                </a>
+                    </a>
+                ';
+                }
+                ?>                  
             </div>
         </div>
     </div>

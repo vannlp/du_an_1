@@ -58,7 +58,7 @@
                 }
                 echo '
                 <div class="box">
-                    <a href="' . URL_WEB . '?c=chitiet&a=index&id=' . $value[0] . '">
+                    <a href="' . URL_WEB . '?c=chitiet&a=index&id='.$value[0].'&iddm='.$value[1].'">
                         <img src="' . URL_PUBLIC . 'site/img/product/realme3pro.png" class="product" />
                         <h3 class="name">
                             <b>' . $value[3] . '</b>
