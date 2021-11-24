@@ -11,3 +11,4 @@ if (isset($_GET['c']) && isset($_GET['a'])) {
     $action = 'index';
     routerSite($controller, $action);
 }
+//van ngu lol
