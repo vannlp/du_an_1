@@ -38,6 +38,6 @@ class DB
     public function getDataOne($sql)
     {
         $datas = $this->con->query($sql);
-        return $datas->fetch_assoc();
+        return $datas->fetch_array();
     }
 }

@@ -8,11 +8,12 @@ class san_phamModel extends DB
     }
     function get_id_sanPham($id)
     {
-        $sql = "SELECT * FROM san_pham WHERE id_sanpham = $id";
+        $sql = "SELECT * FROM san_pham WHERE id_sanpham = '$id'";
         return $this->getDataOne($sql);
     }
-    function get_id_dm_by_id_sanPham($iddm){
-        $sql = "SELECT * FROM `san_pham` WHERE id_dm_sp = $iddm";
+    function get_id_dm_by_id_sanPham($iddm)
+    {
+        $sql = "SELECT * FROM san_pham WHERE id_dm_sp = $iddm";
         return $this->getData($sql);
     }
 

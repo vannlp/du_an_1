@@ -9,27 +9,30 @@
         </div>
 
         <div class="productImg__small">
-            <img src="<?php echo URL_PUBLIC.'site/img/product/realme3pro.png' ?>" alt="" />
-            <img src="<?php echo URL_PUBLIC.'site/img/product/realme3pro1.png' ?>" alt="" />
+            <?php
+            foreach ($data['img'] as $value) {
+                echo '<img src="' . URL_PUBLIC . 'site/img/' . $value[1] . '" alt="" />';
+            }
+            ?>
+
         </div>
     </div>
 
     <div class="productDesc__wrapper">
         <div class="porduct__heading">
-            <?php foreach($data['sanPhamID'] as $sanPham) ?>
-            <h3><?php echo $sanPham[3] ?></h3>
+            <h3><?php echo $data['sanPhamID'][3] ?></h3>
             <div class="">
                 <div class="product__sao">
-                    <?php 
-                    $sosoa = $sanPham[9];
+                    <?php
+                    $sosoa = $data['sanPhamID'][9];
                     $check = [
-                        0=>'',
-                        1=>'',
-                        2=>'',
-                        3=>'',
-                        4=>'',
+                        0 => '',
+                        1 => '',
+                        2 => '',
+                        3 => '',
+                        4 => '',
                     ];
-                    for($i = 0; $i < $sosoa; $i++){
+                    for ($i = 0; $i < $sosoa; $i++) {
                         $check[$i] = 'action';
                     } ?>
                     <div class="rating">
@@ -41,15 +44,15 @@
                         <span>Đã bán 82</span>
                     </div>
                 </div>
-                
+
             </div>
         </div>
 
         <div class="productMota__wrapper">
             <div class="productMota__left">
                 <div class="product__price-wrapper">
-                    <span><?php echo $sanPham[6] ?> VND</span>
-                    <small><?php echo $sanPham[7] ?> VND</small>
+                    <span><?php echo $data['sanPhamID'][6] ?> VND</span>
+                    <small><?php echo $data['sanPhamID'][7] ?> VND</small>
                     <span>-4%</span>
                 </div>
                 <div class="product__muaHang">
@@ -81,19 +84,30 @@
     <h3>Mô Tả Sản Phẩm</h3>
     <div>
         <p>
-        <?php echo $sanPham[4] ?>
+            <?php echo $data['sanPhamID'][4] ?>
         </p>
     </div>
 </section>
 
+<style>
+    .product-tuongTu-item img {
+        width: 100%;
+        display: block;
+    }
+
+    .product-tuongTu-price span {
+        color: red;
+        font-weight: 500;
+    }
+</style>
 <section class="product-tuongTu">
     <div class="container">
         <div class="product-tuongTu-wrapper">
             <h3>Sản phẩm tương tự</h3>
             <div class="product-tuongTu-slider">
-                <?php 
-                foreach($data['sanPhamLQ'] as $sanPhamLQ){
-                    $sosoa = $sanPham[9];
+                <?php
+                foreach ($data['sanPhamLQ'] as $value) {
+                    $sosoa = $value[9];
                     $check = [
                         0 => '',
                         1 => '',
@@ -104,28 +118,30 @@
                     for ($i = 0; $i < $sosoa; $i++) {
                         $check[$i] = 'action';
                     }
-                    echo'
-                    <a href="#" class="product-tuongTu-item">
-                        <img src="https://salt.tikicdn.com/cache/200x200/ts/product/16/75/dd/65cb93e9e792b114b8d1682f49c607e4.jpg.webp" alt="" />
-                        <h4>'.$sanPhamLQ[3].'</h4>
-                        <div class="product-tuongTu-danhGia">
-                            <div class="product__sao">
-                                <span class="fa fa-star ' . $check[0] . '"></span>
-                                <span class="fa fa-star ' . $check[1] . '"></span>
-                                <span class="fa fa-star ' . $check[2] . '"></span>
-                                <span class="fa fa-star ' . $check[3] . '"></span>
-                                <span class="fa fa-star ' . $check[4] . '"></span> |
-                                <span>Đã bán 1000+</span>
+                    echo '
+                        <a href="#" class="product-tuongTu-item">
+                            <img src="' . URL_PUBLIC . 'site/img/' . $value[5] . '" alt="" />
+                            <h4>' . $value[3] . '</h4>
+                            <div class="product-tuongTu-danhGia">
+                                <div class="product__sao">
+                                    <span class="fa fa-star ' . $check[0] . '"></span>
+                                    <span class="fa fa-star ' . $check[1] . '"></span>
+                                    <span class="fa fa-star ' . $check[2] . '"></span>
+                                    <span class="fa fa-star ' . $check[3] . '"></span>
+                                    <span class="fa fa-star ' . $check[4] . '"></span> |
+                                    <span>Đã bán 1000+</span>
+                                </div>
+                                <span>Đã bán 20</span>
                             </div>
-                            <span>Đã bán 20</span>
-                        </div>
-                        <div class="product-tuongTu-price">
-                            <span>'.$sanPhamLQ[6].'</span>
-                        </div>
-                    </a>
-                ';
+                            <div class="product-tuongTu-price">
+                                <span>' . $value[6] . '</span>
+                            </div>
+                        </a>
+                    ';
                 }
-                ?>                  
+
+
+                ?>
             </div>
         </div>
     </div>

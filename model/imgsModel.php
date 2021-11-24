@@ -3,7 +3,7 @@ class imgsModel extends DB
 {
     function get_img_username($ten_dang_nhap)
     {
-        $sql = "SELECT * from imgs where ten_dang_nhap='$ten_dang_nhap'";
+        $sql = "SELECT * from imgs where ten_dang_nhap='$ten_dang_nhap' and id_sanpham is null";
         return $this->getData($sql);
     }
 
@@ -21,5 +21,11 @@ class imgsModel extends DB
             $sql = "UPDATE imgs set id_sanpham = '$id_sanpham' where id_img=$id";
             $this->setData($sql);
         }
+    }
+
+    function get_img_idSanPham($id_sanpham)
+    {
+        $sql = "SELECT * from imgs where id_sanpham = '$id_sanpham'";
+        return $this->getData($sql);
     }
 }
