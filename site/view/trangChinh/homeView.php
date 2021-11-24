@@ -87,7 +87,6 @@
                     $check[$i] = 'checked';
                 }
                 echo '
-<<<<<<< HEAD
             <div class="box">
                 <a href="' . URL_WEB . '?c=chitiet&a=index&id=' . $sanPham[1] . '">
                     <img src="' . URL_PUBLIC . 'site/img/' . $sanPham[5] . '" class="product" />
