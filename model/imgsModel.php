@@ -13,4 +13,12 @@ class imgsModel extends DB
         $sql = "INSERT into imgs values(null, '$link_img', null, null, '$ten_dang_nhap')";
         return $this->setData($sql);
     }
+
+    function update_img_sanpham($id_sanpham, $data = [])
+    {
+        for ($i = 0; $i < count($data); $i++) {
+            $sql = "UPDATE imgs set id_sanpham = '$id_sanpham' where id_img=" . $data[$i] . "";
+            $this->setData($sql);
+        }
+    }
 }

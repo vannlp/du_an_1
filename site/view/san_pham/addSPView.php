@@ -51,6 +51,18 @@
                 <input type="text" name="tieu_de" class="form-control">
             </div>
             <div class="form-group">
+                <label for="">Danh mục sản phẩm</label>
+                <select name="id_dm_sp" class="form-control" id="">
+                    <?php
+                    foreach ($data['dm_sp'] as $value) {
+                        echo '<option value="' . $value[0] . '">' . $value[1] . '</option>';
+                    }
+                    ?>
+
+                </select>
+            </div>
+
+            <div class="form-group">
                 <label for="">Ảnh đại diện</label>
                 <input type="file" name="img" class="form-control">
             </div>
@@ -74,10 +86,10 @@
             </div>
             <div class="form-group">
                 <label for="">Mô tả</label>
-                <textarea name="mo_ta" class="form-control" id="" cols="30" rows="10"></textarea>
+                <textarea name="noi_dung" class="form-control" id="" cols="30" rows="10"></textarea>
             </div>
 
-            <button type="submit" class="button button--blue">Submit</button>
+            <button type="submit" name="btn-submit" class="button button--blue">Submit</button>
         </form>
     </div>
 </div>
