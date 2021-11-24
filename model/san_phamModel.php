@@ -11,6 +11,10 @@ class san_phamModel extends DB
         $sql = "SELECT * FROM san_pham WHERE id_sanpham = $id";
         return $this->getDataOne($sql);
     }
+    function get_id_dm_by_id_sanPham($iddm){
+        $sql = "SELECT * FROM `san_pham` WHERE id_dm_sp = $iddm";
+        return $this->getData($sql);
+    }
 
     function insert_san_pham($data = [])
     {

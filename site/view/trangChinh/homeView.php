@@ -41,7 +41,7 @@
             <?php
             foreach ($data['danhMuc'] as $danhMuc) {
                 echo '
-                    <a href="#" class="item_danhMuc">
+                    <a href="?c=timkiem&a=dm&id=' . $danhMuc[1] . '" class="item_danhMuc">
                         <img src="' . URL_PUBLIC . 'site/img/' . $danhMuc[3] . '" alt="" />
                         <p>' . $danhMuc[1] . '</p>
                     </a>
@@ -87,6 +87,7 @@
                     $check[$i] = 'checked';
                 }
                 echo '
+<<<<<<< HEAD
             <div class="box">
                 <a href="' . URL_WEB . '?c=chitiet&a=index&id=' . $sanPham[1] . '">
                     <img src="' . URL_PUBLIC . 'site/img/' . $sanPham[5] . '" class="product" />

@@ -78,6 +78,10 @@
     color: orangered !important;
 }
 
+.rating>.action{
+    color: orangered !important;
+}
+
 .productMota__wrapper {
     display: flex;
 }

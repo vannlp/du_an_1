@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 24, 2021 lúc 06:44 AM
--- Phiên bản máy phục vụ: 10.4.21-MariaDB
--- Phiên bản PHP: 8.0.11
+-- Thời gian đã tạo: Th10 24, 2021 lúc 09:09 AM
+-- Phiên bản máy phục vụ: 10.4.13-MariaDB
+-- Phiên bản PHP: 7.2.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -36,6 +36,7 @@ CREATE TABLE `binh_luan` (
   `ngay_up` datetime NOT NULL,
   `so_sao` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+-- Error reading data for table duan1_nhom3.binh_luan: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `duan1_nhom3`.`binh_luan`' at line 1
 
 -- --------------------------------------------------------
 
@@ -49,14 +50,7 @@ CREATE TABLE `danhmuc_sp` (
   `noi_dung` text COLLATE utf8_unicode_ci NOT NULL,
   `img` varchar(255) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Đang đổ dữ liệu cho bảng `danhmuc_sp`
---
-
-INSERT INTO `danhmuc_sp` (`Id_dm_sp`, `tieu_de`, `noi_dung`, `img`) VALUES
-(2, 'Điện thoại', 'Danh mục sản phẩm điện thoại', 'iphone-13-pro-gold-1-600x600.jpg'),
-(4, 'Laptop', 'sdfsdfsdfdsgsgrg', 'msi-gf65-10ue-i7-228vn-600x600.jpg');
+-- Error reading data for table duan1_nhom3.danhmuc_sp: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `duan1_nhom3`.`danhmuc_sp`' at line 1
 
 -- --------------------------------------------------------
 
@@ -69,6 +63,7 @@ CREATE TABLE `danh_muc_tin` (
   `tieu_de` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `mo_ta` text COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+-- Error reading data for table duan1_nhom3.danh_muc_tin: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `duan1_nhom3`.`danh_muc_tin`' at line 1
 
 -- --------------------------------------------------------
 
@@ -180,15 +175,7 @@ CREATE TABLE `nguoi_dung` (
   `vai_tro` int(11) NOT NULL,
   `trang_thai` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Đang đổ dữ liệu cho bảng `nguoi_dung`
---
-
-INSERT INTO `nguoi_dung` (`ten_dang_nhap`, `mat_khau`, `ho_ten`, `dia_chi`, `sdt`, `cmnd`, `email`, `ngay_sinh`, `gioi_tinh`, `img`, `vai_tro`, `trang_thai`) VALUES
-('phanvan0322', 'e10adc3949ba59abbe56e057f20f883e', 'Phan Tường Văn', NULL, NULL, NULL, 'phanvan0322@gmail.com', NULL, NULL, NULL, 1, 1),
-('phanvan123', '982f32e5997d059c233151d7ae87fe01', 'Phan Văn', NULL, NULL, NULL, 'phanvan0322@gmail.com', NULL, NULL, NULL, 2, 1),
-('phanvan352', '982f32e5997d059c233151d7ae87fe01', 'Phan Tường Văn', NULL, NULL, NULL, 'phanvan352@gmail.com', NULL, NULL, NULL, 2, 1);
+-- Error reading data for table duan1_nhom3.nguoi_dung: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `duan1_nhom3`.`nguoi_dung`' at line 1
 
 -- --------------------------------------------------------
 
@@ -202,6 +189,7 @@ CREATE TABLE `quang_cao_sp` (
   `noi_dung` text COLLATE utf8_unicode_ci NOT NULL,
   `bang_gia` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+-- Error reading data for table duan1_nhom3.quang_cao_sp: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `duan1_nhom3`.`quang_cao_sp`' at line 1
 
 -- --------------------------------------------------------
 
@@ -223,6 +211,14 @@ CREATE TABLE `san_pham` (
   `trang_thai` tinyint(1) NOT NULL,
   `so_luong` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `san_pham`
+--
+
+INSERT INTO `san_pham` (`id_sanpham`, `id_dm_sp`, `ten_dang_nhap`, `tieu_de`, `noi_dung`, `img`, `gia_goc`, `gia_giam`, `ngay_dang`, `danh_gia`, `trang_thai`, `so_luong`) VALUES
+('4', 2, 'phanvan123', 'realme', '', '', 3000000, 1400000, '2021-11-17 13:57:39', 4, 0, 0),
+('5', 4, 'phanvan123', 'laptop ngon', '', '', 400000, NULL, '0000-00-00 00:00:00', 1, 0, 0);
 
 -- --------------------------------------------------------
 
