@@ -51,8 +51,8 @@
         <div class="productMota__wrapper">
             <div class="productMota__left">
                 <div class="product__price-wrapper">
-                    <span><?php echo $data['sanPhamID'][6] ?> VND</span>
-                    <small><?php echo $data['sanPhamID'][7] ?> VND</small>
+                    <span><?php echo number_format($data['sanPhamID'][6]) ?> VND</span>
+                    <small><?php echo number_format($data['sanPhamID'][7]) ?> VND</small>
                     <span>-4%</span>
                 </div>
                 <div class="product__muaHang">
@@ -119,7 +119,7 @@
                         $check[$i] = 'action';
                     }
                     echo '
-                        <a href="#" class="product-tuongTu-item">
+                        <a href="' . URL_WEB . '?c=chitiet&a=index&id=' . $value[0] . '" class="product-tuongTu-item">
                             <img src="' . URL_PUBLIC . 'site/img/' . $value[5] . '" alt="" />
                             <h4>' . $value[3] . '</h4>
                             <div class="product-tuongTu-danhGia">
@@ -134,7 +134,7 @@
                                 <span>Đã bán 20</span>
                             </div>
                             <div class="product-tuongTu-price">
-                                <span>' . $value[6] . '</span>
+                                <span>' . number_format($value[6]) . '</span>
                             </div>
                         </a>
                     ';

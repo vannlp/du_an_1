@@ -25,10 +25,8 @@
                             } else {
                                 echo '
                                     <div class="account-2">
-                                        <span class="header_text header_text--secondary">Tài khoản</span>
+                                        <a href="' . URL_WEB . '/?c=san_pham&a=add_san_pham" class="header_text header_text--secondary">Tài khoản</a>
                                         <i class="fas fa-angle-down header__icon"></i>
-                                        <span>/<span>
-                                        <a href="?c=san_pham&a=add_san_pham" class="header_text">Đăng sản phẩm</a>
                                         <span>/<span>
                                         <a href="?c=account&a=logout" class="header_text">Đăng xuất</a>
                                     </div>
