@@ -42,3 +42,10 @@ function checkLogin()
         header('location: /?c=account&a=login');
     }
 }
+
+function checkLogin2()
+{
+    if (!isset($_SESSION['login'])) {
+        header('location: /?c=account&a=login');
+    }
+}

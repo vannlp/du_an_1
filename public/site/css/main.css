@@ -1,0 +1,120 @@
+/* Danh mục */
+.danhMucAll{
+    background-color: #fff;
+    margin-top: 30px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 5px 5px 5px 5px;
+}
+.danhMuc{
+    margin: 0 auto;
+}
+.item_danhMuc{
+    text-align: center;
+    margin: 0px 20px;
+}
+.item_danhMuc img{
+    width: 100%;
+    margin-bottom: 10px;
+}   
+.slick-arrow{
+    position: absolute;
+    padding: 30px 15px;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 0 6px;
+    color: #fff;
+    border-radius: 4px;
+    transition: 1s;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-weight: 700;
+}
+.slick-prev{
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+.slick-next{
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+/* Hiển thị quản cáo*/
+.news{
+    display: flex;
+}
+.news-item img{
+    width: 60%;
+    margin: 30px;
+    border-radius: 10px;
+}
+/* Hiển thị sản phẩm */
+.main-product{
+    width: 100%;
+    margin: 0;
+}
+.container-c{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    transform-style: preserve-3d;
+    padding: 10px 10px 10px 10px;
+}
+.container-c .box{
+    position: relative;
+    width: 220px;
+    height: 300px;
+    transform-style: preserve-3d;
+    margin: 5px;
+    border-radius: 5px;
+    
+}
+.container-c .box:hover{
+    background:rgba(230,230,230,1);
+    border: 1px solid #ccc;
+}
+.container-c .box .name{
+    position: absolute;
+    bottom: 50px;
+    Left: 0;
+    text-align: center;
+    color: #232323;
+    width: 100%;
+    font-size: 16px;
+}
+.container-c .box .rating{
+    position: absolute;
+    bottom: 30px;
+    text-align: center;
+    color: #232323;
+    width: 100%;
+}
+.container-c .box .buy1{
+    position: absolute;
+    bottom: 5px;
+    color: red;
+    padding: 3px 10px;
+    font-size: 17px;
+    text-decoration: none;
+    text-align: center;
+}
+.container-c .box .product{
+    position: absolute;
+    top: 35%;
+    Left: 50%;
+    max-width: 150px;
+    transition: 0.5s;
+    z-index: 11;
+    transform-style: preserve-3d;
+    transform: translate3d(-50%, -50%, 5px) ;
+}
+.checked {
+    color: orange;
+}
+.sanPham{
+    margin-bottom: 30px;
+}

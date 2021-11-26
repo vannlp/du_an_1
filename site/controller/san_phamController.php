@@ -8,6 +8,7 @@ class san_phamController
 
     function __construct()
     {
+        checkLogin2();
         $this->sanphamModel = model('san_phamModel');
         $this->dm_san_phamModel = model('dm_san_phamModel');
         $this->date = new DateTime();
@@ -48,6 +49,15 @@ class san_phamController
         $dm_sp = $this->dm_san_phamModel->get_dm_sp_all();
         view('san_pham/addSPView', 'site', [
             'dm_sp' => $dm_sp
+        ]);
+    }
+
+    public function list_san_pham()
+    {
+        $data_san_pham = $this->sanphamModel->get_san_pham_username($_SESSION['login'][0]);
+
+        view('san_pham/listView', 'site', [
+            'dataSP' => $data_san_pham
         ]);
     }
 }

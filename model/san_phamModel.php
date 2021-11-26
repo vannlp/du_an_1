@@ -28,4 +28,10 @@ class san_phamModel extends DB
         '$tieu_de','$noi_dung','$img', $gia_goc, $gia_giam, '$ngay_dang', 0, 0, $so_luong)";
         return $this->setData($sql);
     }
+
+    function get_san_pham_username($ten_dang_nhap)
+    {
+        $sql = "SELECT * from san_pham where ten_dang_nhap = '$ten_dang_nhap'";
+        return $this->getData($sql);
+    }
 }

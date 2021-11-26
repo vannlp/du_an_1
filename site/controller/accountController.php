@@ -69,4 +69,10 @@ class accountController
             'thong_bao' => $thong_bao
         ]);
     }
+
+    public function quan_ly_tk()
+    {
+        checkLogin2();
+        view('account/quan_ly_tkView', 'site', []);
+    }
 }

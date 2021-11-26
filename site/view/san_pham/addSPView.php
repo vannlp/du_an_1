@@ -34,9 +34,9 @@
         <nav class="menu_user">
             <label class="logo_nav">Quản Lý</label>
             <ul>
-                <li><a href="">Thông tin cá nhân</a></li>
+                <li><a href="?c=account&a=quan_ly_tk">Thông tin cá nhân</a></li>
                 <li><a href="">Đổi mật khẩu</a></li>
-                <li><a href="">Quản lý sản phẩm</a></li>
+                <li><a href="?c=san_pham&a=add_san_pham">Quản lý sản phẩm</a></li>
                 <li><a href="">Quản lý hóa đơn</a></li>
                 <li><a href="">Thống kê</a></li>
             </ul>
@@ -45,6 +45,7 @@
     <!--  -->
     <div class="quanLy__main">
         <h2>Thêm sản phẩm</h2>
+        <a href="?c=san_pham&a=list_san_pham" class="button button--blue">Danh sách sản phẩm</a>
         <form method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="">Tên sản phẩm</label>
