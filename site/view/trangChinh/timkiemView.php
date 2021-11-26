@@ -35,6 +35,14 @@
         </ul>
       </div>
     </div>
+    <style>
+      @media screen and (min-width: 900px) {
+        .container-c .box {
+          max-width: 33.333333333333%;
+          flex: 0 0 33.333333333333%;
+        }
+      }
+    </style>
     <div class="showProduct">
       <h3 class="searchOutput">Kết quả tìm kiếm cho "<?php echo $data['tukhoa'] ?>"</h3>
       <div class="container-c">
@@ -57,23 +65,28 @@
             $check[$i] = 'checked';
           }
           echo '
-                <div class="box">
-                    <a href="' . URL_WEB . '?c=chitiet&a=index&id=' . $value[0] . '">
-                        <img src="' . URL_PUBLIC . 'site/img/' . $value[5] . '" class="product" />
-                        <h3 class="name">
-                            <b>' . $value[3] . '</b>
-                        </h3>
-                        <div class="rating">
-                            <span class="fa fa-star ' . $check[0] . '"></span>
-                            <span class="fa fa-star ' . $check[1] . '"></span>
-                            <span class="fa fa-star ' . $check[2] . '"></span>
-                            <span class="fa fa-star ' . $check[3] . '"></span>
-                            <span class="fa fa-star ' . $check[4] . '"></span> |
-                            <span>Đã bán 1000+</span>
-                        </div>
-                        <p href="" class="buy1"><b>' . $value[6] . '</b></p>
-                    </a>
+          <div class="box">
+            <a href="' . URL_WEB . '?c=chitiet&a=index&id=' . $value[0] . '">
+                <img src="' . URL_PUBLIC . 'site/img/' . $value[5] . '" class="product" />
+                <div class="product__main">
+                    <h3 class="name">
+                        <b>' . $value[3] . '</b>
+                    </h3>
+                    <div class="rating">
+                        <span class="fa fa-star ' . $check[0] . '"></span>
+                        <span class="fa fa-star ' . $check[1] . '"></span>
+                        <span class="fa fa-star ' . $check[2] . '"></span>
+                        <span class="fa fa-star ' . $check[3] . '"></span>
+                        <span class="fa fa-star ' . $check[4] . '"></span>
+                        <p>Đã bán 1000+</p>
+                    </div>
+                    <p class="buy1">
+                        <b>' . number_format($value[6]) . '</b>
+                        <b>' . number_format($value[7]) . '</b>
+                    </p>
                 </div>
+            </a>
+        </div>
                 ';
         }
         //}

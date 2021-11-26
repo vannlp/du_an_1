@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="<?= URL_PUBLIC ?>site/css/product.css">
+<link rel="stylesheet" href="<?= URL_PUBLIC ?>site/css/index.css">
 <script src="<?= URL_PUBLIC ?>site/js/product.js"></script>
 <script src="<?= URL_PUBLIC ?>site/js/xulyanh.js"></script>
 
@@ -121,20 +122,22 @@
                     echo '
                         <a href="' . URL_WEB . '?c=chitiet&a=index&id=' . $value[0] . '" class="product-tuongTu-item">
                             <img src="' . URL_PUBLIC . 'site/img/' . $value[5] . '" alt="" />
-                            <h4>' . $value[3] . '</h4>
-                            <div class="product-tuongTu-danhGia">
-                                <div class="product__sao">
+                            <div class="product__main">
+                                <h3 class="name">
+                                    <b>' . $value[3] . '</b>
+                                </h3>
+                                <div class="rating">
                                     <span class="fa fa-star ' . $check[0] . '"></span>
                                     <span class="fa fa-star ' . $check[1] . '"></span>
                                     <span class="fa fa-star ' . $check[2] . '"></span>
                                     <span class="fa fa-star ' . $check[3] . '"></span>
-                                    <span class="fa fa-star ' . $check[4] . '"></span> |
-                                    <span>Đã bán 1000+</span>
+                                    <span class="fa fa-star ' . $check[4] . '"></span>
+                                    <p>Đã bán 1000+</p>
                                 </div>
-                                <span>Đã bán 20</span>
-                            </div>
-                            <div class="product-tuongTu-price">
-                                <span>' . number_format($value[6]) . '</span>
+                                <p class="buy1">
+                                    <b>' . number_format($value[6]) . '</b>
+                                    <b>' . number_format($value[7]) . '</b>
+                                </p>
                             </div>
                         </a>
                     ';
@@ -248,13 +251,13 @@
             prevArrow: `<button type="button" class="slick-prev"><</button>`,
             nextArrow: `<button type="button" class="slick-next">></button>`,
             responsive: [{
-                    breakpoint: 770,
+                    breakpoint: 800,
                     settings: {
-                        slidesToShow: 4,
+                        slidesToShow: 3,
                     },
                 },
                 {
-                    breakpoint: 500,
+                    breakpoint: 700,
                     settings: {
                         slidesToShow: 2,
                     },
