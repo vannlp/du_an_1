@@ -74,7 +74,7 @@
                 <button class="button button--blue" type="button" id="up_load_file">Chọn ảnh</button>
             </div>
             <div class="form-group">
-                <label for="">Giá góc</label>
+                <label for="">Giá gốc</label>
                 <input type="number" name="gia_goc" class="form-control">
             </div>
             <div class="form-group">
