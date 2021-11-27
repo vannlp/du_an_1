@@ -28,4 +28,10 @@ class imgsModel extends DB
         $sql = "SELECT * from imgs where id_sanpham = '$id_sanpham'";
         return $this->getData($sql);
     }
+
+    function get_img_username2($ten_dang_nhap, $id_sanpham)
+    {
+        $sql = "SELECT * from imgs where ten_dang_nhap='$ten_dang_nhap' and id_sanpham='$id_sanpham'";
+        return $this->getData($sql);
+    }
 }

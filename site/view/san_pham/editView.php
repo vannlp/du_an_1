@@ -118,16 +118,22 @@
     const img_mo_ta = document.querySelector('#img_mo_ta')
 
     up_load_file.addEventListener('click', () => {
-        xhttp.open("GET", "?c=img&a=list_img_ajax");
+        xhttp.open("GET", "?c=img&a=list_img_ajax2&id=<?= $_GET['id'] ?>");
         xhttp.send();
         man_mo.style.display = 'flex';
         root.innerHTML = `<i class="xoay"></i>`;
         setTimeout(() => {
             let data = JSON.parse(xhttp.responseText);
             let html = data.map((value, index) => {
+                let checked = '';
+
+                if (value[3] != null) {
+                    checked = 'checked';
+                }
+
                 return `
                 <div>
-                    <input type="checkbox" name="" value="${value[0]}" class="checkbox" id="">
+                    <input type="checkbox" ${checked} name="" value="${value[0]}" class="checkbox" id="">
                     <img width="70px" src="/public/site/img/${value[1]}" alt="">
                 </div>
                 `;

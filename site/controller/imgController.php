@@ -33,4 +33,11 @@ class imgController
         $dataList = $this->imgsModel->get_img_username($_SESSION['login'][0]);
         echo json_encode($dataList);
     }
+
+    public function list_img_ajax2()
+    {
+        $id = $_GET['id'];
+        $dataList = $this->imgsModel->get_img_username2($_SESSION['login'][0], $id);
+        echo json_encode($dataList);
+    }
 }
