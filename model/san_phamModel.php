@@ -34,4 +34,14 @@ class san_phamModel extends DB
         $sql = "SELECT * from san_pham where ten_dang_nhap = '$ten_dang_nhap'";
         return $this->getData($sql);
     }
+
+    function update_san_pham($data = [])
+    {
+        extract($data);
+        $sql = "UPDATE san_pham 
+        set id_dm_sp=$id_dm_sp, tieu_de='$tieu_de', noi_dung='$noi_dung', img='$img',
+        gia_goc=$gia_goc, gia_giam=$gia_giam, so_luong=$so_luong
+        where id_sanpham = '$id_sanpham'";
+        return $this->setData($sql);
+    }
 }

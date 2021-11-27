@@ -3,7 +3,7 @@ class quan_lyController
 {
     function __construct()
     {
-        cleckLogin2();
+        checkLogin2();
     }
 
     public function index()

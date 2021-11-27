@@ -42,7 +42,7 @@
                                     <img src="' . URL_WEB . '/public/site/img/' . $value[5] . '"/>
                                 </td>
                                 <td>
-                                    <a href="#" class="button button--yello">Edit</a>
+                                    <a href="?c=san_pham&a=edit&id=' . $value[0] . '" class="button button--yello">Edit</a>
                                     <a href="#" class="button button--red">Xóa</a>
                                 </td>
                             </tr>

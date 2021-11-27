@@ -60,4 +60,18 @@ class san_phamController
             'dataSP' => $data_san_pham
         ]);
     }
+
+    public function edit()
+    {
+        if (isset($_GET['id'])) {
+            $id_sanpham = $_GET['id'];
+            $data_san_pham = $this->sanphamModel->get_id_sanPham($id_sanpham);
+            $dm_sp = $this->dm_san_phamModel->get_dm_sp_all();
+        }
+
+        view('san_pham/editView', 'site', [
+            'dataSP' => $data_san_pham,
+            'dm_sp' => $dm_sp
+        ]);
+    }
 }
