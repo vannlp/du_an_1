@@ -79,26 +79,41 @@
             </div>
             <div class="form-group">
                 <label for="">Giá gốc</label>
-                <input type="number" name="gia_goc" class="form-control">
+                <input type="number" value="<?= $data['dataSP']['gia_goc'] ?>" name="gia_goc" class="form-control">
             </div>
             <div class="form-group">
                 <label for="">Giá giảm</label>
-                <input type="number" name="gia_giam" class="form-control">
+                <input type="number" value="<?= $data['dataSP']['gia_giam'] ?>" name="gia_giam" class="form-control">
             </div>
             <div class="form-group">
                 <label for="">Số lượng</label>
-                <input type="number" name="so_luong" class="form-control">
+                <input type="number" value="<?= $data['dataSP']['so_luong'] ?>" name="so_luong" class="form-control">
             </div>
             <div class="form-group">
                 <label for="">Mô tả</label>
-                <textarea name="noi_dung" class="form-control" id="" cols="30" rows="10"></textarea>
+                <textarea name="noi_dung" class="form-control" id="mo_ta" cols="30" rows="10"><?= $data['dataSP']['noi_dung'] ?></textarea>
+                <script>
+                    CKEDITOR.replace('mo_ta');
+                </script>
             </div>
 
             <button type="submit" name="btn-submit" class="button button--blue">Submit</button>
         </form>
     </div>
 </div>
+<style>
+    .root {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
 
+    .root>div {
+        height: 80px;
+        display: flex;
+        align-items: flex-end;
+    }
+</style>
 <div class="man_mo">
     <div class="man_mo_wrapper">
         <i class="fas fa-times close"></i>

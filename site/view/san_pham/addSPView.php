@@ -42,6 +42,19 @@
             </ul>
         </nav>
     </div>
+    <style>
+        .root {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+
+        .root>div {
+            height: 80px;
+            display: flex;
+            align-items: flex-end;
+        }
+    </style>
     <!--  -->
     <div class="quanLy__main">
         <h2>Thêm sản phẩm</h2>
@@ -87,9 +100,11 @@
             </div>
             <div class="form-group">
                 <label for="">Mô tả</label>
-                <textarea name="noi_dung" class="form-control" id="" cols="30" rows="10"></textarea>
+                <textarea name="noi_dung" id="mo_ta" class="form-control" id="" cols="30" rows="10"></textarea>
             </div>
-
+            <script>
+                CKEDITOR.replace('mo_ta');
+            </script>
             <button type="submit" name="btn-submit" class="button button--blue">Submit</button>
         </form>
     </div>

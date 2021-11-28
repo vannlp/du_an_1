@@ -3,7 +3,7 @@ class san_phamModel extends DB
 {
     function get_sanPham()
     {
-        $sql = "SELECT * FROM san_pham";
+        $sql = "SELECT * FROM san_pham order by ngay_dang desc";
         return $this->getData($sql);
     }
     function get_id_sanPham($id)
@@ -43,5 +43,11 @@ class san_phamModel extends DB
         gia_goc=$gia_goc, gia_giam=$gia_giam, so_luong=$so_luong
         where id_sanpham = '$id_sanpham'";
         return $this->setData($sql);
+    }
+
+    function get_san_pham_img($id_sanpham)
+    {
+        $sql = "SELECT img from san_pham where id_sanpham = '$id_sanpham'";
+        return $this->getValue($sql);
     }
 }

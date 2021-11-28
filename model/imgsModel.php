@@ -32,6 +32,18 @@ class imgsModel extends DB
     function get_img_username2($ten_dang_nhap, $id_sanpham)
     {
         $sql = "SELECT * from imgs where ten_dang_nhap='$ten_dang_nhap' and id_sanpham='$id_sanpham'";
-        return $this->getData($sql);
+        $result1 = $this->getData($sql);
+
+        $sql = "SELECT * from imgs where ten_dang_nhap='$ten_dang_nhap' and id_sanpham is null";
+        $result2 = $this->getData($sql);
+
+        $data = array_merge($result1, $result2);
+        return $data;
+    }
+
+    function reset_img($id_sanpham)
+    {
+        $sql = "UPDATE imgs set id_sanpham = null where id_sanpham = '$id_sanpham'";
+        return $this->setData($sql);
     }
 }
