@@ -284,6 +284,7 @@
 
 .btn-binhluan:hover{
     box-shadow: 1px 1px 10px 1px #ccc;
+    border-radius: 5px 5px;
 }
 
 .text-binhluan:hover{
