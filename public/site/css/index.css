@@ -77,52 +77,105 @@
 }
 .container-c .box{
     position: relative;
-    width: 220px;
-    height: 300px;
+    max-width: 20%;
+    flex: 0 0 20%;
+    min-height: 350px;
     transform-style: preserve-3d;
-    margin: 5px;
+    /* margin: 5px; */
     border-radius: 5px;
     
 }
-.container-c .box:hover{
+
+.container-c .box a{
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+}
+
+.box:hover{
     background:rgba(230,230,230,1);
     border: 1px solid #ccc;
 }
-.container-c .box .name{
-    position: absolute;
-    bottom: 50px;
-    Left: 0;
+
+.box img{
+    display: block;
+    width: 100%;
+}
+
+.name{
+    /* position: absolute; */
+    /* bottom: 50px; */
+    /* Left: 0; */
     text-align: center;
     color: #232323;
     width: 100%;
     font-size: 16px;
 }
-.container-c .box .rating{
-    position: absolute;
-    bottom: 30px;
+.rating{
+    /* position: absolute; */
+    /* bottom: 30px; */
     text-align: center;
     color: #232323;
     width: 100%;
 }
-.container-c .box .buy1{
-    position: absolute;
-    bottom: 5px;
+.buy1{
+    /* position: absolute; */
+    /* bottom: 5px; */
     color: red;
     padding: 3px 10px;
-    font-size: 17px;
+    font-size: 15px;
     text-decoration: none;
     text-align: center;
 }
-.container-c .box .product{
-    position: absolute;
-    top: 35%;
-    Left: 50%;
-    max-width: 150px;
-    transition: 0.5s;
-    z-index: 11;
-    transform-style: preserve-3d;
-    transform: translate3d(-50%, -50%, 5px) ;
+
+.product__main{
+    margin-top: 20px;
 }
+
+.product{
+    /* position: absolute; */
+    /* top: 35%;
+    Left: 50%;
+    max-width: 150px; */
+    transition: 0.5s;
+    /* z-index: 11; */
+    transform-style: preserve-3d;
+    /* transform: translate3d(-50%, -50%, 5px) ; */
+}
+
+.buy1>b:first-child {
+    text-decoration: line-through #ccc;
+    color: #212121;
+}
+
+@media screen and (max-width:1267px) {
+    .container-c .box{
+        max-width: 25%;
+        flex: 0 0 25%;
+    }
+}
+@media screen and (max-width:830px) {
+    .container-c .box{
+        max-width: 33.333333%;
+        flex: 0 0 33.333333%;
+    }
+}
+@media screen and (max-width:670px) {
+    .container-c .box{
+        max-width: 50%;
+        flex: 0 0 50%;
+    }
+}
+@media screen and (max-width:500px) {
+    .container-c .box{
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+}
+
+
+
+
 .checked {
     color: orange;
 }

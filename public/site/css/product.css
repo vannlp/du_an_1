@@ -78,6 +78,10 @@
     color: orangered !important;
 }
 
+.product__sao .rating{
+    text-align: left !important;
+}
+
 .rating>.action{
     color: orangered !important;
 }

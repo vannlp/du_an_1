@@ -29,3 +29,8 @@
     margin: 15px 10px;
     border-bottom: 1px solid #ccc;
 }
+
+.container-c .box{
+    max-width: 33.333333333333%;
+    flex: 0 0 33.333333333333%;
+}

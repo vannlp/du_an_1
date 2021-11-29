@@ -60,4 +60,42 @@ class san_phamController
             'dataSP' => $data_san_pham
         ]);
     }
+
+    public function edit()
+    {
+        if (isset($_GET['id'])) {
+            $id_sanpham = $_GET['id'];
+            if (isset($_POST['btn-submit'])) {
+                $imgOld = $this->sanphamModel->get_san_pham_img($id_sanpham);
+                $data = [
+                    'id_sanpham' => $id_sanpham,
+                    'id_dm_sp' => $_POST['id_dm_sp'],
+                    'img' => updateFile('img', URL . '/public/site/img/', $imgOld),
+                    'tieu_de' => $_POST['tieu_de'],
+                    'noi_dung' => $_POST['noi_dung'],
+                    'gia_goc' => $_POST['gia_goc'],
+                    'so_luong' => $_POST['so_luong']
+                ];
+
+                if ($_POST['gia_giam'] != '') {
+                    $data['gia_giam'] = $_POST['gia_giam'];
+                }
+                $arrImg = explode(';', $_POST['img_mo_ta']);
+                $this->imgsModel->reset_img($id_sanpham);
+                $this->imgsModel->update_img_sanpham($id_sanpham, $arrImg);
+                // print_r($data);
+
+                $this->sanphamModel->update_san_pham($data);
+            }
+
+
+            $data_san_pham = $this->sanphamModel->get_id_sanPham($id_sanpham);
+            $dm_sp = $this->dm_san_phamModel->get_dm_sp_all();
+        }
+
+        view('san_pham/editView', 'site', [
+            'dataSP' => $data_san_pham,
+            'dm_sp' => $dm_sp
+        ]);
+    }
 }
