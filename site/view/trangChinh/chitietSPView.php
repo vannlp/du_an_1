@@ -157,6 +157,7 @@
         <?php
         if (isset($_SESSION['login'])) {
             echo '
+            <form action="#" method="post">
             <div class="danhGia-wrapper">
                 <div class="danhGia-sao">
                     <i class="fas fa-star" data-index="0"></i>
@@ -165,9 +166,10 @@
                     <i class="fas fa-star" data-index="3"></i>
                     <i class="fas fa-star" data-index="4"></i>
                 </div>
-                <textarea name="binh-luan" id="binh-luan" cols="30" rows="10"></textarea>
-                <button>Submit</button>
+                <textarea name="binh-luan" id="binh-luan" class="text-binhluan" cols="30" rows="10"></textarea>
+                <button type="submit" name="btn-binhluan" id="btn-binhluan" class="btn-binhluan">Gửi bình luận</button>
             </div>
+            </form>
             ';
         } else {
             echo '<h4>Bạn cần đăng nhập để bình luận</h4>';

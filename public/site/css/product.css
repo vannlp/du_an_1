@@ -278,6 +278,18 @@
     flex: 0 0 70%;
 }
 
+.btn-binhluan{
+    cursor: pointer;
+}
+
+.btn-binhluan:hover{
+    box-shadow: 1px 1px 10px 1px #ccc;
+}
+
+.text-binhluan:hover{
+    box-shadow: 1px 1px 10px 1px #ccc;
+}
+
 .danhGia-list-title img{
     width: 25%;
     border-radius: 50%;
