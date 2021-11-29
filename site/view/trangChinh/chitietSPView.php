@@ -153,38 +153,47 @@
 <section class="nhanXet container">
     <h3>Đánh Giá - Nhận Xét Từ Khách Hàng</h3>
     <div class="danhGia">
-        <form action="#" method="post" class="danhGia-wrapper">
-            <div class="danhGia-sao">
-                <i class="fas fa-star" data-index="0"></i>
-                <i class="fas fa-star" data-index="1"></i>
-                <i class="fas fa-star" data-index="2"></i>
-                <i class="fas fa-star" data-index="3"></i>
-                <i class="fas fa-star" data-index="4"></i>
+
+        <?php
+        if (isset($_SESSION['login'])) {
+            echo '
+            <div class="danhGia-wrapper">
+                <div class="danhGia-sao">
+                    <i class="fas fa-star" data-index="0"></i>
+                    <i class="fas fa-star" data-index="1"></i>
+                    <i class="fas fa-star" data-index="2"></i>
+                    <i class="fas fa-star" data-index="3"></i>
+                    <i class="fas fa-star" data-index="4"></i>
+                </div>
+                <textarea name="binh-luan" id="binh-luan" cols="30" rows="10"></textarea>
+                <button>Submit</button>
             </div>
-            <textarea name="binh-luan" id="binh-luan" cols="30" rows="10"></textarea>
-            <button>Submit</button>
-        </form>
+            ';
+        } else {
+            echo '<h4>Bạn cần đăng nhập để bình luận</h4>';
+        }
+        ?>
     </div>
 
     <div class="danhGia-list">
         <div class="danhGia-list-item">
             <?php
-                foreach($data['binhluan'] as $binhluan){
-                    $sosoa = $binhluan[6];
-                    $check = [
-                        0 => '',
-                        1 => '',
-                        2 => '',
-                        3 => '',
-                        4 => '',
-                    ];
-                    for ($i = 0; $i < $sosoa; $i++) {
-                        $check[$i] = 'action';
-                    }
-                    echo'
+            foreach ($data['binhluan'] as $binhluan) {
+                $sosoa = $binhluan[6];
+                $check = [
+                    0 => '',
+                    1 => '',
+                    2 => '',
+                    3 => '',
+                    4 => '',
+                ];
+                for ($i = 0; $i < $sosoa; $i++) {
+                    $check[$i] = 'action';
+                }
+                echo '
                         <div class="danhGia-list-title">
                             <img src="https://vcdn.tikicdn.com/cache/w100/ts/seller/83/e1/c3/2c071fbb04d92608a1dbdf96f7269ca3.jpg.webp" alt="" />
-                            <span>'.$binhluan[9].'</span>
+                            <span>' . $binhluan[9] . '</span>
                         </div>
                         <div class="danhGia-list-desc">
                             <div class="product__sao">
@@ -195,15 +204,15 @@
                                 <i class="fas fa-star  ' . $check[4] . '"></i>
                             </div>
                             <div class="danhGia-list-noiDung">
-                                <span>'.$binhluan[4].' |</span> 
-                                <span>'.$binhluan[5].'</span>
+                                <span>' . $binhluan[4] . ' |</span> 
+                                <span>' . $binhluan[5] . '</span>
                             </div>
                         </div>
                         ';
-                }
+            }
             ?>
         </div>
-        </div>
+    </div>
     </div>
 </section>
 
