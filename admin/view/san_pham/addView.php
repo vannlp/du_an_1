@@ -64,7 +64,7 @@
                                     <td>
                                         <input type="checkbox" name="" id="">
                                     </td>
-                                    <td>' . $key + 1 . '</td>
+                                    <td>' . $key++ . '</td>
                                     <td>' . $value[1] . '</td>
                                     <td class="td-img">
                                         <img src="' . URL_PUBLIC . 'site/img/' . $value[3] . '"/>
