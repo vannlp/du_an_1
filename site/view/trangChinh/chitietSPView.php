@@ -167,7 +167,7 @@
                     <i class="fas fa-star" data-index="4"></i>
                 </div>
                 <textarea name="binh-luan" id="binh-luan" class="text-binhluan" cols="30" rows="10"></textarea>
-                <button type="submit" name="btn-binhluan" id="btn-binhluan" class="btn-binhluan">Gửi bình luận</button>
+                <button type="button" name="btn-binhluan" id="btn-binhluan" class="btn-binhluan">Gửi bình luận</button>
             </div>
             </form>
             ';

@@ -3,9 +3,7 @@ window.addEventListener("load", () => {
     const Sao = document.querySelectorAll(".danhGia-sao>i");
 
     Sao.forEach((data, index) => {
-      data.addEventListener("click", () => {
-        let soSao = data.dataset.index;
-      });
+      let soSao = data.dataset.index;
     });
 
     return soSao;
