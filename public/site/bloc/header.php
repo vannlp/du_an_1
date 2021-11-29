@@ -19,7 +19,7 @@
                             if (!isset($_SESSION['login'])) {
                                 echo '
                                     <a href="?c=account&a=login" class="header_text">Đăng nhập</a>
-                                    <span>/</span>
+                                    <span class="header_text"><b>/</b></span>
                                     <a href="?c=account&a=signup" class="header_text">Đăng ký</a>
                                 ';
                             } else {
