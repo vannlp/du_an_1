@@ -19,34 +19,60 @@
     <div class="danhMucAll">
         <form class="sanPham" method="post" enctype="multipart/form-data">
             <div class="user_img">
-                <img src="img/test_banner.jpg" alt="" srcset="" />
+                <img width="350px" src="<?= URL_WEB ?>/public/site/img/<?= $data['nguoi_dung'][9] ?>" alt="" srcset="" />
                 <div>
-                    <input type="file" id="file" name="file" multiple />
+                    <input type="file" id="file" name="img" multiple />
                 </div>
             </div>
 
             <div class="user_text">
                 <div class="form-group">
                     <label for="">Họ và tên</label>
-                    <input type="text" value="Phan Tường Văn" class="form-control" />
+                    <input value="<?= $data['nguoi_dung'][2] ?>" name="ho_ten" type="text" class="form-control" />
                 </div>
                 <div class="form-group">
                     <label for="">Email</label>
-                    <input type="email" value="phanvan0322@gmail.com" class="form-control" />
+                    <input type="email" name="email" value="<?= $data['nguoi_dung'][6] ?>" class="form-control" />
                 </div>
                 <div class="form-group">
                     <label for="">Số điện thoại</label>
-                    <input type="text" value="095521211" class="form-control" />
+                    <input type="text" name="sdt" value="<?= $data['nguoi_dung'][4] ?>" class="form-control" />
                 </div>
                 <div class="form-group">
                     <label for="">Địa chỉ</label>
-                    <input type="text" value="1552 kafsjkfuiasiu" class="form-control" />
+                    <input type="text" name="dia_chi" value="<?= $data['nguoi_dung'][3] ?>" class="form-control" />
                 </div>
                 <div class="form-group">
                     <label for="">CMND</label>
-                    <input type="text" value="556545441" class="form-control" />
+                    <input type="text" name="cmnd" value="<?= $data['nguoi_dung'][5] ?>" class="form-control" />
                 </div>
-                <button type="submit" class="button button--blue">Submit</button>
+                <div class="form-group">
+                    <label for="">Ngày sinh</label>
+                    <input type="date" name="ngay_sinh" value="<?= $data['nguoi_dung'][7] ?>" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="">Giới tính</label><br>
+                    <?php
+                    if ($data['nguoi_dung'][8] == 'nam') {
+                        echo '
+                        <input type="radio" checked name="gioi_tinh" value="nam" /> nam
+                        <input type="radio" name="gioi_tinh" value="nữ" /> nữ
+                        ';
+                    } else if ($data['nguoi_dung'][8] == 'nữ') {
+                        echo '
+                        <input type="radio"  name="gioi_tinh" value="nam" /> nam
+                        <input type="radio" checked name="gioi_tinh" value="nữ" /> nữ
+                        ';
+                    } else {
+                        echo '
+                        <input type="radio" name="gioi_tinh" value="nam" /> nam
+                        <input type="radio" name="gioi_tinh" value="nữ" /> nữ
+                        ';
+                    }
+                    ?>
+
+                </div>
+                <button type="submit" name="btn-submit" class="button button--blue">Submit</button>
             </div>
         </form>
     </div>

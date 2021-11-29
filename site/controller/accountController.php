@@ -73,6 +73,31 @@ class accountController
     public function quan_ly_tk()
     {
         checkLogin2();
-        view('account/quan_ly_tkView', 'site', []);
+
+        $imgOld = $this->nguoi_dungModel->get_img_theo_username($_SESSION['login'][0]);
+        $ten_dang_nhap = $_SESSION['login'][0];
+
+        if (isset($_POST['btn-submit'])) {
+            $data = [
+                'ten_dang_nhap' => $ten_dang_nhap,
+                'ho_ten' => $_POST['ho_ten'],
+                'dia_chi' => $_POST['dia_chi'],
+                'sdt' => $_POST['sdt'],
+                'cmnd' => $_POST['cmnd'],
+                'img' => updateFile('img', URL . '/public/site/img/', $imgOld),
+                'email' => $_POST['email'],
+                'ngay_sinh' => $_POST['ngay_sinh'],
+                'gioi_tinh' => $_POST['gioi_tinh']
+            ];
+            $this->nguoi_dungModel->update_nguoi_dung($data);
+            $_SESSION['login'] = $this->nguoi_dungModel->get_nguoi_dung_username($ten_dang_nhap);
+        }
+
+        $nguoi_dung = $_SESSION['login'];
+
+
+        view('account/quan_ly_tkView', 'site', [
+            'nguoi_dung' => $nguoi_dung
+        ]);
     }
 }
