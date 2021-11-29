@@ -33,7 +33,9 @@ class chitietController
         }
     }
 
-    private function add_binh_luan()
+
+    public function binh_luan_ajax()
     {
+        echo $_GET['soSao'] . $_GET['text'];
     }
 }

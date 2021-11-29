@@ -2,7 +2,7 @@ window.addEventListener("load", () => {
   function start() {
     // xulyImg();
     xulyBtn();
-    danhGiaSao();
+    // danhGiaSao();
   }
 
   function xulyImg() {
@@ -56,22 +56,6 @@ window.addEventListener("load", () => {
         capnhapInput();
       });
     }
-  }
-
-  function danhGiaSao() {
-    const Sao = document.querySelectorAll(".danhGia-sao>i");
-
-    Sao.forEach((data, index) => {
-      data.addEventListener("click", () => {
-        let soSao = data.dataset.index;
-        for (let i = 0; i < Sao.length; i++) {
-          Sao[i].classList.remove("action");
-        }
-        for (let i = 0; i <= soSao; i++) {
-          Sao[i].classList.add("action");
-        }
-      });
-    });
   }
 
   start();
