@@ -62,7 +62,7 @@ window.addEventListener("load", () => {
     const Sao = document.querySelectorAll(".danhGia-sao>i");
 
     Sao.forEach((data, index) => {
-      data.addEventListener("mousemove", () => {
+      data.addEventListener("click", () => {
         let soSao = data.dataset.index;
         for (let i = 0; i < Sao.length; i++) {
           Sao[i].classList.remove("action");

@@ -32,4 +32,8 @@ class chitietController
             ]);
         }
     }
+
+    private function add_binh_luan()
+    {
+    }
 }

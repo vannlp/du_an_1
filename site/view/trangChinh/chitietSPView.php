@@ -217,7 +217,7 @@
     </div>
     </div>
 </section>
-
+<script src="<?= URL_WEB ?>/public/site/js/xulybinhluan.js"></script>
 <script>
     $(document).ready(() => {
         $(".product-tuongTu-slider").slick({
