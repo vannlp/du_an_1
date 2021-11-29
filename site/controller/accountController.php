@@ -100,4 +100,11 @@ class accountController
             'nguoi_dung' => $nguoi_dung
         ]);
     }
+
+    function matkhau(){
+
+        checkLogin2();
+
+        view('account/matkhauView', 'site', []);
+    }
 }
