@@ -167,7 +167,8 @@
                     <i class="fas fa-star" data-index="4"></i>
                 </div>
                 <textarea name="binh-luan" id="binh-luan" class="text-binhluan" cols="30" rows="10"></textarea>
-                <button type="button" name="btn-binhluan" id="btn-binhluan" class="btn-binhluan">Gửi bình luận</button>
+                <textarea name="idSP" id="idSP" cols="30" rows="10" style="display:none">'.$data['sanPhamID'][0].'</textarea>
+                <button type="reset" name="btn-binhluan" id="btn-binhluan" class="btn-binhluan">Gửi bình luận</button>
             </div>
             </form>
             ';
@@ -178,7 +179,6 @@
     </div>
 
     <div class="danhGia-list">
-        <div class="danhGia-list-item">
             <?php
             foreach ($data['binhluan'] as $binhluan) {
                 $sosoa = $binhluan[6];
@@ -193,6 +193,7 @@
                     $check[$i] = 'action';
                 }
                 echo '
+                    <div class="danhGia-list-item">
                         <div class="danhGia-list-title">
                             <img src="https://vcdn.tikicdn.com/cache/w100/ts/seller/83/e1/c3/2c071fbb04d92608a1dbdf96f7269ca3.jpg.webp" alt="" />
                             <span>' . $binhluan[9] . '</span>
@@ -210,10 +211,10 @@
                                 <span>' . $binhluan[5] . '</span>
                             </div>
                         </div>
+                    </div>    
                         ';
             }
             ?>
-        </div>
     </div>
     </div>
 </section>

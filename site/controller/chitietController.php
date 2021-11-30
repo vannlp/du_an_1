@@ -40,9 +40,8 @@ class chitietController
     public function binh_luan_ajax()
     {
         if(isset($_GET['soSao']) && isset($_GET['text'])){
-            echo $_GET['soSao'];
             $data = [
-                'id' => 'null', //lỗi//
+                'id' => $_GET['idSP'], //lỗi//
                 'tenDN' => $_SESSION['login'][0],
                 'text' => $_GET['text'],
                 'ngay_dang' => date_format($this->date, 'Y-m-d H:i:s'),

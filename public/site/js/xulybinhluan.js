@@ -32,7 +32,15 @@ window.addEventListener("load", () => {
 
     let data = khungText.value;
 
-    return data;
+    return data; 
+  }
+
+  function layidSP() {
+    const idSP = document.querySelector("#idSP");
+
+    let data = idSP.value;
+
+    return data; 
   }
 
   function xulybinhluan() {
@@ -42,11 +50,13 @@ window.addEventListener("load", () => {
     btn_Binh_luan.addEventListener("click", () => {
       let soSao = laydulieuSao();
       let text = laydulieuText();
+      let idSP = layidSP();
       $.get(
         "?c=chitiet&a=binh_luan_ajax",
         {
           soSao: soSao,
           text: text,
+          idSP: idSP,
         },
         function (data) {
           console.log(data);
