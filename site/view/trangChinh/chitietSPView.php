@@ -65,7 +65,7 @@
                             <button>+</button>
                         </div>
                     </div>
-                    <a href="#" class="product__btn-mua">Chọn mua</a>
+                    <button id="btn-mua" class="product__btn-mua">Chọn mua</button>
                 </div>
             </div>
             <div class="productMota__right">
@@ -217,7 +217,12 @@
     </div>
     </div>
 </section>
+<div class="add_gio_hang">
+    <span>Thêm vào giỏ hàng thành công</span>
+</div>
 <script src="<?= URL_WEB ?>/public/site/js/xulybinhluan.js"></script>
+<script src="<?= URL_WEB ?>/public/site/js/xulygiohang.js"></script>
+
 <script>
     $(document).ready(() => {
         $(".product-tuongTu-slider").slick({
