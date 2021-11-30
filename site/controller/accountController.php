@@ -19,11 +19,7 @@ class accountController
             foreach ($data as $value) {
                 if ($ten_dang_nhap == $value[0] && $mat_khau == $value[1]) {
                     $_SESSION['login'] = $value;
-                    if ($_SESSION['login'][10] == 1) {
-                        header('location: /admin.php');
-                    } else {
                         header('location: /index.php');
-                    }
                     break;
                 } else {
                     $thong_bao = 'Đăng nhập thất bại';
