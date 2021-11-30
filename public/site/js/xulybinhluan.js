@@ -77,7 +77,7 @@ window.addEventListener("load", () => {
               return `
               <div class="danhGia-list-item">
                   <div class="danhGia-list-title">
-                      <img src="https://vcdn.tikicdn.com/cache/w100/ts/seller/83/e1/c3/2c071fbb04d92608a1dbdf96f7269ca3.jpg.webp" alt="" />
+                      <img src="/public/site/img/${value[16]}" alt="" />
                       <span>${value[9]}</span>
                   </div>
                   <div class="danhGia-list-desc">

@@ -24,7 +24,7 @@ class chitietController
             $sanPhamLQ = $this->sanPhamIDModel->get_id_dm_by_id_sanPham($iddm);
             $img = $this->imgsModel->get_img_idSanPham($id);
             $binhluan = $this->binhluanModel->get_binhluan_by_idSP($id);
-            // print_r($img);
+            // print_r($binhluan);
 
             view('trangChinh/chitietSPView', 'site', [
                 'sanPhamID' => $sanPhamID,
