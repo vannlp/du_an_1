@@ -47,8 +47,9 @@ class chitietController
                 'ngay_dang' => date_format($this->date, 'Y-m-d H:i:s'),
                 'soSao' => $_GET['soSao']
             ];
-            
             $binhluan = $this->binhluanModel->add_binhluan($data);
+            $upsao = $this->binhluanModel->get_Sao_binhluan_by_idSP($data);
+            $this->binhluanModel->Upsao($upsao[0], $data);
             if($binhluan){
                 echo 'Bình luận đã gửi';
             }

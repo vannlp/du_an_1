@@ -14,4 +14,16 @@ class binh_luanModel extends DB
         $sql = "INSERT INTO binh_luan VALUES(null,'$tenDN',null,'$id','$text','$ngay_dang',$soSao)";
         return $this->setData($sql);
     }
+
+    function get_Sao_binhluan_by_idSP($data = []){
+        extract($data);
+        $sql = "SELECT AVG (so_sao) FROM binh_luan WHERE id_sanpham = '$id'";
+        return $this->getDataOne($sql);
+    }
+
+    function UpSao($upsao, $data=[]){
+        extract($data);
+        $sql = "UPDATE san_pham SET danh_gia = '$upsao' WHERE id_sanpham = '$id'";
+        return $this->setData($sql);
+    }
 }

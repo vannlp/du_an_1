@@ -50,4 +50,5 @@ class san_phamModel extends DB
         $sql = "SELECT img from san_pham where id_sanpham = '$id_sanpham'";
         return $this->getValue($sql);
     }
+
 }
