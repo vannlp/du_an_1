@@ -32,14 +32,12 @@ class chitietController
                 'img' => $img,
                 'binhluan' => $binhluan
             ]);
-            
         }
-        
     }
 
     public function binh_luan_ajax()
     {
-        if(isset($_GET['soSao']) && isset($_GET['text'])){
+        if (isset($_GET['soSao']) && isset($_GET['text'])) {
             $data = [
                 'id' => $_GET['idSP'], //lỗi//
                 'tenDN' => $_SESSION['login'][0],
@@ -50,16 +48,14 @@ class chitietController
             $binhluan = $this->binhluanModel->add_binhluan($data);
             $upsao = $this->binhluanModel->get_Sao_binhluan_by_idSP($data);
             $this->binhluanModel->Upsao($upsao[0], $data);
-            if($binhluan){
-                echo 'Bình luận đã gửi';
-            }
-            else{
+            $binhluan2 = $this->binhluanModel->get_binhluan_by_idSP($_GET['idSP']);
+            if ($binhluan) {
+                echo json_encode($binhluan2);
+            } else {
                 echo 'Bình luận thất bại';
             }
-        }
-        else{
+        } else {
             echo 'không gửi được bình luận';
         }
-        
     }
 }

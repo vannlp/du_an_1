@@ -167,7 +167,7 @@
                     <i class="fas fa-star" data-index="4"></i>
                 </div>
                 <textarea name="binh-luan" id="binh-luan" class="text-binhluan" cols="30" rows="10"></textarea>
-                <textarea name="idSP" id="idSP" cols="30" rows="10" style="display:none">'.$data['sanPhamID'][0].'</textarea>
+                <textarea name="idSP" id="idSP" cols="30" rows="10" style="display:none">' . $data['sanPhamID'][0] . '</textarea>
                 <button type="reset" name="btn-binhluan" id="btn-binhluan" class="btn-binhluan">Gửi bình luận</button>
             </div>
             </form>
@@ -177,22 +177,21 @@
         }
         ?>
     </div>
-
     <div class="danhGia-list">
-            <?php
-            foreach ($data['binhluan'] as $binhluan) {
-                $sosoa = $binhluan[6];
-                $check = [
-                    0 => '',
-                    1 => '',
-                    2 => '',
-                    3 => '',
-                    4 => '',
-                ];
-                for ($i = 0; $i < $sosoa; $i++) {
-                    $check[$i] = 'action';
-                }
-                echo '
+        <?php
+        foreach ($data['binhluan'] as $binhluan) {
+            $sosoa = $binhluan[6];
+            $check = [
+                0 => '',
+                1 => '',
+                2 => '',
+                3 => '',
+                4 => '',
+            ];
+            for ($i = 0; $i < $sosoa; $i++) {
+                $check[$i] = 'action';
+            }
+            echo '
                     <div class="danhGia-list-item">
                         <div class="danhGia-list-title">
                             <img src="https://vcdn.tikicdn.com/cache/w100/ts/seller/83/e1/c3/2c071fbb04d92608a1dbdf96f7269ca3.jpg.webp" alt="" />
@@ -213,8 +212,8 @@
                         </div>
                     </div>    
                         ';
-            }
-            ?>
+        }
+        ?>
     </div>
     </div>
 </section>
