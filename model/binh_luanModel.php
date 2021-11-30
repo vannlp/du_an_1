@@ -7,4 +7,11 @@ class binh_luanModel extends DB
                 WHERE id_sanpham = '$id'";
         return $this->getData($sql);
     }
+
+    function add_binhluan($data = [])
+    {
+        extract($data);
+        $sql = "INSERT INTO binh_luan VALUES(null,'$tenDN',null,'$id','$text','$ngay_dang',$soSao)";
+        return $this->setData($sql);
+    }
 }
