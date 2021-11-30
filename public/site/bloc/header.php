@@ -35,7 +35,7 @@
                             ?>
                         </div>
                     </div>
-                    <a class="cart-wrapper" href="#">
+                    <a class="cart-wrapper" href="?c=giohang&a=index">
                         <i class="
                     fas
                     fa-shopping-cart

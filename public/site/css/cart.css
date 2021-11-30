@@ -1,0 +1,151 @@
+.main__cart-h3{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.main__cart-wrapper{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px 0;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.main__cart-left{
+    max-width: 70%;
+    flex: 0 0 70%;
+    margin-right: 30px;
+}
+
+.main__cart-right{
+    max-width: 25%;
+    flex: 0 0 25%;
+}
+
+.main__cart-sp{
+    display: flex;
+    background-color: #fff;
+    padding: 10px 10px;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.main__cart-sp div {
+    text-align: center;
+    font-size: 13px;
+}
+
+
+.main__cart-title{
+    max-width: 40%;
+    flex: 0 0 40%;
+    display: flex;
+    align-items: flex-start;
+    text-align: left !important;
+    font-weight: 500;
+}
+
+.main__cart-title img{
+    max-width: 20%;
+    flex: 0 0 20%;
+}
+
+.main__cart-donGia{
+    max-width: 10%;
+    flex: 0 0 10%;
+}
+
+.main__cart-soLuong{
+    max-width: 20%;
+    flex: 0 0 20%;
+}
+
+.main__cart-thanhTien{
+    max-width: 15%;
+    flex: 0 0 15%;
+}
+
+.main__cart-action{
+    max-width: 10%;
+    flex: 0 0 10%;
+}
+
+.span-cart-donGia{
+    font-weight: 500;
+}
+
+.span-cart-TT{
+    font-weight: 500;
+    color: red;
+}
+
+.btn-xoa{
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    background-color: rgb(253, 45, 45);
+    color: #fff;
+    cursor: pointer;
+}
+
+.main__cart-khung{
+    background-color: #fff;
+}
+
+.main__cart-khung .main__cart-sp{
+    border-bottom: 1px solid #ccc;
+    margin: 0;
+    padding: 20px 10px;
+}
+
+.cart-right-wrapper{
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 20px;
+    font-size: 14px;
+}
+
+.cart-thongTin-title span{
+    font-weight: 500;
+    margin-right: 20px;
+}
+
+.input-km{
+    padding: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.cart-right-wrapper h5{
+    margin-bottom: 10px;
+}
+
+.btn-km{
+    padding: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.cart-right-thanhToan {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    font-weight: 500;
+}
+
+.btn-thanhToan{
+    padding: 10px;
+    width: 100%;
+    border: none;
+    background-color: rgb(248, 61, 61);
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 5px;
+    color: #fff;
+}
