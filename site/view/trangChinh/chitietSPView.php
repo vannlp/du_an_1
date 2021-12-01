@@ -207,7 +207,6 @@
                             </div>
                             <div class="danhGia-list-noiDung">
                                 <span>' . $binhluan[4] . ' |</span> 
-                                <span>' . $binhluan[5] . '</span>
                             </div>
                         </div>
                     </div>    

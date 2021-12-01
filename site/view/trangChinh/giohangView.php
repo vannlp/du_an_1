@@ -50,7 +50,7 @@
                   </div>
                 </div>
                 <div class="main__cart-thanhTien">
-                  <span class="span-cart-TT">' . number_format($value['gia_giam']) . '</span>
+                  <span class="span-cart-TT"></span>
                 </div>
                 <div class="main__cart-action">
                   <p style="display: none;">' . $value[0] . '</p>
@@ -62,7 +62,21 @@
       ?>
     </div>
   </div>
+  <script>
+    $(document).ready(() => {
+      const donGia = document.querySelectorAll('.span-cart-donGia')
+      const btnsoLuong = document.querySelectorAll('.btn-soLuong>input')
+      const tongGia = document.querySelectorAll('.main__cart-thanhTien>span')
 
+      donGia.forEach((value, index) => {
+        let gia = parseInt(value.innerText)
+        let sl = Number(btnsoLuong[index].value)
+        let gia_Tong = gia * sl;
+        console.log(gia_Tong);
+        // tongGia[index].innerText = gia_Tong;
+      })
+    })
+  </script>
   <div class="main__cart-right">
     <div class="cart-right-wrapper">
       <div class="cart-thongTin-title">
