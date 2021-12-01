@@ -39,6 +39,7 @@ class giohangController
 
         $san_pham = $this->san_phamModel->get_id_sanPham($id_sanpham);
         $san_pham['so_luong_mua'] = $so_luong;
+        $san_pham['tong_tien'] = $san_pham['gia_giam'] * $so_luong;
         $_SESSION['cart' . $ten_dang_nhap][$id_sanpham] = $san_pham;
         echo '123';
     }
@@ -84,7 +85,9 @@ class giohangController
                     'id_hoa_don' => $id_hoa_don,
                     'id_sanpham' => $value['id_sanpham'],
                     'so_luong' => $value['so_luong_mua'],
+                    'tong_tien' => $value['tong_tien']
                 ];
+                $this->san_phamModel->update_so_luong($value['id_sanpham'], $value['so_luong_mua']);
                 $this->hoaDonModel->insert_hdct($data2);
             }
 

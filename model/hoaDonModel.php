@@ -11,7 +11,7 @@ class hoaDonModel extends DB
     {
         extract($data);
         $sql = "INSERT into hoa_don_chi_tiet values(null, '$id_sanpham', '$id_hoa_don',
-        $so_luong, null, null)";
+        $so_luong, null, $tong_tien)";
         return $this->setData($sql);
     }
 }

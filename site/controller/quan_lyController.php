@@ -10,4 +10,8 @@ class quan_lyController
     {
         view('account/quan_ly_tkView', 'site', []);
     }
+
+    public function hoadon()
+    {
+    }
 }

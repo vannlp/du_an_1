@@ -52,4 +52,9 @@ class san_phamModel extends DB
         return $this->getValue($sql);
     }
 
+    function update_so_luong($id_sanpham, $sl)
+    {
+        $sql = "UPDATE san_pham set so_luong=so_luong-$sl where id_sanpham='$id_sanpham'";
+        return $this->setData($sql);
+    }
 }
