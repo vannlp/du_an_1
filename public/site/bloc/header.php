@@ -25,7 +25,7 @@
                             } else {
                                 echo '
                                     <div class="account-2">
-                                        <a href="' . URL_WEB . '/?c=account&a=quan_ly_tk" class="header_text header_text--secondary">Tài khoản</a>
+                                        <a href="' . URL_WEB . '/?c=account&a=quan_ly_tk" class="header_text header_text--secondary">'.$_SESSION['login'][2].'</a>
                                         <i class="fas fa-angle-down header__icon"></i>
                                         <span>/<span>
                                         <a href="?c=account&a=logout" class="header_text">Đăng xuất</a>
