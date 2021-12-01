@@ -44,5 +44,11 @@ class giohangController
         $id_sanpham = $_GET['id'];
 
         unset($_SESSION['cart' . $ten_dang_nhap][$id_sanpham]);
+
+        header('location: ?c=giohang&a=index');
+    }
+
+    public function thanh_toan()
+    {
     }
 }
