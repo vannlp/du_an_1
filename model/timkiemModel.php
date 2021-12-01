@@ -14,5 +14,14 @@ class timkiemModel extends DB{
                 WHERE sp.tieu_de LIKE '%$timkiem%' OR dmsp.tieu_de LIKE '%$timkiem%'";
         return $this->getData($sql);
     }
+    function tim_kiem_shop($tukhoa){
+        $sql ="SELECT * FROM `san_pham` sp JOIN `nguoi_dung` nd ON sp.ten_dang_nhap=nd.ten_dang_nhap
+               WHERE sp.ten_dang_nhap = '$tukhoa'";
+        return $this->getData($sql);
+    }
+    function tim_kiem_gia($id){
+        $sql = "SELECT * FROM san_pham WHERE gia_giam <= '$id'";
+        return $this->getData($sql);
+    }
 }
 ?>

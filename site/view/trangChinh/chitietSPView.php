@@ -58,23 +58,32 @@
                 </div>
                 <div class="product__muaHang">
                     <div class="product__soLuong-wrapper">
-                        <span>Số lượng:</span><br />
+                        <span>Số lượng còn lại: <?php echo $data['sanPhamID'][11] ?></span><br><br>
+                        <p>Số lượng mua:</p><br>
                         <div class="btn-soLuong">
                             <button>-</button>
                             <input type="text" name="" id="soLuong-input" value="1" />
                             <button>+</button>
                         </div>
                     </div>
-                    <button id="btn-mua" class="product__btn-mua">Chọn mua</button>
+                    <?php
+                        if($data['sanPhamID'][11] != 0){
+                            echo '<button id="btn-mua" class="product__btn-mua" type="button">Chọn mua</button>';
+                        }
+                        else{
+                            echo '<button id="" class="btn-disabled" type="button">Sản phẩm đã hết hàng</button>';
+                        }
+                    ?>
                 </div>
             </div>
             <div class="productMota__right">
                 <div class="product__right-title">
                     <img src="https://vcdn.tikicdn.com/cache/w100/ts/seller/83/e1/c3/2c071fbb04d92608a1dbdf96f7269ca3.jpg.webp" alt="" />
-                    <span>THẮNG THAO MOBILE</span>
+                    <span><?php echo  $data['sanPhamID'][14] ?></span>
                 </div>
                 <div class="product__right-action">
-                    <a href="#" class="product__right-btn">Xem Shop</a>
+                    <a href="?c=timkiem&a=shop&id=<?php echo  $data['sanPhamID'][2] ?>" class="product__right-btn">Xem thêm sản phẩm của shop</a>
+                    
                 </div>
             </div>
         </div>

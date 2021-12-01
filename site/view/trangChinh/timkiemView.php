@@ -20,18 +20,11 @@
         </ul>
       </div>
       <div class="searchDanhmuc">
-        <h4>Sản phẩm mua nhiều</h4>
-        <ul class="productRating">
-          <li><a href="">Sản phẩm 1</a></li>
-          <li><a href="">Sản phẩm 1</a></li>
-        </ul>
-      </div>
-      <div class="searchDanhmuc">
         <h4>Giá</h4>
         <ul>
-          <li><a href="">Dưới 300.000 vnđ</a></li>
-          <li><a href="">Dưới 600.000 vnđ</a></li>
-          <li><a href="">Dưới 1.000.000 vnđ</a></li>
+          <li><a href="?c=timkiem&a=gia&id=300000">Dưới 300.000 vnđ</a></li>
+          <li><a href="?c=timkiem&a=gia&id=600000">Dưới 600.000 vnđ</a></li>
+          <li><a href="?c=timkiem&a=gia&id=100000000">Dưới 1.000.000 vnđ</a></li>
         </ul>
       </div>
     </div>
