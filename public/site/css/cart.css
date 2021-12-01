@@ -87,6 +87,7 @@
     background-color: rgb(253, 45, 45);
     color: #fff;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .main__cart-khung{

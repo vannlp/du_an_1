@@ -53,7 +53,8 @@
                   <span class="span-cart-TT">' . number_format($value['gia_giam']) . '</span>
                 </div>
                 <div class="main__cart-action">
-                  <button class="btn-xoa">Xóa</button>
+                  <p style="display: none;">' . $value[0] . '</p>
+                  <a href="?c=giohang&a=delete_cart&id=' . $value[0] . '" class="btn-xoa">Xóa</a>
                 </div>
               </div>
               ';
@@ -99,8 +100,6 @@
     </div>
   </div>
 </section>
-<script>
 
-</script>
 <script src="./main.js"></script>
-<script src="./slieder.js"></script>
+<!-- <script src="./slieder.js"></script> -->
