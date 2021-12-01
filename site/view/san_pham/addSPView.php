@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="<?= URL_PUBLIC ?>site/css/user.css">
+<link rel="stylesheet" href="<?= URL_PUBLIC ?>site/css/index.css">
 <style>
     .man_mo {
         position: fixed;
