@@ -270,3 +270,7 @@
 .dot-item.active {
     background-color: var(--primary-color); ;
 }
+
+.root img{
+    width: 50px !important;
+}

@@ -12,10 +12,10 @@
                 <li><a href="?c=san_pham&a=add_san_pham">Quản lý sản phẩm</a></li>
                 <li><a href="">Quản lý hóa đơn</a></li>
                 <li><a href="">Thống kê</a></li>
-                <?php 
-                  if($_SESSION['login'][10] == 1){
-                    echo'<li><a href="admin.php">Admin</a></li>';
-                  }
+                <?php
+                if ($_SESSION['login'][10] == 1) {
+                    echo '<li><a href="admin.php">Admin</a></li>';
+                }
                 ?>
             </ul>
         </nav>
@@ -24,7 +24,7 @@
     <div class="danhMucAll">
         <form class="sanPham" method="post" enctype="multipart/form-data">
             <div class="user_img">
-                <img width="350px" src="<?= URL_WEB ?>/public/site/img/<?= $data['nguoi_dung'][9] ?>" alt="" srcset="" />
+                <img src="<?= URL_WEB ?>/public/site/img/<?= $data['nguoi_dung'][9] ?>" alt="" srcset="" />
                 <div>
                     <input type="file" id="file" name="img" multiple />
                 </div>
