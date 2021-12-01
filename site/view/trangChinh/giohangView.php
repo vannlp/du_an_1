@@ -45,7 +45,7 @@
                 <div class="main__cart-soLuong">
                   <div class="btn-soLuong">
                     <button>-</button>
-                    <input type="text" name="" id="soLuong-input" value="1" />
+                    <input type="text" name="" id="soLuong-input" value="' . $value['so_luong_mua'] . '" />
                     <button>+</button>
                   </div>
                 </div>
@@ -62,21 +62,7 @@
       ?>
     </div>
   </div>
-  <script>
-    $(document).ready(() => {
-      const donGia = document.querySelectorAll('.span-cart-donGia')
-      const btnsoLuong = document.querySelectorAll('.btn-soLuong>input')
-      const tongGia = document.querySelectorAll('.main__cart-thanhTien>span')
 
-      donGia.forEach((value, index) => {
-        let gia = parseInt(value.innerText)
-        let sl = Number(btnsoLuong[index].value)
-        let gia_Tong = gia * sl;
-        console.log(gia_Tong);
-        // tongGia[index].innerText = gia_Tong;
-      })
-    })
-  </script>
   <div class="main__cart-right">
     <div class="cart-right-wrapper">
       <div class="cart-thongTin-title">
@@ -97,8 +83,8 @@
       <button class="btn-km">ok</button>
     </div>
 
-    <div class="cart-right-wrapper">
-      <div class="cart-right-thanhToan">
+    <form method="POST" action="?c=giohang&a=thanh_toan" class="cart-right-wrapper">
+      <div class="cart-right-thanhToan" id="tamTinh">
         <span>Tạm tính</span>
         <span>0</span>
       </div>
@@ -106,14 +92,102 @@
         <span>Giảm giá</span>
         <span>0</span>
       </div>
-      <div class="cart-right-thanhToan">
+      <div class="cart-right-thanhToan" id="tongCong">
         <span>Tổng cộng</span>
-        <span>0</span>
+        <input readonly type="number" name="tong_tien" id="">
       </div>
-      <button class="btn-thanhToan">Thanh toán</button>
-    </div>
-  </div>
+      <button type="submit" name="btn-submit" class="btn-thanhToan">Thanh toán</button>
+    </form>
 </section>
 
-<script src="./main.js"></script>
+<!-- <script src="./main.js"></script> -->
 <!-- <script src="./slieder.js"></script> -->
+<script>
+  $(document).ready(() => {
+    const donGia = document.querySelectorAll('.span-cart-donGia')
+    const btnsoLuong = document.querySelectorAll('.btn-soLuong>input')
+    const tongGia = document.querySelectorAll('.span-cart-TT')
+    const btnTru = document.querySelectorAll('.btn-soLuong>button:first-child')
+    const btnCong = document.querySelectorAll('.btn-soLuong>button:last-child')
+    const Tamtinh = document.querySelector('#tamTinh>span:last-child')
+    const tongCong = document.querySelector('#tongCong>input')
+    const id_sp = document.querySelectorAll('.main__cart-action>p')
+
+    var tong = 0;
+    donGia.forEach((value, index) => {
+      let gia = value.innerText
+      gia = gia.replace(/,/g, '');
+      let sl = Number(btnsoLuong[index].value)
+      let gia_Tong = gia * sl;
+      console.log(gia_Tong, index);
+      tongGia[index].innerText = gia_Tong;
+
+      btnCong[index].addEventListener('click', () => {
+        let id_sanpham = id_sp[index].innerText;
+        // alert('hello')
+        setTimeout(() => {
+          let gia1 = value.innerText
+          let sl1 = Number(btnsoLuong[index].value)
+          tong = tong - gia_Tong
+          gia_Tong = thanhTien(gia1, sl1)
+          tong = tong + gia_Tong
+          tongGia[index].innerText = gia_Tong;
+          capnhapTong()
+
+          $.get(
+            '?c=giohang&a=capNhapSoLuong', {
+              tong_tien: gia_Tong,
+              so_luong: sl1,
+              id_sanpham: id_sanpham
+            },
+            function() {
+
+            }
+          )
+        }, 100)
+      })
+
+      btnTru[index].addEventListener('click', () => {
+        let id_sanpham = id_sp[index].innerText;
+
+        // alert('hello')
+        setTimeout(() => {
+          let gia1 = value.innerText
+          let sl1 = Number(btnsoLuong[index].value)
+          tong = tong - gia_Tong
+          gia_Tong = thanhTien(gia1, sl1)
+          tong = tong + gia_Tong
+          tongGia[index].innerText = gia_Tong;
+          capnhapTong()
+
+          $.get(
+            '?c=giohang&a=capNhapSoLuong', {
+              tong_tien: gia_Tong,
+              so_luong: sl1,
+              id_sanpham: id_sanpham
+            },
+            function() {
+
+            }
+          )
+        }, 100)
+      })
+
+      tong += gia_Tong
+    })
+
+    function capnhapTong() {
+      Tamtinh.innerText = tong;
+      tongCong.value = tong;
+    }
+    capnhapTong()
+
+    function thanhTien(gia, soLuong) {
+      gia = gia.replace(/,/g, '');
+      let sl = Number(soLuong)
+      let gia_Tong = gia * sl;
+      // console.log(gia_Tong, index);
+      return gia_Tong
+    }
+  })
+</script>
