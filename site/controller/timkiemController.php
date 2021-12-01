@@ -2,6 +2,7 @@
 class timkiemController
 {
     private $timkiemModel;
+    private $dmSPModel;
 
     function __construct(){
         $this->timkiemModel = model('timkiemModel');
@@ -41,6 +42,30 @@ class timkiemController
         }
         $dmSP = $this->dmSPModel->get_dm_sp_all();
         //Tận cùng của nổi đau
+        view('trangChinh/timkiemView', 'site', [
+            'danhMuc' => $dmSP,
+            'tukhoa'=>$tukhoa,
+            'view'=>$sanPham
+        ]);
+    }
+    function shop(){
+        if(isset($_GET['id'])){
+            $tukhoa = $_GET['id'];
+            $sanPham = $this->timkiemModel->tim_kiem_shop($tukhoa);
+        }
+        $dmSP = $this->dmSPModel->get_dm_sp_all();
+        view('trangChinh/timkiemView', 'site', [
+            'danhMuc' => $dmSP,
+            'tukhoa'=>$tukhoa,
+            'view'=>$sanPham
+        ]);
+    }
+    function gia(){
+        if(isset($_GET['id'])){
+            $tukhoa = $_GET['id'];
+            $sanPham = $this->timkiemModel->tim_kiem_gia($tukhoa);
+        }
+        $dmSP = $this->dmSPModel->get_dm_sp_all();
         view('trangChinh/timkiemView', 'site', [
             'danhMuc' => $dmSP,
             'tukhoa'=>$tukhoa,
