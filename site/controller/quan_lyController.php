@@ -39,4 +39,13 @@ class quan_lyController
 
         $this->hoaDonModel->update_tinh_trang_don($id_hoa_don, $trang_thai);
     }
+
+    public function hoadoncuatoi()
+    {
+        $user = $_SESSION['login'][0];
+        $hoa_don = $this->hoaDonModel->get_hoa_don_cua_toi($user);
+        view('quan_ly/hoadoncuatoiView', 'site', [
+            'data-hoaDon' => $hoa_don
+        ]);
+    }
 }

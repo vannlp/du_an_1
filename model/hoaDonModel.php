@@ -23,6 +23,11 @@ class hoaDonModel extends DB
         return $this->getData($sql);
     }
 
+    function get_hoa_don_cua_toi($user){
+        $sql = "SELECT * FROM hoa_don WHERE ten_dang_nhap = '$user'";
+        return $this->getData($sql);
+    }
+
     function update_tinh_trang_don($id_hoa_don, $trang_thai)
     {
         $sql = "UPDATE hoa_don set trang_thai = $trang_thai where id_hoa_don='$id_hoa_don'";

@@ -102,6 +102,21 @@
     width: 100%;
 }
 
+.icon_giamgia{
+    display: inline-block;
+    position: fixed;
+    z-index: 1000;
+    right: 10px;
+    bottom: 10px;
+    
+}
+
+.icon_giamgia a img{
+    display: block;
+    width: 100px;
+    border-radius: 45%;
+}
+
 .name{
     /* position: absolute; */
     /* bottom: 50px; */

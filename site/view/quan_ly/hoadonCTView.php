@@ -21,7 +21,7 @@
         </nav>
     </div>
     <div class="danhMucAll">
-        <a href="#" class="button button--blue">Đơn hàng của tôi</a>
+        <a href="?c=quan_ly&a=hoadoncuatoi" class="button button--blue">Đơn hàng của tôi</a>
         <a href="?c=quan_ly&a=hoadon" class="button button--blue">Đơn hàng của khách</a>
     </div>
     <div class="danhMucAll">

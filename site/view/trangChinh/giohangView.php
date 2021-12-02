@@ -66,18 +66,33 @@
   <div class="main__cart-right">
     <div class="cart-right-wrapper">
       <div class="cart-thongTin-title">
-        <span>Phan Tường Văn</span>
-        <span>0774091026</span>
+        <p>Thông tin của bạn</p><br>
+        <span><?php echo $_SESSION['login'][2] ?></span>
+        <span><?php echo $_SESSION['login'][4] ?></span>
       </div>
       <div>
         <span>
-          Hẻm 330, 288 Nguyễn Văn Linh, Phường An Khánh, Quận Ninh Kiều,
-          Cần Thơ
+        <?php echo $_SESSION['login'][3] ?>
         </span>
       </div>
     </div>
 
     <div class="cart-right-wrapper">
+      <?php 
+        if(isset($data['magiam'])){
+          echo '<h5>Mã khuyến mãi của bạn</h5>';
+        
+        foreach($data['magiam'] as $ma){
+          echo'
+            <p>'.$ma[0].'</p>
+          ';
+        }
+      }
+      else{
+        echo '<h5>Bạn không có mã giảm giá nào</h5>';
+      }
+      ?>
+      <br>
       <h5>Khuyến mại</h5>
       <input type="text" class="input-km" name="" id="" placeholder="Nhập mã khuyến mãi" />
       <button class="btn-km">ok</button>
@@ -96,8 +111,19 @@
         <span>Tổng cộng</span>
         <input readonly type="number" name="tong_tien" id="">
       </div>
-      <button type="submit" name="btn-submit" class="btn-thanhToan">Thanh toán</button>
-    </form>
+      <?php
+        if(isset($_SESSION['login'][3]) && isset($_SESSION['login'][4])){
+          echo '
+          <button name="btn-submit" class="btn-thanhToan" disabled>Bạn còn thiếu thông tin</button>
+          ';
+        }
+        else{
+          echo'
+          <button type="submit" name="btn-submit" class="btn-thanhToan" disabled>Thanh toán</button>
+        ';
+        }
+      ?>
+       </form>
 </section>
 
 <!-- <script src="./main.js"></script> -->

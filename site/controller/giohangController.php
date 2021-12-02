@@ -5,7 +5,7 @@ class giohangController
     private $nguoi_dungModel;
     private $date;
     private $hoaDonModel;
-
+    private $magiamModel;
 
     function __construct()
     {
@@ -14,20 +14,23 @@ class giohangController
         $this->nguoi_dungModel = model('nguoi_dungModel');
         $this->date = new DateTime();
         $this->hoaDonModel = model('hoaDonModel');
+        $this->magiamgiaModel = model('magiamgiaModel');
     }
 
     public function index()
     {
         $ten_dang_nhap = $_SESSION['login'][0];
-
+        $tenDN = $_SESSION['login'][0];
         $gio_hang = [];
 
         if (isset($_SESSION['cart' . $ten_dang_nhap])) {
             $gio_hang = $_SESSION['cart' . $ten_dang_nhap];
+            
         }
-        // print_r($gio_hang);
+        $magiam = $this->magiamgiaModel->get_magiam_by_tenDN($tenDN);
         view('trangChinh/giohangView', 'site', [
-            'gio_hang' => $gio_hang
+            'gio_hang' => $gio_hang,
+            'magiam' => $magiam
         ]);
     }
 

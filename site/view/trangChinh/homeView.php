@@ -53,6 +53,10 @@
     </div>
 </div>
 
+<div class="icon_giamgia">
+    <a href="?c=giamgia&a=index"><img src="https://i.pinimg.com/originals/fd/2c/1a/fd2c1a96b654e220d09525f006482477.gif"></a>
+</div>
+
 <div class="container news">
     <a href="" class="news-item"><img src="<?= URL_PUBLIC ?>site/img/demo.jpg" class="" /></a>
     <a href="" class="news-item"><img src="<?= URL_PUBLIC ?>site/img/demo.jpg" class="" /></a>
