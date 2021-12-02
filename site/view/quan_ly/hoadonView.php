@@ -22,23 +22,25 @@
     </div>
     <div class="danhMucAll">
         <a href="#" class="button button--blue">Đơn hàng của tôi</a>
+        <a href="?c=quan_ly&a=hoadon" class="button button--blue">Đơn hàng của khách</a>
     </div>
     <div class="danhMucAll">
         <h3>Đơn hàng của khách</h3>
         <table class="table__main">
             <thead>
                 <tr>
-                    <th>id</th>
+                    <th>Mã hóa đơn</th>
                     <th>Tên khách hàng</th>
                     <th>Tổng tiền</th>
                     <th>Ngày mua</th>
                     <th>Trạng thái</th>
+                    <th>Chi tiết</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody style="text-align: center;">
                 <?php foreach ($data['data-hoaDon'] as $value) { ?>
                     <tr>
-                        <td class="id_hoa_don"><a href="?c=quan_ly&a=hdct&id=<?= $value[0] ?>"><?= $value[0] ?></a></td>
+                        <td class="id_hoa_don"><a><?= $value[0] ?></a></td>
                         <td><?= $value[1] ?></td>
                         <td><?= number_format($value[2]) ?></td>
                         <td><?php
@@ -46,13 +48,16 @@
                             echo $arr[0];
                             ?></td>
                         <td>
-                            <select name="" class="tinh-trang-don" id="">
+                            <select name="" class="tinh-trang-don" id="" style="width: 100%; font-size: 17px;">
                                 <option <?php if ($value[4] == 0) echo 'selected' ?> value="0">Đang xử lý</option>
                                 <option <?php if ($value[4] == 1) echo 'selected' ?> value="1">Đã xem xét</option>
                                 <option <?php if ($value[4] == 2) echo 'selected' ?> value="2">Đang giao hàng</option>
                                 <option <?php if ($value[4] == 3) echo 'selected' ?> value="3">Đã giao hàng</option>
                                 <option <?php if ($value[4] == 4) echo 'selected' ?> value="4">Đã hủy đơn</option>
                             </select>
+                        </td>
+                        <td>
+                            <a href="?c=quan_ly&a=hdct&id=<?= $value[0] ?>"><button style="width: 100%; font-size: 15px; background-color: rgb(253, 45, 45); color: white;">Xem chi tiết</button></a>
                         </td>
                     </tr>
                 <?php } ?>
