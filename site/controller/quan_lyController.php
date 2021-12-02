@@ -22,6 +22,16 @@ class quan_lyController
         ]);
     }
 
+    public function hdct()
+    {
+        $id_hoa_don = $_GET['id'];
+        $hdct = $this->hoaDonModel->get_hdct($id_hoa_don);
+
+        view('quan_ly/hoadonCTView', 'site', [
+            'hdct' => $hdct
+        ]);
+    }
+
     public function change_tinh_trang_don()
     {
         $id_hoa_don = $_GET['id_hoa_don'];

@@ -38,7 +38,7 @@
             <tbody>
                 <?php foreach ($data['data-hoaDon'] as $value) { ?>
                     <tr>
-                        <td class="id_hoa_don"><a href="#"><?= $value[0] ?></a></td>
+                        <td class="id_hoa_don"><a href="?c=quan_ly&a=hdct&id=<?= $value[0] ?>"><?= $value[0] ?></a></td>
                         <td><?= $value[1] ?></td>
                         <td><?= number_format($value[2]) ?></td>
                         <td><?php

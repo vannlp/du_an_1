@@ -28,4 +28,12 @@ class hoaDonModel extends DB
         $sql = "UPDATE hoa_don set trang_thai = $trang_thai where id_hoa_don='$id_hoa_don'";
         return $this->setData($sql);
     }
+
+    function get_hdct($id_hoa_don)
+    {
+        $sql = "SELECT sp.tieu_de, hdct.so_luong, hdct.tong_tien
+        from hoa_don_chi_tiet hdct inner join san_pham sp
+        on hdct.id_sanpham = sp.id_sanpham where hdct.id_hoa_don = '$id_hoa_don'";
+        return $this->getData($sql);
+    }
 }
