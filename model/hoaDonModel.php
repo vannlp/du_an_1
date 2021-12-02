@@ -14,4 +14,18 @@ class hoaDonModel extends DB
         $so_luong, null, $tong_tien)";
         return $this->setData($sql);
     }
+
+    function get_hoa_don()
+    {
+        $sql = "SELECT hd.id_hoa_don, nd.ho_ten, hd.tong_tien, hd.ngay_mua, hd.trang_thai
+        from hoa_don hd inner join nguoi_dung nd 
+        on hd.ten_dang_nhap = nd.ten_dang_nhap order by hd.ngay_mua desc";
+        return $this->getData($sql);
+    }
+
+    function update_tinh_trang_don($id_hoa_don, $trang_thai)
+    {
+        $sql = "UPDATE hoa_don set trang_thai = $trang_thai where id_hoa_don='$id_hoa_don'";
+        return $this->setData($sql);
+    }
 }

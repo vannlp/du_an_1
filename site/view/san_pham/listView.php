@@ -8,17 +8,17 @@
             <nav class="menu_user">
                 <label class="logo_nav">Quản Lý</label>
                 <ul>
-                <li><a href="?c=account&a=quan_ly_tk">Thông tin cá nhân</a></li>
-                <li><a href="?c=account&a=matkhau">Đổi mật khẩu</a></li>
-                <li><a href="?c=san_pham&a=add_san_pham">Quản lý sản phẩm</a></li>
-                <li><a href="">Quản lý hóa đơn</a></li>
-                <li><a href="">Thống kê</a></li>
-                <?php 
-                  if($_SESSION['login'][10] == 1){
-                    echo'<li><a href="admin.php">Admin</a></li>';
-                  }
-                ?>
-            </ul>
+                    <li><a href="?c=account&a=quan_ly_tk">Thông tin cá nhân</a></li>
+                    <li><a href="?c=account&a=matkhau">Đổi mật khẩu</a></li>
+                    <li><a href="?c=san_pham&a=add_san_pham">Quản lý sản phẩm</a></li>
+                    <li><a href="?c=quan_ly&a=hoadon">Quản lý hóa đơn</a></li>
+                    <li><a href="">Thống kê</a></li>
+                    <?php
+                    if ($_SESSION['login'][10] == 1) {
+                        echo '<li><a href="admin.php">Admin</a></li>';
+                    }
+                    ?>
+                </ul>
             </nav>
         </div>
 
