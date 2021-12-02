@@ -28,7 +28,7 @@
         <h3>Đơn hàng của khách</h3>
         <hr>
         <br>
-        <h4>Đơn hàng <?= $_GET['id'] ?></h4>
+        <h4>Đơn hàng: <?= $_GET['id'] ?></h4>
         <hr>
         <br>
         <table class="table__main">
