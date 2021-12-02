@@ -112,7 +112,7 @@
         <input readonly type="number" name="tong_tien" id="">
       </div>
       <?php
-        if(isset($_SESSION['login'][3]) && isset($_SESSION['login'][4])){
+        if(empty($_SESSION['login'][3]) && empty($_SESSION['login'][4])){
           echo '
           <button name="btn-submit" class="btn-thanhToan" disabled>Bạn còn thiếu thông tin</button>
           ';
