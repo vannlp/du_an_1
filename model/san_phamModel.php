@@ -57,4 +57,11 @@ class san_phamModel extends DB
         $sql = "UPDATE san_pham set so_luong=so_luong-$sl where id_sanpham='$id_sanpham'";
         return $this->setData($sql);
     }
+
+    function get_so_luong_ban($id_sanpham)
+    {
+        $sql = "SELECT SUM(hdct.so_luong) FROM hoa_don_chi_tiet hdct JOIN san_pham sp
+        on hdct.id_sanpham = sp.id_sanpham WHERE sp.id_sanpham = '$id_sanpham'";
+        return $this->getValue($sql);
+    }
 }

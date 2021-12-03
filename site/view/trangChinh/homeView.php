@@ -99,7 +99,7 @@
                             <span class="fa fa-star ' . $check[2] . '"></span>
                             <span class="fa fa-star ' . $check[3] . '"></span>
                             <span class="fa fa-star ' . $check[4] . '"></span>
-                            <p>Đã bán 1000+</p>
+                            <p>Đã bán ' . $sanPham['so_luong_ban'] . '</p>
                         </div>
                         <p class="buy1">
                             <b>' . number_format($sanPham[6]) . '</b>

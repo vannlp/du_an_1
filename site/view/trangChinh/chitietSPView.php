@@ -42,7 +42,7 @@
                         <span class="fa fa-star <?php echo $check[2] ?>"></span>
                         <span class="fa fa-star <?php echo $check[3] ?>"></span>
                         <span class="fa fa-star <?php echo $check[4] ?>"></span></span> |
-                        <span>Đã bán 82</span>
+                        <span>Đã bán <?= $data['so_luong_ban'] ?></span>
                     </div>
                 </div>
 

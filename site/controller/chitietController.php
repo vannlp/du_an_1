@@ -24,13 +24,18 @@ class chitietController
             $sanPhamLQ = $this->sanPhamIDModel->get_id_dm_by_id_sanPham($iddm);
             $img = $this->imgsModel->get_img_idSanPham($id);
             $binhluan = $this->binhluanModel->get_binhluan_by_idSP($id);
+            $so_luong_ban = $this->sanPhamIDModel->get_so_luong_ban($id);
+            if ($so_luong_ban == null) {
+                $so_luong_ban = 0;
+            }
             // print_r($binhluan);
 
             view('trangChinh/chitietSPView', 'site', [
                 'sanPhamID' => $sanPhamID,
                 'sanPhamLQ' => $sanPhamLQ,
                 'img' => $img,
-                'binhluan' => $binhluan
+                'binhluan' => $binhluan,
+                'so_luong_ban' => $so_luong_ban
             ]);
         }
     }
