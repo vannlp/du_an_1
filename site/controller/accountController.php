@@ -19,7 +19,7 @@ class accountController
             foreach ($data as $value) {
                 if ($ten_dang_nhap == $value[0] && $mat_khau == $value[1]) {
                     $_SESSION['login'] = $value;
-                        header('location: /index.php');
+                    header('location: /index.php');
                     break;
                 } else {
                     $thong_bao = 'Đăng nhập thất bại';
@@ -97,10 +97,32 @@ class accountController
         ]);
     }
 
-    function matkhau(){
+    function matkhau()
+    {
 
         checkLogin2();
+        $thong_bao = '';
 
-        view('account/matkhauView', 'site', []);
+        if (isset($_POST['btn-submit'])) {
+            $ten_dang_nhap = $_SESSION['login'][0];
+            $mat_khau = $_SESSION['login'][1];
+            $mat_khau_cu = $_POST['matkhaucu'];
+            $mat_khau_moi = $_POST['matkhaumoi'];
+            $nhap_lai_mk = $_POST['re-matkhau'];
+            if ($mat_khau == md5($mat_khau_cu)) {
+                if ($mat_khau_moi == $nhap_lai_mk) {
+                    $this->nguoi_dungModel->update_mat_khau(md5($mat_khau_moi), $ten_dang_nhap);
+                    $thong_bao = 'Cập nhập thành công';
+                } else {
+                    $thong_bao = 'Mật khẩu mới không trùng khớp nhập lại mật khẩu';
+                }
+            } else {
+                $thong_bao = 'Bạn nhập sai mật khẩu cũ';
+            }
+        }
+
+        view('account/matkhauView', 'site', [
+            'thong-bao' => $thong_bao
+        ]);
     }
 }

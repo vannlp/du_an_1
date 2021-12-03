@@ -35,4 +35,10 @@ class nguoi_dungModel extends DB
         $sql = "SELECT img from nguoi_dung where ten_dang_nhap='$ten_dang_nhap'";
         return $this->getValue($sql);
     }
+
+    function update_mat_khau($matkhau, $ten_dang_nhap)
+    {
+        $sql = "UPDATE nguoi_dung set mat_khau='$matkhau' where ten_dang_nhap = '$ten_dang_nhap'";
+        return $this->setData($sql);
+    }
 }

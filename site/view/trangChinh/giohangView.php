@@ -72,23 +72,22 @@
       </div>
       <div>
         <span>
-        <?php echo $_SESSION['login'][3] ?>
+          <?php echo $_SESSION['login'][3] ?>
         </span>
       </div>
     </div>
 
     <div class="cart-right-wrapper">
-      <?php 
-        if(isset($data['magiam'])){
-          echo '<h5>Mã khuyến mãi của bạn</h5>';
-        
-        foreach($data['magiam'] as $ma){
-          echo'
-            <p>'.$ma[0].'</p>
+      <?php
+      if (isset($data['magiam'])) {
+        echo '<h5>Mã khuyến mãi của bạn</h5>';
+
+        foreach ($data['magiam'] as $ma) {
+          echo '
+            <p>' . $ma[0] . '</p>
           ';
         }
-      }
-      else{
+      } else {
         echo '<h5>Bạn không có mã giảm giá nào</h5>';
       }
       ?>
@@ -112,8 +111,8 @@
         <input readonly type="number" name="tong_tien" id="">
       </div>
       <?php
-        if(empty($_SESSION['login'][3]) && empty($_SESSION['login'][4])){
-          echo '
+      if ($_SESSION['login'][3] == '' || $_SESSION['login'][4] == '') {
+        echo '
           <button name="btn-submit" class="btn-thanhToan" disabled>Bạn còn thiếu thông tin</button>
           ';
         }
@@ -121,9 +120,9 @@
           echo'
           <button type="submit" name="btn-submit" class="btn-thanhToan">Thanh toán</button>
         ';
-        }
+      }
       ?>
-       </form>
+    </form>
 </section>
 
 <!-- <script src="./main.js"></script> -->
