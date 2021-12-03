@@ -11,7 +11,7 @@
                 <li><a href="?c=account&a=matkhau">Đổi mật khẩu</a></li>
                 <li><a href="?c=san_pham&a=add_san_pham">Quản lý sản phẩm</a></li>
                 <li><a href="?c=quan_ly&a=hoadon">Quản lý hóa đơn</a></li>
-                <li><a href="">Thống kê</a></li>
+                <li><a href="?c=quan_ly&a=thongke">Thống kê</a></li>
                 <?php
                 if ($_SESSION['login'][10] == 1) {
                     echo '<li><a href="admin.php">Admin</a></li>';
@@ -22,7 +22,7 @@
     </div>
     <!--  -->
     <div class="danhMucAll">
-        <form class="sanPham" method="post" enctype="multipart/form-data">
+        <form class="sanPham" method="post" id="qltk" enctype="multipart/form-data">
             <div class="user_img">
                 <img src="<?= URL_WEB ?>/public/site/img/<?= $data['nguoi_dung'][9] ?>" alt="" srcset="" />
                 <div>
@@ -82,3 +82,37 @@
         </form>
     </div>
 </div>
+
+<script>
+    $(document).ready(() => {
+        $("#qltk").validate({
+            onfocusout: false,
+            onkeyup: false,
+            onclick: false,
+            rules: {
+                sdt: {
+                    maxlength: 11,
+                    minlength: 10,
+                    number: true,
+                },
+                cmnd: {
+                    maxlength: 12,
+                    minlength: 9,
+                    number: true
+                }
+            },
+            messages: {
+                sdt: {
+                    maxlength: 'Độ dài tối đa 11',
+                    minlength: 'Độ dài tối thiểu 10',
+                    number: 'Phải nhập số',
+                },
+                cmnd: {
+                    maxlength: 'Độ dài tối đa 12',
+                    minlength: 'Độ dài tối thiểu 9',
+                    number: 'Phải nhập số'
+                }
+            }
+        })
+    })
+</script>

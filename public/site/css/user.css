@@ -98,12 +98,18 @@ label.logo_nav{
     margin-bottom: 30px;
     background-color: white;
     border-radius: 5px 5px;
-    position: relative;
+    /* position: relative; */
     min-height: 400px;
-    
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .signup-wrapper{
-    min-height: 600px;
+    /* min-height: 600px; */
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .login-wrapper h3{
     text-align: center;
@@ -114,11 +120,11 @@ label.logo_nav{
     background-image: url('https://img.freepik.com/free-photo/grunge-paint-background_1409-1337.jpg?size=626&ext=jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    top: 50%;
+    /* top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%); */
     width: 80%;
-    position: absolute;
+    /* position: absolute; */
     background-color: #ccc;
     padding: 20px 20px;
     border-radius: 10px 10px;
@@ -132,3 +138,5 @@ label.logo_nav{
     padding: 20px 10px;
     margin-bottom: 20px;
 }
+
+

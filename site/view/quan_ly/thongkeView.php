@@ -21,34 +21,26 @@
         </nav>
     </div>
     <div class="danhMucAll">
-        <a href="?c=quan_ly&a=hoadoncuatoi" class="button button--blue">Đơn hàng của tôi</a>
-        <a href="?c=quan_ly&a=hoadon" class="button button--blue">Đơn hàng của khách</a>
-    </div>
-    <div class="danhMucAll">
-        <h3>Đơn hàng của khách</h3>
-        <hr>
-        <br>
-        <h4>Đơn hàng: <?= $_GET['id'] ?></h4>
-        <hr>
-        <br>
+        <h3>Thống kê</h3>
         <table class="table__main">
             <thead>
                 <tr>
                     <th>Tên sản phẩm</th>
-                    <th>Số lượng</th>
-                    <th>Tổng tiền</th>
+                    <th>Hiện có</th>
+                    <th>Đã bán</th>
+                    <th>Doanh thu</th>
                 </tr>
             </thead>
             <tbody>
-
                 <?php
-                foreach ($data['hdct'] as $value) {
+                foreach ($data['thong_ke'] as $value) {
                     echo '
-                        <tr>
-                            <td>' . $value[0] . '</td>
-                            <td>' . $value[1] . '</td>
-                            <td>' . number_format($value[2]) . '</td>
-                        </tr>
+                    <tr>
+                        <td>' . $value[0] . '</td>
+                        <td>' . $value[1] . '</td>
+                        <td>' . $value[2] . '</td>
+                        <td>' . number_format($value[3]) . 'VND</td>
+                    </tr>
                     ';
                 }
                 ?>

@@ -49,4 +49,14 @@ class quan_lyController
             'data-hoaDon' => $hoa_don
         ]);
     }
+
+    public function thongke()
+    {
+        $ten_dang_nhap = $_SESSION['login'][0];
+        $thongke = $this->hoaDonModel->get_thong_ke($ten_dang_nhap);
+
+        view('quan_ly/thongkeView', 'site', [
+            'thong_ke' => $thongke
+        ]);
+    }
 }

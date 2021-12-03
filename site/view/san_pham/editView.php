@@ -39,7 +39,7 @@
                 <li><a href="?c=account&a=matkhau">Đổi mật khẩu</a></li>
                 <li><a href="?c=san_pham&a=add_san_pham">Quản lý sản phẩm</a></li>
                 <li><a href="?c=quan_ly&a=hoadon">Quản lý hóa đơn</a></li>
-                <li><a href="">Thống kê</a></li>
+                <li><a href="?c=quan_ly&a=thongke">Thống kê</a></li>
                 <?php
                 if ($_SESSION['login'][10] == 1) {
                     echo '<li><a href="admin.php">Admin</a></li>';
@@ -55,7 +55,7 @@
         <form method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="">Tên sản phẩm</label>
-                <input type="text" value="<?= $data['dataSP']['tieu_de'] ?>" name="tieu_de" class="form-control">
+                <input type="text" required value="<?= $data['dataSP']['tieu_de'] ?>" name="tieu_de" class="form-control">
             </div>
             <div class="form-group">
                 <label for="">Danh mục sản phẩm</label>
@@ -97,7 +97,7 @@
             </div>
             <div class="form-group">
                 <label for="">Mô tả</label>
-                <textarea name="noi_dung" class="form-control" id="mo_ta" cols="30" rows="10"><?= $data['dataSP']['noi_dung'] ?></textarea>
+                <textarea name="noi_dung" required class="form-control" id="mo_ta" cols="30" rows="10"><?= $data['dataSP']['noi_dung'] ?></textarea>
                 <script>
                     CKEDITOR.replace('mo_ta');
                 </script>

@@ -11,7 +11,7 @@
                 <li><a href="?c=account&a=matkhau">Đổi mật khẩu</a></li>
                 <li><a href="?c=san_pham&a=add_san_pham">Quản lý sản phẩm</a></li>
                 <li><a href="?c=quan_ly&a=hoadon">Quản lý hóa đơn</a></li>
-                <li><a href="">Thống kê</a></li>
+                <li><a href="?c=quan_ly&a=thongke">Thống kê</a></li>
                 <?php
                 if ($_SESSION['login'][10] == 1) {
                     echo '<li><a href="admin.php">Admin</a></li>';
@@ -48,7 +48,9 @@
                             echo $arr[0];
                             ?></td>
                         <td>
-                            <select name="" class="tinh-trang-don" id="" <?php if ($value[4] == 3 or $value[4] == 4){ echo 'disabled';} ?> style="width: 100%; font-size: 17px;">
+                            <select name="" class="tinh-trang-don" id="" <?php if ($value[4] == 3 or $value[4] == 4) {
+                                                                                echo 'disabled';
+                                                                            } ?> style="width: 100%; font-size: 17px;">
                                 <option <?php if ($value[4] == 0) echo 'selected' ?> value="0">Đang xử lý</option>
                                 <option <?php if ($value[4] == 1) echo 'selected' ?> value="1">Đã xem xét</option>
                                 <option <?php if ($value[4] == 2) echo 'selected' ?> value="2">Đang giao hàng</option>

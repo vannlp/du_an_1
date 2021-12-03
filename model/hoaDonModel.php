@@ -45,4 +45,15 @@ class hoaDonModel extends DB
         on hdct.id_sanpham = sp.id_sanpham where hdct.id_hoa_don = '$id_hoa_don'";
         return $this->getData($sql);
     }
+
+    function get_thong_ke($ten_dang_nhap)
+    {
+        $sql = "SELECT sp.tieu_de, sp.so_luong, count(hdct.so_luong), sum(hdct.tong_tien) 
+        from hoa_don_chi_tiet hdct join san_pham sp
+        on hdct.id_sanpham = sp.id_sanpham
+        join hoa_don hd on hd.id_hoa_don = hdct.id_hoa_don
+        where sp.ten_dang_nhap = '$ten_dang_nhap' and hd.trang_thai=3
+        ";
+        return $this->getData($sql);
+    }
 }

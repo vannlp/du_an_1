@@ -13,7 +13,7 @@ $(document).ready(() => {
         minlength: 8,
       },
       matkhau1: {
-        equalTo: "matkhau",
+        equalTo: "#mat_khau",
         required: true,
         minlength: 8,
       },

@@ -9,7 +9,7 @@
         <!-- menu -->
         <div class="login-layout">
 
-            <h3>Đăng nhập</h3>
+            <h3>Đăng Ký</h3>
 
             <div class="login">
                 <form action="?c=account&a=signup" id="form-dk" method="post">
@@ -46,23 +46,26 @@
                         <label for="">
                             Nhập lại mật khẩu
                         </label>
-                        <input type="password" name="matkhau1" required="required" class="form-controll mat_khau" placeholder="Tên đăng nhập">
+                        <input type="password" name="matkhau1" id="mat_khau1" required="required" class="form-controll mat_khau" placeholder="Tên đăng nhập">
                     </div>
                     <div class="form-group">
-                        <button type="submit" name="btn-signup">Đăng Ký</button>
+                        <button type="submit" id="btn-dk" name="btn-signup">Đăng Ký</button>
                     </div>
-                    <?php
-                    if (isset($data['thong_bao'])) {
-                        echo '<h4>' . $data['thong_bao'] . '</h4>';
-                    }
-                    ?>
+
                 </form>
             </div>
+
+            <?php
+            if (isset($data['thong_bao'])) {
+                echo '<h4 style="text-align: center; font-size: 20px">' . $data['thong_bao'] . '</h4>';
+            }
+            ?>
         </div>
 
     </div>
-    <!--  -->
 
 </div>
 </div>
+
+
 <script src="<?= URL_PUBLIC ?>site/js/validate.js"></script>

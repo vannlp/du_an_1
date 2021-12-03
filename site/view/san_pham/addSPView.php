@@ -39,7 +39,7 @@
                 <li><a href="?c=account&a=matkhau">Đổi mật khẩu</a></li>
                 <li><a href="?c=san_pham&a=add_san_pham">Quản lý sản phẩm</a></li>
                 <li><a href="?c=quan_ly&a=hoadon">Quản lý hóa đơn</a></li>
-                <li><a href="">Thống kê</a></li>
+                <li><a href="?c=quan_ly&a=thongke">Thống kê</a></li>
                 <?php
                 if ($_SESSION['login'][10] == 1) {
                     echo '<li><a href="admin.php">Admin</a></li>';
@@ -68,7 +68,7 @@
         <form method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="">Tên sản phẩm</label>
-                <input type="text" name="tieu_de" class="form-control">
+                <input type="text" name="tieu_de" required class="form-control">
             </div>
             <div class="form-group">
                 <label for="">Danh mục sản phẩm</label>
@@ -94,19 +94,19 @@
             </div>
             <div class="form-group">
                 <label for="">Giá gốc</label>
-                <input type="number" name="gia_goc" class="form-control">
+                <input type="number" required name="gia_goc" class="form-control">
             </div>
             <div class="form-group">
                 <label for="">Giá giảm</label>
-                <input type="number" name="gia_giam" class="form-control">
+                <input type="number" required name="gia_giam" class="form-control">
             </div>
             <div class="form-group">
                 <label for="">Số lượng</label>
-                <input type="number" name="so_luong" class="form-control">
+                <input type="number" required name="so_luong" class="form-control">
             </div>
             <div class="form-group">
                 <label for="">Mô tả</label>
-                <textarea name="noi_dung" id="mo_ta" class="form-control" id="" cols="30" rows="10"></textarea>
+                <textarea name="noi_dung" required id="mo_ta" class="form-control" id="" cols="30" rows="10"></textarea>
             </div>
             <script>
                 CKEDITOR.replace('mo_ta');
