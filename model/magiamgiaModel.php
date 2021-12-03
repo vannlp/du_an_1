@@ -13,8 +13,8 @@ class magiamgiaModel extends DB
         return $this->setData($sql);
     }
 
-    function get_magiam_by_tenDN($tenDN){
-        $sql = "SELECT * FROM ma_giam_gia WHERE ten_dang_nhap = '$tenDN'";
+    function get_magiam_by_tenDN($ten_dang_nhap){
+        $sql = "SELECT * FROM ma_giam_gia WHERE ten_dang_nhap = '$ten_dang_nhap'";
         return $this->getData($sql);
     }
 }

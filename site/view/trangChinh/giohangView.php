@@ -37,15 +37,15 @@
                     src="/public/site/img/' . $value[5] . '"
                     alt=""
                   />
-                  <span>' . $value['tieu_de'] . '</span>
+                  <span>' . $value[4] . '</span>
                 </div>
                 <div class="main__cart-donGia">
-                  <span class="span-cart-donGia">' . number_format($value['gia_giam']) . '</span>
+                  <span class="span-cart-donGia">' . number_format($value[6]) . '</span>
                 </div>
                 <div class="main__cart-soLuong">
                   <div class="btn-soLuong">
                     <button>-</button>
-                    <input type="text" name="" id="soLuong-input" value="' . $value['so_luong_mua'] . '" />
+                    <input type="text" name="" id="soLuong-input" value="' . $value[1] . '" />
                     <button>+</button>
                   </div>
                 </div>
@@ -54,7 +54,7 @@
                 </div>
                 <div class="main__cart-action">
                   <p style="display: none;">' . $value[0] . '</p>
-                  <a href="?c=giohang&a=delete_cart&id=' . $value[0] . '" class="btn-xoa">Xóa</a>
+                  <a href="?c=giohang&a=delete_cart&id=' . $value[7] . '" class="btn-xoa">Xóa</a>
                 </div>
               </div>
               ';
@@ -119,7 +119,7 @@
         }
         else{
           echo'
-          <button type="submit" name="btn-submit" class="btn-thanhToan" disabled>Thanh toán</button>
+          <button type="submit" name="btn-submit" class="btn-thanhToan">Thanh toán</button>
         ';
         }
       ?>
