@@ -63,16 +63,16 @@
                         <div class="btn-soLuong">
                             <button>-</button>
                             <input type="text" name="" id="soLuong-input" value="1" />
+
                             <button>+</button>
                         </div>
                     </div>
                     <?php
-                        if($data['sanPhamID'][11] != 0){
-                            echo '<button id="btn-mua" class="product__btn-mua" type="button">Chọn mua</button>';
-                        }
-                        else{
-                            echo '<button id="" class="btn-disabled" type="button">Sản phẩm đã hết hàng</button>';
-                        }
+                    if ($data['sanPhamID'][11] != 0) {
+                        echo '<button id="btn-mua" class="product__btn-mua" type="button">Chọn mua</button>';
+                    } else {
+                        echo '<button id="" class="btn-disabled" type="button">Sản phẩm đã hết hàng</button>';
+                    }
                     ?>
                 </div>
             </div>
@@ -83,7 +83,7 @@
                 </div>
                 <div class="product__right-action">
                     <a href="?c=timkiem&a=shop&id=<?php echo  $data['sanPhamID'][2] ?>" class="product__right-btn">Xem thêm sản phẩm của shop</a>
-                    
+
                 </div>
             </div>
         </div>

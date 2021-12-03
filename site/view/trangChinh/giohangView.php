@@ -53,7 +53,7 @@
                   <span class="span-cart-TT"></span>
                 </div>
                 <div class="main__cart-action">
-                  <p style="display: none;">' . $value[0] . '</p>
+                  <p style="display: none;">' . $value[7] . '</p>
                   <a href="?c=giohang&a=delete_cart&id=' . $value[7] . '" class="btn-xoa">Xóa</a>
                 </div>
               </div>
@@ -115,9 +115,8 @@
         echo '
           <button name="btn-submit" class="btn-thanhToan" disabled>Bạn còn thiếu thông tin</button>
           ';
-        }
-        else{
-          echo'
+      } else {
+        echo '
           <button type="submit" name="btn-submit" class="btn-thanhToan">Thanh toán</button>
         ';
       }
@@ -148,7 +147,8 @@
       tongGia[index].innerText = gia_Tong;
 
       btnCong[index].addEventListener('click', () => {
-        let id_sanpham = id_sp[index].innerText;
+        let id_gh = id_sp[index].innerText;
+
         // alert('hello')
         setTimeout(() => {
           let gia1 = value.innerText
@@ -159,11 +159,12 @@
           tongGia[index].innerText = gia_Tong;
           capnhapTong()
 
+          console.log(gia_Tong, sl1, id_gh);
           $.get(
             '?c=giohang&a=capNhapSoLuong', {
               tong_tien: gia_Tong,
               so_luong: sl1,
-              id_sanpham: id_sanpham
+              id_gio_hang: Number(id_gh)
             },
             function() {
 
@@ -173,7 +174,7 @@
       })
 
       btnTru[index].addEventListener('click', () => {
-        let id_sanpham = id_sp[index].innerText;
+        let id_gh = id_sp[index].innerText;
 
         // alert('hello')
         setTimeout(() => {
@@ -185,11 +186,12 @@
           tongGia[index].innerText = gia_Tong;
           capnhapTong()
 
+          // console.log(gia_Tong, sl1, id_sanpham);
           $.get(
             '?c=giohang&a=capNhapSoLuong', {
               tong_tien: gia_Tong,
               so_luong: sl1,
-              id_sanpham: id_sanpham
+              id_gio_hang: id_gh
             },
             function() {
 

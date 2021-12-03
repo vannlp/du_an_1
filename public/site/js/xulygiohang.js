@@ -6,9 +6,10 @@ $(document).ready(() => {
     const add_gio_hang = document.querySelector(".add_gio_hang");
 
     let id_sp = idSP.value;
-    let so_luong = soluong.value;
 
     btn_mua.addEventListener("click", () => {
+      let so_luong = soluong.value;
+      console.log(so_luong);
       $.get(
         "?c=giohang&a=add_gio_hang",
         {

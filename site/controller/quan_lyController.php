@@ -16,7 +16,8 @@ class quan_lyController
 
     public function hoadon()
     {
-        $hoa_don = $this->hoaDonModel->get_hoa_don();
+        $tenshop = $_SESSION['login'][0];
+        $hoa_don = $this->hoaDonModel->get_hoa_don($tenshop);
         view('quan_ly/hoadonView', 'site', [
             'data-hoaDon' => $hoa_don
         ]);

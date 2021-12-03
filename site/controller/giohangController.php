@@ -26,7 +26,7 @@ class giohangController
         $gio_hang = $this->gio_hangModel->get_gio_hang_by_tenDN($ten_dang_nhap);
         $magiam = $this->magiamgiaModel->get_magiam_by_tenDN($ten_dang_nhap);
 
-        
+
         view('trangChinh/giohangView', 'site', [
             'gio_hang' => $gio_hang,
             'magiam' => $magiam
@@ -40,11 +40,10 @@ class giohangController
         $so_luong = $_GET['soluong'];
         $san_pham = $this->san_phamModel->get_id_sanPham($id_sanpham);
         $tong_tien = $san_pham['gia_giam'] * $so_luong;
-        $kt = $this->gio_hangModel->add_giohang($ten_dang_nhap,$id_sanpham,$so_luong,$tong_tien);
-        if($kt){
+        $kt = $this->gio_hangModel->add_giohang($ten_dang_nhap, $id_sanpham, $so_luong, $tong_tien);
+        if ($kt) {
             echo "Add thành công";
-        }
-        else{
+        } else {
             echo "Add thất bại";
         }
     }
@@ -61,14 +60,11 @@ class giohangController
 
     public function capNhapSoLuong()
     {
-        if (isset($_GET['id_sanpham'])) {
-            $id_sanpham = $_GET['id_sanpham'];
-            $so_luong = $_GET['so_luong'];
-            $ten_dang_nhap = $_SESSION['login'][0];
-            $tong_tien = $_GET['tong_tien'];
+        $id_giohang = $_GET['id_gio_hang'];
+        $so_luong = $_GET['so_luong'];
+        $tong_tien = $_GET['tong_tien'];
 
-            $this->gio_hangModel->update_giohang($id_sanpham, $so_luong, $ten_dang_nhap, $tong_tien);
-        }
+        $this->gio_hangModel->update_giohang($id_giohang, $so_luong, $tong_tien);
     }
 
     public function thanh_toan()
@@ -79,19 +75,19 @@ class giohangController
             $gio_hang = $this->gio_hangModel->get_gio_hang_by_tenDN1($ten_dang_nhap);
             $gio_hang_tam = [];
             $index = 0;
-            foreach($gio_hang as $val){
+            foreach ($gio_hang as $val) {
                 $gio_hang_tam[$index] = $val[4];
-                $index ++;
+                $index++;
             }
             $tenshop = array_unique($gio_hang_tam);
             // end
             $tamp = [];
-            foreach($tenshop as $key => $val){
+            foreach ($tenshop as $key => $val) {
                 $tamp[$key] = $this->gio_hangModel->get_sanpham_in_giohang($ten_dang_nhap, $val);
             }
-            foreach($tamp as $val1){
+            foreach ($tamp as $val1) {
                 $tong_tien = 0;
-                foreach($val1 as $val2){
+                foreach ($val1 as $val2) {
                     $tong_tien += $val2[2];
                 }
                 echo $tong_tien . ' ';
