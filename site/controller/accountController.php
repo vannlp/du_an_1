@@ -131,9 +131,7 @@ class accountController
         if (isset($_POST['btn-submit'])) {
             $_SESSION['xac-nhan'] = mt_rand(1000, 999999);
             $mail = $_POST['email'];
-            $header  =  "From:myemail@exmaple.com \r\n";
-            $header .=  "Cc:other@exmaple.com \r\n";
-            $isSussec = mail($mail, 'email xác nhận quên mật khẩu', $_SESSION['xac-nhan'], $header);
+            $isSussec = mail($mail, 'email xác nhận quên mật khẩu', $_SESSION['xac-nhan']);
             if ($isSussec == true) {
                 header('location: ?c=account&a=xac_nhan');
             } else {
