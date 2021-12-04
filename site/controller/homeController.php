@@ -22,7 +22,6 @@ class homeController
                 $sanPham[$i]['so_luong_ban'] = 0;
             }
         }
-
         //Tận cùng của nổi đau
         view('trangChinh/homeView', 'site', [
             'danhMuc' => $dmSP,

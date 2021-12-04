@@ -125,4 +125,56 @@ class accountController
             'thong-bao' => $thong_bao
         ]);
     }
+
+    function quen_mat_khau()
+    {
+        if (isset($_POST['btn-submit'])) {
+            $_SESSION['xac-nhan'] = mt_rand(1000, 999999);
+            $mail = $_POST['email'];
+            $header  =  "From:myemail@exmaple.com \r\n";
+            $header .=  "Cc:other@exmaple.com \r\n";
+            $isSussec = mail($mail, 'email xác nhận quên mật khẩu', $_SESSION['xac-nhan'], $header);
+            if ($isSussec == true) {
+                header('location: ?c=account&a=xac_nhan');
+            } else {
+                echo 'gửi mail thất bại';
+            }
+        }
+        view('account/quenmatkhauView', 'site', []);
+    }
+
+    function xac_nhan()
+    {
+        $thong_bao = '';
+        if (isset($_POST['btn-sumit'])) {
+            $xac_nhan = $_POST['ma_xac_nhan'];
+            if ($xac_nhan == $_SESSION['xac_nhan']) {
+                header('location: ?c=account&a=cap_nhap_mat_khau');
+            } else {
+                $thong_bao = "Mã xác nhận đã nhập sai";
+            }
+        }
+        view('account/xacnhanView', 'site', [
+            'thong-bao' => $thong_bao
+        ]);
+    }
+
+    function cap_nhap_mat_khau()
+    {
+        checkLogin2();
+        $thong_bao = '';
+
+        if (isset($_POST['btn-submit'])) {
+            if ($_POST['mat_khau'] == $_POST['re_mat_khau']) {
+                $this->nguoi_dungModel->update_mat_khau($_SESSION['login'][0], $_POST['mat_khau']);
+                $thong_bao = 'Cập nhập thành công';
+            } else {
+                $thong_bao = "Vui lòng kiểm tra lại nhập mật khẩu";
+            }
+        }
+
+        view('account/xacnhanView', 'site', [
+            'thong-bao' => $thong_bao
+        ]);
+    }
 }

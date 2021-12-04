@@ -23,6 +23,9 @@
                         <input type="password" name="mat_khau" id="" class="form-controll" placeholder="Mật khẩu">
                     </div>
                     <div class="form-group">
+                        <a href="?c=account&a=quen_mat_khau">Quên mật khẩu</a>
+                    </div>
+                    <div class="form-group">
                         <button type="submit" name="btn-submit">Đăng nhập</button>
                     </div>
                     <?php
