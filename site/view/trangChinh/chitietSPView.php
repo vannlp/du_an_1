@@ -1,5 +1,7 @@
 <link rel="stylesheet" href="<?= URL_PUBLIC ?>site/css/product.css">
 <link rel="stylesheet" href="<?= URL_PUBLIC ?>site/css/index.css">
+<link rel="stylesheet" href="<?= URL_PUBLIC ?>site/css/cart.css">
+
 <script src="<?= URL_PUBLIC ?>site/js/product.js"></script>
 <script src="<?= URL_PUBLIC ?>site/js/xulyanh.js"></script>
 
@@ -52,8 +54,8 @@
         <div class="productMota__wrapper">
             <div class="productMota__left">
                 <div class="product__price-wrapper">
-                    <span><?php echo number_format($data['sanPhamID'][6]) ?> VND</span>
-                    <small><?php echo number_format($data['sanPhamID'][7]) ?> VND</small>
+                    <span><?php echo number_format($data['sanPhamID'][7]) ?> VND</span>
+                    <small><?php echo number_format($data['sanPhamID'][6]) ?> VND</small>
                     <span>-4%</span>
                 </div>
                 <div class="product__muaHang">

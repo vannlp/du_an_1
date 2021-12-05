@@ -22,9 +22,9 @@
       <div class="searchDanhmuc">
         <h4>Giá</h4>
         <ul>
-          <li><a href="?c=timkiem&a=gia&id=300000">Dưới 300.000 vnđ</a></li>
-          <li><a href="?c=timkiem&a=gia&id=600000">Dưới 600.000 vnđ</a></li>
-          <li><a href="?c=timkiem&a=gia&id=100000000">Dưới 1.000.000 vnđ</a></li>
+          <li><a href="?c=timkiem&a=gia&id=10000000">Dưới 10.000.000 vnđ</a></li>
+          <li><a href="?c=timkiem&a=gia&id=50000000">Dưới 50.000.000 vnđ</a></li>
+          <li><a href="?c=timkiem&a=gia&id=100000000">Dưới 100.000.000 vnđ</a></li>
         </ul>
       </div>
     </div>

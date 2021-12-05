@@ -130,6 +130,8 @@ class accountController
     {
         if (isset($_POST['btn-submit'])) {
             $_SESSION['xac-nhan'] = mt_rand(1000, 999999);
+            ini_set('SMTP', 'mail.google.com');
+            ini_set('smtp_port', 25);
             $mail = $_POST['email'];
             $isSussec = mail($mail, 'email xác nhận quên mật khẩu', $_SESSION['xac-nhan']);
             if ($isSussec == true) {
@@ -164,7 +166,7 @@ class accountController
 
         if (isset($_POST['btn-submit'])) {
             if ($_POST['mat_khau'] == $_POST['re_mat_khau']) {
-                $this->nguoi_dungModel->update_mat_khau($_SESSION['login'][0], $_POST['mat_khau']);
+                $this->nguoi_dungModel->update_mat_khau($_POST['ten_dang_nhap'], $_POST['mat_khau']);
                 $thong_bao = 'Cập nhập thành công';
             } else {
                 $thong_bao = "Vui lòng kiểm tra lại nhập mật khẩu";

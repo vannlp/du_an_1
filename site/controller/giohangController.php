@@ -5,7 +5,7 @@ class giohangController
     private $nguoi_dungModel;
     private $date;
     private $hoaDonModel;
-    private $magiamModel;
+    private $magiamgiaModel;
     private $gio_hangModel;
 
     function __construct()
@@ -73,6 +73,14 @@ class giohangController
             // Tìm tên shop 
             $ten_dang_nhap = $_SESSION['login'][0];
             $gio_hang = $this->gio_hangModel->get_gio_hang_by_tenDN1($ten_dang_nhap);
+            $phantramkm = 1;
+            if (isset($_POST['ma_khuyen_mai'])) {
+                $id_ma_giam = $_POST['ma_khuyen_mai'];
+                echo $id_ma_giam;
+                $phantramkm = $this->magiamgiaModel->get_phan_tram_giam($id_ma_giam);
+                $phantramkm = $phantramkm / 100;
+                $this->magiamgiaModel->update_ma_gia($id_ma_giam);
+            }
             $gio_hang_tam = [];
             $index = 0;
             foreach ($gio_hang as $val) {
@@ -91,6 +99,9 @@ class giohangController
                     $tong_tien += $val2[2];
                 }
                 echo $tong_tien . ' ';
+                if (isset($_POST['ma_khuyen_mai'])) {
+                    $tong_tien = $tong_tien - ($tong_tien * $phantramkm);
+                }
                 $id_hoa_don = 'hd' . mt_rand(1, 999999);
                 $data = [
                     'tong_tien' => $tong_tien,
@@ -111,6 +122,7 @@ class giohangController
                     $this->hoaDonModel->insert_hdct($data2);
                 }
             }
+
             $this->gio_hangModel->delete_giohang_by_tenDN($ten_dang_nhap);
             header('location: ?c=giohang&a=index');
         }

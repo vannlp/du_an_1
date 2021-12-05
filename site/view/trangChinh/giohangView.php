@@ -76,51 +76,52 @@
         </span>
       </div>
     </div>
+    <form method="POST" action="?c=giohang&a=thanh_toan">
+      <div class="cart-right-wrapper">
+        <?php
+        if (isset($data['magiam'])) {
+          echo '<h5>Mã khuyến mãi của bạn</h5>';
 
-    <div class="cart-right-wrapper">
-      <?php
-      if (isset($data['magiam'])) {
-        echo '<h5>Mã khuyến mãi của bạn</h5>';
-
-        foreach ($data['magiam'] as $ma) {
-          echo '
-            <p>' . $ma[0] . '</p>
+          foreach ($data['magiam'] as $ma) {
+            echo '
+            <p>' . $ma[0] . ' || ' . $ma[2] . '%</p>
           ';
+          }
+        } else {
+          echo '<h5>Bạn không có mã giảm giá nào</h5>';
         }
-      } else {
-        echo '<h5>Bạn không có mã giảm giá nào</h5>';
-      }
-      ?>
-      <br>
-      <h5>Khuyến mại</h5>
-      <input type="text" class="input-km" name="" id="" placeholder="Nhập mã khuyến mãi" />
-      <button class="btn-km">ok</button>
-    </div>
+        ?>
+        <br>
+        <h5>Khuyến mại</h5>
+        <input type="text" class="input-km" name="ma_khuyen_mai" id="" placeholder="Nhập mã khuyến mãi" />
+        <button class="btn-km">ok</button>
+      </div>
 
-    <form method="POST" action="?c=giohang&a=thanh_toan" class="cart-right-wrapper">
-      <div class="cart-right-thanhToan" id="tamTinh">
-        <span>Tạm tính</span>
-        <span>0</span>
-      </div>
-      <div class="cart-right-thanhToan">
-        <span>Giảm giá</span>
-        <span>0</span>
-      </div>
-      <div class="cart-right-thanhToan" id="tongCong">
-        <span>Tổng cộng</span>
-        <input readonly type="number" name="tong_tien" id="">
-      </div>
-      <?php
-      if ($_SESSION['login'][3] == '' || $_SESSION['login'][4] == '') {
-        echo '
+      <div class="cart-right-wrapper">
+        <div class="cart-right-thanhToan" id="tamTinh">
+          <span>Tạm tính</span>
+          <span>0</span>
+        </div>
+        <div class="cart-right-thanhToan">
+          <span>Giảm giá</span>
+          <span>0</span>
+        </div>
+        <div class="cart-right-thanhToan" id="tongCong">
+          <span>Tổng cộng</span>
+          <input readonly type="number" name="tong_tien" id="">
+        </div>
+        <?php
+        if ($_SESSION['login'][3] == '' || $_SESSION['login'][4] == '') {
+          echo '
           <button name="btn-submit" class="btn-thanhToan" disabled>Bạn còn thiếu thông tin</button>
           ';
-      } else {
-        echo '
+        } else {
+          echo '
           <button type="submit" name="btn-submit" class="btn-thanhToan">Thanh toán</button>
         ';
-      }
-      ?>
+        }
+        ?>
+      </div>
     </form>
 </section>
 

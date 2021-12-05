@@ -8,6 +8,12 @@
 
             <div class="login">
                 <form action="#" method="post">
+                    <div class="form-group">
+                        <label for="">
+                            Nhập tên đăng nhập
+                        </label>
+                        <input type="password" name="ten_dang_nhap" id="" class="form-controll">
+                    </div>
 
                     <div class="form-group">
                         <label for="">
