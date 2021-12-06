@@ -55,6 +55,16 @@
                         Danh mục
                     </a>
                 </li>
+                <li class="aside__list-li">
+                    <a href="<?= URL_WEB ?>/admin.php?c=san_pham&a=kd_san_pham" class="aside__list-link">
+                        Kiểm duyệt sản phẩm
+                    </a>
+                </li>
+                <li class="aside__list-li">
+                    <a href="<?= URL_WEB ?>/admin.php?c=san_pham&a=san_pham" class="aside__list-link">
+                        Sản phẩm đang hiển thị
+                    </a>
+                </li>
             </ul>
         </li>
     </ul>

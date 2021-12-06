@@ -2,10 +2,12 @@
 class san_phamController
 {
     private $dm_san_phamModel;
+    private $san_phamModel;
 
     function __construct()
     {
         $this->dm_san_phamModel = model('dm_san_phamModel');
+        $this->san_phamModel = model('san_phamModel');
     }
 
     public function add_danh_muc()
@@ -66,5 +68,28 @@ class san_phamController
             $this->dm_san_phamModel->delete_dm_sp($id_dm_sp);
             header('location: ?c=san_pham&a=add_danh_muc');
         }
+    }
+
+    public function kd_san_pham(){
+        $list_sp = $this->san_phamModel->get_san_pham_kd();
+
+        view('san_pham/kd_san_phamView', 'admin', [
+            'list_sp' => $list_sp
+        ]);
+    }
+
+    public function tinh_trang_sp(){
+            $trang_thai = $_GET['trang_thai'];
+            $id_sp = $_GET['id_sp'];
+
+            $this->san_phamModel->set_san_pham_kd($trang_thai, $id_sp);
+    }
+
+    public function san_pham(){
+        $list_sp = $this->san_phamModel->get_sanPham_admin();
+
+        view('san_pham/san_phamView', 'admin', [
+            'list_sp' => $list_sp
+        ]);
     }
 }

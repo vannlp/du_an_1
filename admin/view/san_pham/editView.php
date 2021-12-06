@@ -2,15 +2,15 @@
     <div class="listNew__header">
         <div class="chucNang__header-khung">
             <h3 class="chucNang__header-h3">
-                Module sản phẩm
+                Danh Mục
             </h3>
             <div class="chucNang__header-kCn">
-                <h4 class="chucNang__header-h4">Danh mục sản phẩm</h4>
+                <h4 class="chucNang__header-h4">Chỉnh sửa danh mục</h4>
             </div>
         </div>
     </div>
     <div class="listNew__main">
-        <div class="listNew__item">
+        <div class="listSP__item">
             <button class="listNew__btn" type="button">Thêm danh mục</button>
             <div class="listNew__khung">
                 <form action="?c=san_pham&a=edit_danh_muc&id=<?= $_GET['id'] ?>" enctype="multipart/form-data" method="post">
@@ -29,52 +29,6 @@
                     <button name="btn-submit-dm" type="submit" class="btn btn-primary">Submit</button>
                 </form>
 
-            </div>
-        </div>
-        <div class="listNew__item">
-            <button class="listNew__btn" type="button">Danh sách</button>
-            <div class="listNew__khung">
-                <table class="table-striped" width="100%">
-                    <thead>
-                        <tr>
-                            <th>
-                                <input type="checkbox" name="" id="">
-                            </th>
-                            <th>STT</th>
-                            <th>Tên danh mục</th>
-                            <th>Hành động</th>
-                            <th>Hình ảnh</th>
-                        </tr>
-                    </thead>
-                    <style>
-                        .td-img>img {
-                            width: 40px;
-                            height: auto;
-                        }
-                    </style>
-                    <tbody>
-                        <?php
-                        foreach ($data['list_dm_sp'] as $key => $value) {
-                            echo '
-                                <tr>
-                                    <td>
-                                        <input type="checkbox" name="" id="">
-                                    </td>
-                                    <td>' . $key + 1 . '</td>
-                                    <td>' . $value[1] . '</td>
-                                    <td class="td-img">
-                                        <img src="' . URL_PUBLIC . 'site/img/' . $value[3] . '"/>
-                                    </td>
-                                    <td>
-                                        <a href="?c=san_pham&a=delete&id=' . $value[0] . '" class="btn btn-danger">Xóa</a>
-                                        <a href="?c=san_pham&a=edit_danh_muc&id=' . $value[0] . '" class="btn btn-warning">Edit</a>
-                                    </td>
-                                </tr>
-                                ';
-                        }
-                        ?>
-                    </tbody>
-                </table>
             </div>
         </div>
     </div>

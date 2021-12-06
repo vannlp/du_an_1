@@ -16,8 +16,8 @@ class nguoi_dungModel extends DB
     function set_nguoi_dung($signup = [])
     {
         extract($signup);
-        $sql = "INSERT INTO nguoi_dung(ten_dang_nhap, mat_khau, ho_ten, email, vai_tro, trang_thai)
-                VALUES('$tenDN', '$matkhau', '$hoten', '$email', 2, 1)";
+        $sql = "INSERT INTO nguoi_dung(ten_dang_nhap, mat_khau, ho_ten, email, img, vai_tro, trang_thai)
+                VALUES('$tenDN', '$matkhau', '$hoten', '$email', '$hinh', 2, 1)";
         return $ktdk = $this->setData($sql);
     }
 

@@ -2,10 +2,10 @@
     <div class="listNew__header">
         <div class="chucNang__header-khung">
             <h3 class="chucNang__header-h3">
-                Module sản phẩm
+                Danh Mục
             </h3>
             <div class="chucNang__header-kCn">
-                <h4 class="chucNang__header-h4">Danh mục sản phẩm</h4>
+                <h4 class="chucNang__header-h4">Thêm danh mục</h4>
             </div>
         </div>
     </div>

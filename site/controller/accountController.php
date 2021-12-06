@@ -48,7 +48,8 @@ class accountController
                     'hoten' => $_POST['hoten'],
                     'email' => $_POST['email'],
                     'tenDN' => $_POST['tenDN'],
-                    'matkhau' => md5($_POST['matkhau'])
+                    'matkhau' => md5($_POST['matkhau']),
+                    'hinh' => 'user.png'
                 ];
                 $ktdy = $this->nguoi_dungModel->set_nguoi_dung($signup);
                 $thong_bao = "Đăng ký thành công";
