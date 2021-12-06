@@ -25,17 +25,17 @@
             </a>
             <ul class="aside__list-2">
                 <li class="aside__list-li">
-                    <a href="<?= URL_WEB ?>/admin.php?c=newAdmin&a=list" class="aside__list-link">
+                    <a href="<?= URL_WEB ?>/admin.php?c=tin_tuc&a=list_bai_viet" class="aside__list-link">
                         Danh sách
                     </a>
                 </li>
                 <li class="aside__list-li">
-                    <a href="<?= URL_WEB ?>/admin.php?c=newAdmin&a=addNews" class="aside__list-link">
+                    <a href="<?= URL_WEB ?>/admin.php?c=tin_tuc&a=index" class="aside__list-link">
                         Thêm mới
                     </a>
                 </li>
                 <li class="aside__list-li">
-                    <a href="<?= URL_WEB ?>/admin.php?c=newAdmin&a=danhmuc" class="aside__list-link">
+                    <a href="<?= URL_WEB ?>/admin.php?c=tin_tuc&a=add_dm" class="aside__list-link">
                         Danh mục
                     </a>
                 </li>

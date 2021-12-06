@@ -16,10 +16,10 @@ extract($data['dataDMID']);
         <div class="listNew__item">
             <button class="listNew__btn" type="button">Edit danh mục</button>
             <div class="listNew__khung">
-                <form action="?c=newAdmin&a=editDanhMuc&id=<?= $id_dm_tin ?>" method="post">
+                <form action="?c=tin_tuc&a=edit_dm&id=<?= $id_dm_tin ?>" method="post">
                     <div class="form-group">
                         <label for="tendm">Nhập tên danh mục</label>
-                        <input required value="<?= $ten_danh_muc ?>" type="text" class="form-control" placeholder="Tên danh mục" name="tendm" id="tendm">
+                        <input required value="<?= $tieu_de ?>" type="text" class="form-control" placeholder="Tên danh mục" name="tendm" id="tendm">
                     </div>
                     <div class="form-group">
                         <label for="mota">Nhập mô tả</label>

@@ -35,12 +35,12 @@
                                     <input type="checkbox" name="" id="">
                                 </td>
                                 <td>' . $key + 1 . '</td>
+                                <td>' . $value[0] . '</td>
                                 <td>' . $value[1] . '</td>
                                 <td>' . $value[2] . '</td>
-                                <td>' . $value[3] . '</td>
                                 <td>
-                                    <a href="?c=newAdmin&a=deleteTin&id=' . $value[0] . '" class="btn btn-danger">Xóa</a>
-                                    <a href="?c=newAdmin&a=editTin&id=' . $value[0] . '" class="btn btn-warning">Edit</a>
+                                    <a href="?c=tin_tuc&a=deleteTin&id=' . $value[3] . '" class="btn btn-danger">Xóa</a>
+                                    <a href="?c=newAdmin&a=editTin&id=' . $value[3] . '" class="btn btn-warning">Edit</a>
                                 </td>
                             </tr>
                             ';

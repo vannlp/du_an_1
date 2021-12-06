@@ -1,3 +1,4 @@
+<?php extract($data['tin-tuc']); ?>
 <div class="listNew">
     <div class="listNew__header">
         <div class="chucNang__header-khung">
@@ -11,7 +12,7 @@
     </div>
     <div class="listNew__main">
         <div class="listNew__item full-width">
-            <button class="listNew__btn" type="button">Thêm tin tức</button>
+            <button class="listNew__btn" type="button">Chỉnh sửa tin tức</button>
             <div class="listNew__khung">
                 <form action="?c=tin_tuc&a=index" enctype="multipart/form-data" method="post" class="tinTuc-wrapper">
                     <div class="form-group">
