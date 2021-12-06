@@ -13,7 +13,7 @@
         <div class="listNew__item">
             <button class="listNew__btn" type="button">Thêm danh mục</button>
             <div class="listNew__khung">
-                <form action="?c=newAdmin&a=danhmuc" method="post">
+                <form action="?c=tin_tuc&a=add_dm" method="post">
                     <div class="form-group">
                         <label for="tendm">Nhập tên danh mục</label>
                         <input required type="text" class="form-control" placeholder="Tên danh mục" name="tendm" id="tendm">
@@ -57,7 +57,7 @@
                                     <td>' . $value[1] . '</td>
                                     <td>
                                         <a href="?c=newAdmin&a=deleteDM&id=' . $value[0] . '" class="btn btn-danger">Xóa</a>
-                                        <a href="?c=newAdmin&a=editDanhMuc&id=' . $value[0] . '" class="btn btn-warning">Edit</a>
+                                        <a href="?c=tin_tuc&a=edit_dm&id=' . $value[0] . '" class="btn btn-warning">Edit</a>
                                     </td>
                                 </tr>
                                 ';
