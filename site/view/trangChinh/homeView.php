@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="<?= URL_PUBLIC ?>site/css/index.css">
+<link rel="stylesheet" href="<?= URL_PUBLIC ?>site/css/tintuc.css">
 <script src="<?= URL_PUBLIC ?>site/js/slideShow.js"></script>
 <script src="<?= URL_PUBLIC ?>site/js/slicksliderDM.js"></script>
 
@@ -57,11 +58,17 @@
     <a href="?c=giamgia&a=index"><img src="https://i.pinimg.com/originals/fd/2c/1a/fd2c1a96b654e220d09525f006482477.gif"></a>
 </div>
 
-<div class="container news">
-    <a href="" class="news-item"><img src="<?= URL_PUBLIC ?>site/img/demo.jpg" class="" /></a>
-    <a href="" class="news-item"><img src="<?= URL_PUBLIC ?>site/img/demo.jpg" class="" /></a>
-    <a href="" class="news-item"><img src="<?= URL_PUBLIC ?>site/img/demo.jpg" class="" /></a>
-</div>
+<section class="tintuc__top container">
+    <h2>Tin hot</h2>
+    <div class="tintuc__wrapper-slider">
+        <?php foreach ($data['tinTucData'] as $val) { ?>
+            <a href="<?= URL_WEB ?>?c=tintuc&a=index&id=<?= $val[0] ?>" class="tintuc__item-slider">
+                <img src="<?= URL_WEB ?>/public/site/img/<?= $val[4] ?>" alt="" />
+                <h4><?= $val[2] ?></h4>
+            </a>
+        <?php } ?>
+    </div>
+</section>
 
 
 
@@ -116,3 +123,30 @@
     </div>
     <!-- Sản Phẩm -->
 </div>
+
+<script>
+    $(document).ready(function() {
+        $(".tintuc__wrapper-slider").slick({
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            prevArrow: `<button type="button" class="slick-prev"><</button>`,
+            nextArrow: `<button type="button" class="slick-next">></button>`,
+            responsive: [{
+                    breakpoint: 700,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                    },
+                },
+                {
+                    breakpoint: 1030,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                    },
+                },
+            ],
+        });
+    });
+</script>

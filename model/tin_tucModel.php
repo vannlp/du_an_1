@@ -66,4 +66,10 @@ class tin_tucModel extends DB
         $sql = "SELECT img from tin_tuc where id_tin_tuc='$id_tin_tuc'";
         return $this->getValue($sql);
     }
+
+    function get_tin_tuc_for_slider()
+    {
+        $sql = "SELECT * from tin_tuc order by ngay_dang desc";
+        return $this->getData($sql);
+    }
 }

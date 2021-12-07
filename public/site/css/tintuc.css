@@ -1,0 +1,81 @@
+.tintuc__top{
+    background-color: #fff;
+    padding: 20px 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.tintuc__wrapper-slider a{
+    text-decoration: none;
+    color: #212121;
+}
+
+.tintuc__top h2{
+    margin: 10px 0;
+    text-transform: uppercase;
+}
+
+.tintuc__item-slider{
+    margin: 0 10px;
+}
+
+@media screen and (max-width: 700px) {
+    .tintuc__item-slider{
+        margin: 0 10px;
+    }
+
+    .tintuc__item-slider>img{
+        margin: 0 10px;
+    }
+}
+
+/* tin theo danh mục */
+.tintuc__danhMuc h2{
+    color: #fff;
+    background-color: #1A94FF;
+    padding: 10px 10px;
+}
+
+.tintuc__danhMuc-item{
+    text-decoration: none;
+    color: #212121;
+    display: flex;
+    margin: 20px 0;
+
+}
+
+.tintuc__danhMuc-item img{
+    max-width: 30%;
+    flex: 0 0 30%;
+    margin-right: 30px;
+}
+
+.tintuc__danhMuc-item div h3{
+    margin-bottom: 30px;
+    font-size: 25px;
+}
+
+.tintuc__danhMuc>div:last-child{
+    text-align: center;
+}
+
+.tintuc__danhMuc .btn-taiThem{
+    border: none;
+    outline: none;
+    padding: 10px 30px;
+    width: 300px;
+    background-color: #1A94FF;
+    color: white;
+    cursor: pointer;
+}
+
+.tin_tuc{
+    padding: 50px;
+    margin-bottom: 20px;
+}
+
+.tin_tuc img{
+    width: 100% !important;
+    height: auto;
+}

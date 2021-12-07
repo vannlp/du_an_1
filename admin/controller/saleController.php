@@ -6,8 +6,8 @@ class saleController
     private $ma_giam_giaModel;
     function __construct()
     {
+        checkLogin();
         $this->ma_giam_giaModel = model('magiamgiaModel');
-        
     }
 
 
@@ -19,12 +19,10 @@ class saleController
                 'id_ma_giam_gia' => $_POST['giam_gia'],
                 'phan_tram_giam_gia' => $_POST['PTGG'],
                 'ngay_bat_dau' => $_POST['NBD'],
-                'ngay_ket_thuc' => $_POST['NKT'], 
+                'ngay_ket_thuc' => $_POST['NKT'],
             ];
-            $this ->ma_giam_giaModel->addsale($data);
-
-        }  
-       view ("sale/addsaleView","admin",[]);    
+            $this->ma_giam_giaModel->addsale($data);
+        }
+        view("sale/addsaleView", "admin", []);
     }
-
 }
