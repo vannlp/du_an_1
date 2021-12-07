@@ -32,4 +32,17 @@ class magiamgiaModel extends DB
         $sql = "UPDATE ma_giam_gia SET trang_thai = 2 WHERE id_ma_giam_gia = '$ma'";
         return $this->setData($sql);
     }
+
+    function addsale($data=[]){
+        extract ($data);
+        $sql = "INSERT INTO ma_giam_gia
+        VALUES ('$id_ma_giam_gia', null ,$phan_tram_giam_gia,0,'$ngay_bat_dau','$ngay_ket_thuc')";
+        return $this->setData($sql);
+
+    }
+
+    
+
+
+        
 }
