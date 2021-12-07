@@ -5,7 +5,7 @@
                 Module tin tức
             </h3>
             <div class="chucNang__header-kCn">
-                <a href="?c=newAdmin&a=addNews" class="btn btn-primary">Thêm mới</a>
+                <a href="?c=tin_tuc&a=index" class="btn btn-primary">Thêm mới</a>
             </div>
         </div>
     </div>
@@ -40,7 +40,7 @@
                                 <td>' . $value[2] . '</td>
                                 <td>
                                     <a href="?c=tin_tuc&a=deleteTin&id=' . $value[3] . '" class="btn btn-danger">Xóa</a>
-                                    <a href="?c=newAdmin&a=editTin&id=' . $value[3] . '" class="btn btn-warning">Edit</a>
+                                    <a href="?c=tin_tuc&a=edit_tin_tuc&id=' . $value[3] . '" class="btn btn-warning">Edit</a>
                                 </td>
                             </tr>
                             ';
@@ -51,7 +51,7 @@
             </div>
         </div>
     </div>
-    <div class="listNew__footer">
+    <!-- <div class="listNew__footer">
         <div class="listNew__item full-width">
             <button class="listNew__btn" type="button">Chức năng</button>
             <div class="listNew__khung">
@@ -74,6 +74,6 @@
                 </nav>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>
 <script src="<?= URL_PUBLIC ?>admin/js/thuPhong.js"></script>

@@ -46,4 +46,24 @@ class tin_tucModel extends DB
         $sql = "DELETE from tin_tuc where id_tin_tuc = $id_tin_tuc";
         return $this->setData($sql);
     }
+
+    function get_tin_tuc_one($id_tin_tuc)
+    {
+        $sql = "SELECT * from tin_tuc where id_tin_tuc = $id_tin_tuc";
+        return $this->getDataOne($sql);
+    }
+
+    public function update_tin_tuc($var = [])
+    {
+        extract($var);
+        $sql = "UPDATE tin_tuc set id_dm_tin=$id_dm_tin, tieu_de='$tieu_de', noi_dung='$noi_dung',
+        img='$img' where id_tin_tuc='$id_tin_tuc'";
+        return $this->setData($sql);
+    }
+
+    function get_img_tin_tuc($id_tin_tuc)
+    {
+        $sql = "SELECT img from tin_tuc where id_tin_tuc='$id_tin_tuc'";
+        return $this->getValue($sql);
+    }
 }

@@ -23,6 +23,7 @@ class tin_tucController
                 'ngay_dang' => date_format($this->date, 'Y-m-d H:i:s'),
                 'ten_dang_nhap' => $_SESSION['login'][0]
             ];
+            // print_r($data);
             $thongbao = $this->tin_tucModel->add_tin_tuc($data) ? 'Thêm thành công' : 'Thêm thất bại';
         }
         $dataDanhMuc = $this->tin_tucModel->get_danh_muc_tin();
@@ -84,6 +85,28 @@ class tin_tucController
 
     public function edit_tin_tuc()
     {
-        view('newAdmin/editNewsView', 'admin', []);
+        $thongbao = '';
+        $id_tin_tuc = $_GET['id'];
+
+        $imgOld = $this->tin_tucModel->get_img_tin_tuc($id_tin_tuc);
+
+        if (isset($_POST['btn-submit'])) {
+            $data = [
+                'id_dm_tin' => $_POST['danhMuc'],
+                'tieu_de' => $_POST['title'],
+                'noi_dung' => $_POST['noiDung'],
+                'img' => updateFile('anh', URL . '/public/site/img/', $imgOld),
+                'id_tin_tuc' => $id_tin_tuc
+            ];
+            $thongbao = $this->tin_tucModel->update_tin_tuc($data) ? 'update thành công' : 'update thất bại';
+        }
+
+        $dataTin = $this->tin_tucModel->get_tin_tuc_one($id_tin_tuc);
+        $dataDanhMuc = $this->tin_tucModel->get_danh_muc_tin();
+        view('newAdmin/editNewsView', 'admin', [
+            'tin-tuc' => $dataTin,
+            'thongBao' => $thongbao,
+            'danhMuc' => $dataDanhMuc
+        ]);
     }
 }

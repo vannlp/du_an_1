@@ -5,7 +5,7 @@
                 Module tin tức
             </h3>
             <div class="chucNang__header-kCn">
-                <a href="<?= URL_WEB ?>/admin.php?c=newAdmin&a=list" class="btn btn-primary">Danh sách tin</a>
+                <a href="<?= URL_WEB ?>/admin.php?c=tin_tuc&a=list_bai_viet" class="btn btn-primary">Danh sách tin</a>
             </div>
         </div>
     </div>

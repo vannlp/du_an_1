@@ -6,7 +6,7 @@
                 Module tin tức
             </h3>
             <div class="chucNang__header-kCn">
-                <a href="<?= URL_WEB ?>/admin.php?c=newAdmin&a=list" class="btn btn-primary">Danh sách tin</a>
+                <a href="<?= URL_WEB ?>/admin.php?c=tin_tuc&a=list_bai_viet" class="btn btn-primary">Danh sách tin</a>
             </div>
         </div>
     </div>
@@ -14,10 +14,10 @@
         <div class="listNew__item full-width">
             <button class="listNew__btn" type="button">Chỉnh sửa tin tức</button>
             <div class="listNew__khung">
-                <form action="?c=tin_tuc&a=index" enctype="multipart/form-data" method="post" class="tinTuc-wrapper">
+                <form action="?c=tin_tuc&a=edit_tin_tuc&id=<?= $_GET['id'] ?>" enctype="multipart/form-data" method="post" class="tinTuc-wrapper">
                     <div class="form-group">
                         <label for="title">Title bài viết</label>
-                        <input type="text" placeholder="Title bài viết" name="title" id="title" class="form-control">
+                        <input type="text" value="<?= $tieu_de ?>" placeholder="Title bài viết" name="title" id="title" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="anh">Ảnh đại diện</label>
@@ -29,16 +29,22 @@
                             <option value="">--Chọn danh mục--</option>
                             <?php
                             foreach ($data['danhMuc'] as $value) {
-                                echo '
-                                <option value="' . $value[0] . '">' . $value[1] . '</option>
-                                ';
+                                if ($value[0] == $id_dm_tin) {
+                                    echo '
+                                        <option selected value="' . $value[0] . '">' . $value[1] . '</option>
+                                    ';
+                                } else {
+                                    echo '
+                                        <option value="' . $value[0] . '">' . $value[1] . '</option>
+                                    ';
+                                }
                             }
                             ?>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="noiDung">Nội dung</label>
-                        <textarea name="noiDung" placeholder="Nhập nội dung vào đây" id="noiDung" class="form-control" cols="30" rows="10"></textarea>
+                        <textarea name="noiDung" placeholder="Nhập nội dung vào đây" id="noiDung" class="form-control" cols="30" rows="10"><?= $noi_dung ?></textarea>
                     </div>
                     <script>
                         CKEDITOR.replace('noiDung');
