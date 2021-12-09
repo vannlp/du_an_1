@@ -21,28 +21,35 @@
         </nav>
     </div>
     <div class="danhMucAll">
-        <h3>Thống kê</h3>
+        <a href="?c=quan_ly&a=hoadoncuatoi" class="button button--blue">Đơn hàng của tôi</a>
+        <a href="?c=quan_ly&a=hoadon" class="button button--blue">Đơn hàng của khách</a>
+    </div>
+    <div class="danhMucAll">
+        <h3>Thông tin khách hàng</h3>
+        <hr>
+        <br>
+        <h4>Đơn hàng: <?php echo $data['hoadon'] ?></h4>
+        <hr>
+        <br>
         <table class="table__main">
             <thead>
                 <tr>
-                    <th>Tên sản phẩm</th>
-                    <th>Hiện có</th>
-                    <th>Đã bán</th>
-                    <th>Doanh thu</th>
+                    <th>Tên khách hàng</th>
+                    <th>Địa chỉ</th>
+                    <th>Số điện thoại</th>
                 </tr>
             </thead>
             <tbody>
+
                 <?php
-                foreach ($data['thong_ke'] as $value) {
                     echo '
-                    <tr>
-                        <td>' . $value[0] . '</td>
-                        <td>' . $value[1] . '</td>
-                        <td>' . $value[2] . '</td>
-                        <td>' . number_format($value[3]) . 'VND</td>
-                    </tr>
+                        <tr>
+                            <td>' . $data['khach']['ho_ten'] . '</td>
+                            <td>' . $data['khach']['dia_chi'] . '</td>
+                            <td>' . $data['khach']['sdt'] . '</td>
+                        </tr>
                     ';
-                }
+                
                 ?>
             </tbody>
         </table>

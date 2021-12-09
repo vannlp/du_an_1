@@ -14,7 +14,7 @@ class san_phamModel extends DB
     }
     function get_id_dm_by_id_sanPham($iddm)
     {
-        $sql = "SELECT * FROM san_pham WHERE id_dm_sp = $iddm";
+        $sql = "SELECT * FROM san_pham sp WHERE id_dm_sp = $iddm";
         return $this->getData($sql);
     }
 
@@ -62,6 +62,12 @@ class san_phamModel extends DB
     {
         $sql = "SELECT SUM(hdct.so_luong) FROM hoa_don_chi_tiet hdct JOIN san_pham sp
         on hdct.id_sanpham = sp.id_sanpham WHERE sp.id_sanpham = '$id_sanpham'";
+        return $this->getValue($sql);
+    }
+
+    function get_ten_dm($id){
+        $sql = "SELECT dm.tieu_de FROM san_pham sp JOIN danhmuc_sp dm ON sp.id_dm_sp=dm.id_dm_sp
+                WHERE sp.id_sanpham = '$id'";
         return $this->getValue($sql);
     }
     ////// ADMIN

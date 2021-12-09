@@ -13,7 +13,7 @@
                 <li><a href="?c=quan_ly&a=hoadon">Quản lý hóa đơn</a></li>
                 <li><a href="?c=quan_ly&a=thongke">Thống kê</a></li>
                 <?php
-                if ($_SESSION['login'][10] == 1) {
+                if ($_SESSION['login'][10] == 1 or $_SESSION['login'][10] == 0) {
                     echo '<li><a href="admin.php">Admin</a></li>';
                 }
                 ?>
@@ -41,7 +41,15 @@
                 <?php foreach ($data['data-hoaDon'] as $value) { ?>
                     <tr>
                         <td class="id_hoa_don"><a><?= $value[0] ?></a></td>
-                        <td><?= $value[1] ?></td>
+                        <td>
+                            <form action="?c=quan_ly&a=khach" method="POST">
+                                <input name="id"
+                                 value="<?= $value[5] ?>" style="display: none;">
+                                <input name="idhd"
+                                 value="<?= $value[0] ?>" style="display: none;">
+                                 <button type="submit" name="btn-khach" style="width: 100%; font-size: 15px; background-color: #0082e6; color: white;"><?= $value[1] ?></button>
+                            </form>
+                        </td>
                         <td><?= number_format($value[2]) ?></td>
                         <td><?php
                             $arr = explode(' ', $value[3]);

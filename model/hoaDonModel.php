@@ -17,7 +17,7 @@ class hoaDonModel extends DB
 
     function get_hoa_don($tenshop)
     {
-        $sql = "SELECT hd.id_hoa_don, nd.ho_ten, hd.tong_tien, hd.ngay_mua, hd.trang_thai
+        $sql = "SELECT hd.id_hoa_don, nd.ho_ten, hd.tong_tien, hd.ngay_mua, hd.trang_thai, nd.ten_dang_nhap
         FROM hoa_don hd JOIN hoa_don_chi_tiet hdct ON hd.id_hoa_don=hdct.id_hoa_don 
         JOIN san_pham sp ON sp.id_sanpham=hdct.id_sanpham 
         JOIN nguoi_dung nd ON hd.ten_dang_nhap = nd.ten_dang_nhap

@@ -2,11 +2,13 @@
 class quan_lyController
 {
     private $hoaDonModel;
+    private $nguoi_dungModel;
 
     function __construct()
     {
         checkLogin2();
         $this->hoaDonModel = model('hoaDonModel');
+        $this->nguoi_dungModel = model('nguoi_dungModel');
     }
 
     public function index()
@@ -58,5 +60,24 @@ class quan_lyController
         view('quan_ly/thongkeView', 'site', [
             'thong_ke' => $thongke
         ]);
+    }
+
+    public function khach()
+    {
+        if(isset($_POST['btn-khach'])){
+            $ten_dang_nhap = $_POST['id'];
+            $idhd = $_POST['idhd'];
+            $chitiet = $this->nguoi_dungModel->get_nguoi_dung_username($ten_dang_nhap);
+            view('quan_ly/khachView', 'site', [
+            'khach' => $chitiet,
+            'hoadon' => $idhd
+        ]);
+        }
+        else{
+            header('location: ?c=quan_ly&a=hoadon');
+        }
+        
+
+        
     }
 }

@@ -14,7 +14,7 @@
                     <li><a href="?c=quan_ly&a=hoadon">Quản lý hóa đơn</a></li>
                     <li><a href="?c=quan_ly&a=thongke">Thống kê</a></li>
                     <?php
-                    if ($_SESSION['login'][10] == 1) {
+                    if ($_SESSION['login'][10] == 1 or $_SESSION['login'][10] == 0) {
                         echo '<li><a href="admin.php">Admin</a></li>';
                     }
                     ?>

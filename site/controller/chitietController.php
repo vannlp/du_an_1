@@ -28,6 +28,7 @@ class chitietController
             $img = $this->imgsModel->get_img_idSanPham($id);
             $binhluan = $this->binhluanModel->get_binhluan_by_idSP($id);
             $so_luong_ban = $this->sanPhamIDModel->get_so_luong_ban($id);
+            $tenDM = $this->sanPhamIDModel->get_ten_dm($id);
             $magiam = '';
             if (isset($_SESSION['login'])) {
                 $ten_dang_nhap = $_SESSION['login'][0];
@@ -45,7 +46,8 @@ class chitietController
                 'img' => $img,
                 'binhluan' => $binhluan,
                 'so_luong_ban' => $so_luong_ban,
-                'maGiam' => $magiam
+                'maGiam' => $magiam,
+                'tenDM' => $tenDM
             ]);
         }
     }

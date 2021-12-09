@@ -2,7 +2,7 @@
     <div class="listNew__header">
         <div class="chucNang__header-khung">
             <h3 class="chucNang__header-h3">
-                Module tin tức
+                Danh mục tin tức
             </h3>
             <div class="chucNang__header-kCn">
                 <h4 class="chucNang__header-h4">Danh mục tin</h4>

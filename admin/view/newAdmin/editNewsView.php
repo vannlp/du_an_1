@@ -3,7 +3,7 @@
     <div class="listNew__header">
         <div class="chucNang__header-khung">
             <h3 class="chucNang__header-h3">
-                Module tin tức
+                Chỉnh sửa tin tức
             </h3>
             <div class="chucNang__header-kCn">
                 <a href="<?= URL_WEB ?>/admin.php?c=tin_tuc&a=list_bai_viet" class="btn btn-primary">Danh sách tin</a>

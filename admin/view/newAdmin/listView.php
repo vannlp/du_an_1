@@ -2,7 +2,7 @@
     <div class="listNew__header">
         <div class="chucNang__header-khung">
             <h3 class="chucNang__header-h3">
-                Module tin tức
+                Danh sách tin tức
             </h3>
             <div class="chucNang__header-kCn">
                 <a href="?c=tin_tuc&a=index" class="btn btn-primary">Thêm mới</a>

@@ -4,9 +4,12 @@
 
 <script src="<?= URL_PUBLIC ?>site/js/product.js"></script>
 <script src="<?= URL_PUBLIC ?>site/js/xulyanh.js"></script>
-
+    
 <section class="product container">
     <div class="productImg__wrapper">
+        <div>
+            <h3>Trang chủ > <?php echo $data['tenDM'] ?><h3>
+        </div>
         <div class="productImg__big">
             <img src="" alt="" id="big-img" />
         </div>

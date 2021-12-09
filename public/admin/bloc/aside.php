@@ -77,16 +77,26 @@
             </a>
             <ul class="aside__list-2">
                 <li class="aside__list-li">
-                    <a href="#" class="aside__list-link">
-                        Danh sách 
-                    </a>
-                </li>
-                <li class="aside__list-li">
                     <a href="<?= URL_WEB ?>/admin.php?c=sale&a=index" class="aside__list-link">
                         Thêm mới
                     </a>
                 </li>
-            
+            </ul>
+        </li>
+        <li class="aside__list-li even">
+            <a href="#" class="aside__list-link row--thu1">
+                <div>
+                     <i class="fab fa-salesforce"></i>
+                    <span>Người dùng</span>
+                </div>
+                <i class="fas fa-angle-right icon--dinhHuong"></i>
+            </a>
+            <ul class="aside__list-2">
+                <li class="aside__list-li">
+                    <a href="<?= URL_WEB ?>/admin.php?c=nguoidung&a=index" class="aside__list-link">
+                        Danh sách 
+                    </a>
+                </li>
             </ul>
         </li>
     </ul>

@@ -22,7 +22,7 @@
                 <div class="footer-wrapper">
                     <h3 class="footer-text-h3">Kết nối với chúng tôi</h3>
                     <div class="footer-text">
-                        <a href="#" class="mxh-a"><i class="fab fa-facebook-square"></i></a>
+                        <a href="https://facebook.com/minhhuy.duongngoc.9" target="blank" class="mxh-a"><i class="fab fa-facebook-square"></i></a>
                         <a href="#" class="mxh-a"><i class="fab fa-facebook-messenger"></i></a>
                     </div>
                 </div>

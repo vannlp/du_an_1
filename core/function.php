@@ -35,7 +35,7 @@ function updateFile($file, $target_dir, $fileNameOld)
 function checkLogin()
 {
     if (isset($_SESSION['login'])) {
-        if ($_SESSION['login'][10] != 1) {
+        if ($_SESSION['login'][10] != 1 AND $_SESSION['login'][10] != 0) {
             header('location: /index.php');
         }
     } else {
@@ -47,5 +47,14 @@ function checkLogin2()
 {
     if (!isset($_SESSION['login'])) {
         header('location: /?c=account&a=login');
+    }
+}
+
+function checkLogin3()
+{
+    if (isset($_SESSION['login'])) {
+        if ($_SESSION['login'][10] != 0) {
+            header('location: /admin.php');
+        }
     }
 }
