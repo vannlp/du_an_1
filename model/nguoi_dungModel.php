@@ -41,6 +41,12 @@ class nguoi_dungModel extends DB
         $sql = "UPDATE nguoi_dung set mat_khau='$matkhau' where ten_dang_nhap = '$ten_dang_nhap'";
         return $this->setData($sql);
     }
+
+    function quen_mat_khau($ten_dang_nhap, $mat_khau, $mail)
+    {
+        $sql = "UPDATE nguoi_dung set mat_khau='$mat_khau' where ten_dang_nhap = '$ten_dang_nhap' AND email = '$mail'";
+        return $this->setData($sql);
+    }
     //Admin 
     function update_khach_hang($khachhang, $ten_dang_nhap, $tamp){
         $sql = "UPDATE nguoi_dung set $tamp = $khachhang WHERE ten_dang_nhap = '$ten_dang_nhap'";

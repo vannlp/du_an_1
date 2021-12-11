@@ -77,7 +77,7 @@
                     ?>
 
                 </div>
-                <button type="submit" name="btn-submit" class="button button--blue">Submit</button>
+                <button type="submit" name="btn-submit" class="button button--blue">Cập nhật</button>
             </div>
         </form>
     </div>

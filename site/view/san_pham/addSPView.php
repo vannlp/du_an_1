@@ -63,8 +63,8 @@
     </style>
     <!--  -->
     <div class="quanLy__main">
-        <h2>Thêm sản phẩm</h2>
         <a href="?c=san_pham&a=list_san_pham" class="button button--blue">Danh sách sản phẩm</a>
+        <h2>Thêm sản phẩm</h2>
         <form method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="">Tên sản phẩm</label>
@@ -84,7 +84,7 @@
 
             <div class="form-group">
                 <label for="">Ảnh đại diện</label>
-                <input type="file" name="img" class="form-control">
+                <input type="file" name="img" required class="form-control">
             </div>
             <div class="form-group">
                 <label for="">Ảnh mô tả</label>
@@ -97,12 +97,12 @@
                 <input type="number" required name="gia_goc" class="form-control">
             </div>
             <div class="form-group">
-                <label for="">Giá giảm</label>
-                <input type="number" required name="gia_giam" class="form-control">
+                <label for="">Giá sẽ bán</label>
+                <input type="number" required name="gia_giam" min="0" class="form-control">
             </div>
             <div class="form-group">
                 <label for="">Số lượng</label>
-                <input type="number" required name="so_luong" class="form-control">
+                <input type="number" required name="so_luong" min="0" class="form-control">
             </div>
             <div class="form-group">
                 <label for="">Mô tả</label>
@@ -111,7 +111,7 @@
             <script>
                 CKEDITOR.replace('mo_ta');
             </script>
-            <button type="submit" name="btn-submit" class="button button--blue">Submit</button>
+            <button type="submit" name="btn-submit" class="button button--blue">Đăng sản phẩm</button>
         </form>
     </div>
 </div>
@@ -122,7 +122,7 @@
         <div class="root">
 
         </div>
-        <button class="button button--blue" id="submit-img">Submit</button>
+        <button class="button button--blue" id="submit-img">Xác nhận</button>
     </div>
 </div>
 <script>

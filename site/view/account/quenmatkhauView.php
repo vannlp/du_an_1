@@ -13,7 +13,12 @@
                         <label for="">
                             Nhập địa chỉ email
                         </label>
-                        <input type="email" name="email" id="" class="form-controll" placeholder="email">
+                        <input type="email" name="email" id="" class="form-controll" placeholder="Nhập Email của bạn">
+                        <?php
+                            if (isset($data['thong_bao'])) {
+                                echo '<h4 style="text-align: center; font-size: 20px">' . $data['thong_bao'] . '</h4>';
+                            }
+                        ?> 
                     </div>
 
                     <button type="submit" name="btn-submit" class="button button--blue">Gửi</button>

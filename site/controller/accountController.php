@@ -129,19 +129,31 @@ class accountController
 
     function quen_mat_khau()
     {
+        $thong_bao = '';
         if (isset($_POST['btn-submit'])) {
-            $_SESSION['xac-nhan'] = mt_rand(1000, 999999);
-            ini_set('SMTP', 'mail.google.com');
-            ini_set('smtp_port', 25);
+            $checkmail = $this->nguoi_dungModel->get_nguoi_dung_all();
             $mail = $_POST['email'];
-            $isSussec = mail($mail, 'email xác nhận quên mật khẩu', $_SESSION['xac-nhan']);
-            if ($isSussec == true) {
-                header('location: ?c=account&a=xac_nhan');
-            } else {
-                echo 'gửi mail thất bại';
+            foreach ($checkmail as $value) {
+                if($mail == $value[6]){
+                    $_SESSION['email'] = $mail;
+                    $_SESSION['xac_nhan'] = mt_rand(1000, 999999);
+                    ini_set('SMTP', 'mail.google.com');
+                    ini_set('smtp_port', 25);
+                    $isSussec = mail($mail, 'Email xác nhận quên mật khẩu', $_SESSION['xac_nhan']);
+                    if ($isSussec == true) {
+                        header('location: ?c=account&a=xac_nhan');
+                    } else {
+                        $thong_bao = 'Gửi email xác nhận thất bại';
+                    }
+                }
+                else{
+                    $thong_bao = 'Không tìm thấy địa chỉ email của bạn';
+                }
             }
         }
-        view('account/quenmatkhauView', 'site', []);
+        view('account/quenmatkhauView', 'site', [
+            'thong_bao' => $thong_bao
+        ]);
     }
 
     function xac_nhan()
@@ -150,32 +162,47 @@ class accountController
         if (isset($_POST['btn-sumit'])) {
             $xac_nhan = $_POST['ma_xac_nhan'];
             if ($xac_nhan == $_SESSION['xac_nhan']) {
-                header('location: ?c=account&a=cap_nhap_mat_khau');
+                $_SESSION['KTM'] = 'Xác nhận';
+                header('location: ?c=account&a=cap_nhap');
             } else {
                 $thong_bao = "Mã xác nhận đã nhập sai";
             }
         }
         view('account/xacnhanView', 'site', [
-            'thong-bao' => $thong_bao
+            'thong_bao' => $thong_bao
         ]);
     }
+    function cap_nhap()
+        {
+            if($_SESSION['KTM'] != ''){
+                $thong_bao = '';
 
-    function cap_nhap_mat_khau()
-    {
-        checkLogin2();
-        $thong_bao = '';
-
-        if (isset($_POST['btn-submit'])) {
-            if ($_POST['mat_khau'] == $_POST['re_mat_khau']) {
-                $this->nguoi_dungModel->update_mat_khau($_POST['ten_dang_nhap'], $_POST['mat_khau']);
-                $thong_bao = 'Cập nhập thành công';
-            } else {
-                $thong_bao = "Vui lòng kiểm tra lại nhập mật khẩu";
+                if (isset($_POST['btn_mk'])) {
+                  if($_POST['mat_khau'] == $_POST['re_mat_khau']){
+                    	$mail = $_SESSION['email'];
+                    	$mat_khau = md5($_POST['mat_khau']);
+                    	$ten_dang_nhap = $_POST['ten_dang_nhap'];
+                        $kt = $this->nguoi_dungModel->quen_mat_khau($ten_dang_nhap, $mat_khau, $mail);
+                        if($kt){
+                            $thong_bao = 'Cập nhập mật khẩu mới thành công
+                            <a href="?c=account&a=login" class="button button--blue">Đăng nhập</a>
+                            ';
+                        }else{
+                    		$thong_bao = 'Cập nhập mật khẩu mới thất bại';
+                        }
+                    } else {
+                        $thong_bao = "Vui lòng kiểm tra lại nhập mật khẩu";
+                    }
+                }
+                view('account/cap_nhapMKView', 'site', [
+                    'thong_bao' => $thong_bao
+                ]);
             }
+      		else
+            {
+            	header('location: ?c=index');
+           	}
         }
-
-        view('account/xacnhanView', 'site', [
-            'thong-bao' => $thong_bao
-        ]);
     }
-}
+
+

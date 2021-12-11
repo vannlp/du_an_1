@@ -22,7 +22,7 @@
                 <label for="">Tải ảnh</label>
                 <input type="file" name="img" class="form-control" id="">
             </div>
-            <button name="btn-submit" class="button button--blue">Submit</button>
+            <button name="btn-submit" class="button button--blue">Tải lên</button>
 
             <h4><?= $data['thong_bao'] ?></h4>
         </form>
