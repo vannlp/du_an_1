@@ -17,7 +17,7 @@ class accountController
             $ten_dang_nhap = $_POST['ten_dang_nhap'];
             $mat_khau = md5($_POST['mat_khau']);
             foreach ($data as $value) {
-                if ($ten_dang_nhap == $value[0] && $mat_khau == $value[1]) {
+                if ($ten_dang_nhap == $value[0] && $mat_khau == $value[1] && $value[11] != 0) {
                     $_SESSION['login'] = $value;
                     header('location: /index.php');
                     break;
@@ -42,6 +42,7 @@ class accountController
     public function signup()
     {
         $thong_bao = '';
+        $isSussec = '';
         if (isset($_POST['btn-signup'])) {
             if ($_POST['matkhau'] == $_POST['matkhau1']) {
                 $signup = [
@@ -52,18 +53,21 @@ class accountController
                     'hinh' => 'user.png'
                 ];
                 $ktdy = $this->nguoi_dungModel->set_nguoi_dung($signup);
-                $thong_bao = "Đăng ký thành công";
                 if (!$ktdy) {
                     $thong_bao = "Đăng ký thất bại";
+                    $isSussec = 1;
                 } else {
                     $thong_bao = "Đăng ký thành công";
+                    $isSussec = 0;
+                    header('location: ?c=account&a=login');
                 }
             } else {
                 $thong_bao = "Mật khẩu nhập lại không chính xác";
             }
         }
         view('account/signupView', 'site', [
-            'thong_bao' => $thong_bao
+            'thong_bao' => $thong_bao,
+            'isSussec' => $isSussec
         ]);
     }
 
@@ -134,7 +138,7 @@ class accountController
             $checkmail = $this->nguoi_dungModel->get_nguoi_dung_all();
             $mail = $_POST['email'];
             foreach ($checkmail as $value) {
-                if($mail == $value[6]){
+                if ($mail == $value[6]) {
                     $_SESSION['email'] = $mail;
                     $_SESSION['xac_nhan'] = mt_rand(1000, 999999);
                     ini_set('SMTP', 'mail.google.com');
@@ -145,8 +149,7 @@ class accountController
                     } else {
                         $thong_bao = 'Gửi email xác nhận thất bại';
                     }
-                }
-                else{
+                } else {
                     $thong_bao = 'Không tìm thấy địa chỉ email của bạn';
                 }
             }
@@ -173,36 +176,32 @@ class accountController
         ]);
     }
     function cap_nhap()
-        {
-            if($_SESSION['KTM'] != ''){
-                $thong_bao = '';
+    {
+        if ($_SESSION['KTM'] != '') {
+            $thong_bao = '';
 
-                if (isset($_POST['btn_mk'])) {
-                  if($_POST['mat_khau'] == $_POST['re_mat_khau']){
-                    	$mail = $_SESSION['email'];
-                    	$mat_khau = md5($_POST['mat_khau']);
-                    	$ten_dang_nhap = $_POST['ten_dang_nhap'];
-                        $kt = $this->nguoi_dungModel->quen_mat_khau($ten_dang_nhap, $mat_khau, $mail);
-                        if($kt){
-                            $thong_bao = 'Cập nhập mật khẩu mới thành công
+            if (isset($_POST['btn_mk'])) {
+                if ($_POST['mat_khau'] == $_POST['re_mat_khau']) {
+                    $mail = $_SESSION['email'];
+                    $mat_khau = md5($_POST['mat_khau']);
+                    $ten_dang_nhap = $_POST['ten_dang_nhap'];
+                    $kt = $this->nguoi_dungModel->quen_mat_khau($ten_dang_nhap, $mat_khau, $mail);
+                    if ($kt) {
+                        $thong_bao = 'Cập nhập mật khẩu mới thành công
                             <a href="?c=account&a=login" class="button button--blue">Đăng nhập</a>
                             ';
-                        }else{
-                    		$thong_bao = 'Cập nhập mật khẩu mới thất bại';
-                        }
                     } else {
-                        $thong_bao = "Vui lòng kiểm tra lại nhập mật khẩu";
+                        $thong_bao = 'Cập nhập mật khẩu mới thất bại';
                     }
+                } else {
+                    $thong_bao = "Vui lòng kiểm tra lại nhập mật khẩu";
                 }
-                view('account/cap_nhapMKView', 'site', [
-                    'thong_bao' => $thong_bao
-                ]);
             }
-      		else
-            {
-            	header('location: ?c=index');
-           	}
+            view('account/cap_nhapMKView', 'site', [
+                'thong_bao' => $thong_bao
+            ]);
+        } else {
+            header('location: ?c=index');
         }
     }
-
-
+}

@@ -12,19 +12,19 @@ class nguoidungController
 
     public function index()
     {
-        $danhsach = $this->nguoidungModel->get_nguoi_dung_all();
+        $danhsach = $this->nguoidungModel->get_nguoi_dung_admin();
         view('nguoidung/listView', 'admin', [
             'danhsach' => $danhsach
         ]);
     }
 
-    function khachhang_update(){
-        if(isset($_GET['khachhang'])){
+    function khachhang_update()
+    {
+        if (isset($_GET['khachhang'])) {
             $khachhang = $_GET['khachhang'];
             $ten_dang_nhap = $_GET['id_kh'];
-            $tamp = $_GET['tamp']; 
+            $tamp = $_GET['tamp'];
             $this->nguoidungModel->update_khach_hang($khachhang, $ten_dang_nhap, $tamp);
         }
-        
     }
 }

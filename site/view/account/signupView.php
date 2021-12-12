@@ -66,6 +66,16 @@
 
 </div>
 </div>
+<?php
+if ($data['isSussec'] == 0) {
+    // echo '<script>alert("Đăng ký thành công")</script>';
 
+} elseif ($data['isSussec'] == 1) {
+    echo '<script>alert("Đăng ký thất bại")</script>';
+} else {
+    echo '';
+}
+
+?>
 
 <script src="<?= URL_PUBLIC ?>site/js/validate.js"></script>

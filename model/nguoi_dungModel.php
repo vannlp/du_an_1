@@ -48,8 +48,15 @@ class nguoi_dungModel extends DB
         return $this->setData($sql);
     }
     //Admin 
-    function update_khach_hang($khachhang, $ten_dang_nhap, $tamp){
+    function update_khach_hang($khachhang, $ten_dang_nhap, $tamp)
+    {
         $sql = "UPDATE nguoi_dung set $tamp = $khachhang WHERE ten_dang_nhap = '$ten_dang_nhap'";
         return $this->setData($sql);
+    }
+
+    function get_nguoi_dung_admin()
+    {
+        $sql = "SELECT * from nguoi_dung where vai_tro != 0";
+        return $this->getData($sql);
     }
 }

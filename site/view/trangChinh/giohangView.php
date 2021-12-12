@@ -84,7 +84,10 @@
 
           foreach ($data['magiam'] as $ma) {
             echo '
-            <p>' . $ma[0] . ' || ' . $ma[2] . '%</p>
+            <div class="ma_khuyen_mai_wrapper">
+              <span>' . $ma[0] . '</span>||
+              <span>' . $ma[2] . '</span>%
+            </div>
           ';
           }
         } else {
@@ -93,8 +96,8 @@
         ?>
         <br>
         <h5>Khuyến mại</h5>
-        <input type="text" class="input-km" name="ma_khuyen_mai" id="" placeholder="Nhập mã khuyến mãi" />
-        <button class="btn-km">ok</button>
+        <input type="text" class="input-km" name="ma_khuyen_mai" id="input-khuyen-mai" placeholder="Nhập mã khuyến mãi" />
+        <button class="btn-km" id="btn-khuyen-mai" type="button">ok</button>
       </div>
 
       <div class="cart-right-wrapper">
@@ -104,7 +107,7 @@
         </div>
         <div class="cart-right-thanhToan">
           <span>Giảm giá</span>
-          <span>0</span>
+          <span id="giam_gia_id">0</span>
         </div>
         <div class="cart-right-thanhToan" id="tongCong">
           <span>Tổng cộng</span>
@@ -124,7 +127,34 @@
       </div>
     </form>
 </section>
+<script>
+  $(document).ready(() => {
+    const input_km = document.querySelector('#input-khuyen-mai')
+    const btn_km = document.querySelector('#btn-khuyen-mai')
 
+    const ma_khuyen_mai = document.querySelectorAll('.ma_khuyen_mai_wrapper')
+    const ma_khuyen_mai_span1 = document.querySelectorAll('.ma_khuyen_mai_wrapper>span:first-child')
+    const ma_khuyen_mai_span2 = document.querySelectorAll('.ma_khuyen_mai_wrapper>span:last-child')
+
+    const tong_tien = document.querySelector('#tongCong>input')
+    const cart_giam_gia = document.querySelector("#giam_gia_id");
+
+    btn_km.addEventListener('click', () => {
+      let data_km = input_km.value
+      let tongTien = tong_tien.value
+      // console.log(tongTien);
+      ma_khuyen_mai.forEach((data, index) => {
+        let mkm_text = ma_khuyen_mai_span1[index].innerText
+        if (data_km === mkm_text) {
+          let mkm_phan_tram = ma_khuyen_mai_span2[index].innerText
+          let giam_gia = tongTien * (mkm_phan_tram / 100)
+          cart_giam_gia.innerText = giam_gia;
+          tong_tien.value = tongTien - giam_gia;
+        }
+      })
+    })
+  });
+</script>
 <!-- <script src="./main.js"></script> -->
 <!-- <script src="./slieder.js"></script> -->
 <script>
@@ -144,7 +174,7 @@
       gia = gia.replace(/,/g, '');
       let sl = Number(btnsoLuong[index].value)
       let gia_Tong = gia * sl;
-      console.log(gia_Tong, index);
+      // console.log(gia_Tong, index);
       tongGia[index].innerText = gia_Tong;
 
       btnCong[index].addEventListener('click', () => {
