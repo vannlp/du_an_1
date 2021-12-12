@@ -65,19 +65,29 @@ class san_phamModel extends DB
         return $this->getValue($sql);
     }
 
-    function get_ten_dm($id){
+    function get_ten_dm($id)
+    {
         $sql = "SELECT dm.tieu_de FROM san_pham sp JOIN danhmuc_sp dm ON sp.id_dm_sp=dm.id_dm_sp
                 WHERE sp.id_sanpham = '$id'";
         return $this->getValue($sql);
     }
+
+
+    function delete_sp($id_sanpham)
+    {
+        $sql = "DELETE from san_pham where id_sanpham = '$id_sanpham'";
+        return $this->setData($sql);
+    }
     ////// ADMIN
-     function get_san_pham_kd(){
+    function get_san_pham_kd()
+    {
         $sql = "SELECT * FROM san_pham sp JOIN danhmuc_sp dm ON sp.id_dm_sp=dm.id_dm_sp
                 WHERE trang_thai = 0 order by ngay_dang DESC";
         return $this->getData($sql);
     }
 
-    function set_san_pham_kd($trang_thai, $id_sp){
+    function set_san_pham_kd($trang_thai, $id_sp)
+    {
         $sql = "UPDATE san_pham set trang_thai = $trang_thai where id_sanpham='$id_sp'";
         return $this->setData($sql);
     }

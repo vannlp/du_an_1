@@ -52,7 +52,7 @@
     <div class="quanLy__main">
         <h2>Thêm sản phẩm</h2>
         <a href="?c=san_pham&a=list_san_pham" class="button button--blue">Danh sách sản phẩm</a>
-        <form method="post" enctype="multipart/form-data">
+        <form method="post" enctype="multipart/form-data" id="form-them">
             <div class="form-group">
                 <label for="">Tên sản phẩm</label>
                 <input type="text" required value="<?= $data['dataSP']['tieu_de'] ?>" name="tieu_de" class="form-control">
@@ -75,25 +75,40 @@
 
             <div class="form-group">
                 <label for="">Ảnh đại diện</label>
-                <input type="file" name="img" class="form-control">
+                <input type="file" name="img" class="form-control" id="files">
+                <br>
+                <img style="width: 150px" src="" alt="" id="image">
             </div>
+            <script>
+                document.getElementById("files").onchange = function() {
+                    var reader = new FileReader();
+
+                    reader.onload = function(e) {
+                        // get loaded data and render thumbnail.
+                        document.getElementById("image").src = e.target.result;
+                    };
+
+                    // read the image file as a data URL.
+                    reader.readAsDataURL(this.files[0]);
+                };
+            </script>
             <div class="form-group">
                 <label for="">Ảnh mô tả</label>
-                <input type="text" readonly name="img_mo_ta" id="img_mo_ta" class="form-control">
+                <input type="text" readonly required name="img_mo_ta" id="img_mo_ta" class="form-control">
                 <a target="_blank" href="<?= URL_WEB ?>?c=img&a=add_img" class="button button--blue">Tải ảnh lên</a>
                 <button class="button button--blue" type="button" id="up_load_file">Chọn ảnh</button>
             </div>
             <div class="form-group">
                 <label for="">Giá gốc</label>
-                <input type="number" value="<?= $data['dataSP']['gia_goc'] ?>" name="gia_goc" class="form-control">
+                <input type="number" id="gia_goc" required min="0" value="<?= $data['dataSP']['gia_goc'] ?>" name="gia_goc" class="form-control">
             </div>
             <div class="form-group">
-                <label for="">Giá giảm</label>
-                <input type="number" value="<?= $data['dataSP']['gia_giam'] ?>" name="gia_giam" class="form-control">
+                <label for="">Giá sẽ bán</label>
+                <input type="number" id="gia_giam" required min="0" value="<?= $data['dataSP']['gia_giam'] ?>" name="gia_giam" class="form-control">
             </div>
             <div class="form-group">
                 <label for="">Số lượng</label>
-                <input type="number" value="<?= $data['dataSP']['so_luong'] ?>" name="so_luong" class="form-control">
+                <input type="number" required min="0" value="<?= $data['dataSP']['so_luong'] ?>" name="so_luong" class="form-control">
             </div>
             <div class="form-group">
                 <label for="">Mô tả</label>
@@ -103,7 +118,7 @@
                 </script>
             </div>
 
-            <button type="submit" name="btn-submit" class="button button--blue">Submit</button>
+            <button type="submit" name="btn-submit" id="Dang_sp" class="button button--blue">Submit</button>
         </form>
     </div>
 </div>
@@ -129,6 +144,27 @@
         <button class="button button--blue" id="submit-img">Submit</button>
     </div>
 </div>
+<script>
+    $(document).ready(() => {
+        let gia_goc = $('#gia_goc');
+        let gia_giam = $('#gia_giam');
+
+        $('#Dang_sp').click(() => {
+            if (gia_goc.val() <= gia_giam.val()) {
+                alert('giá giảm phải nhỏ hơn giá gốc');
+                $("#form-them").submit(function() {
+                    return false;
+                });
+            }
+            if ($('#img_mo_ta').val() === '') {
+                alert('Vui lòng chọn ảnh mô tả');
+                $("#form-them").submit(function() {
+                    return false;
+                });
+            }
+        })
+    });
+</script>
 <script>
     const up_load_file = document.querySelector('#up_load_file');
     const man_mo = document.querySelector('.man_mo')

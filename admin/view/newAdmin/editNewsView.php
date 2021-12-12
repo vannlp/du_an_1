@@ -17,7 +17,7 @@
                 <form action="?c=tin_tuc&a=edit_tin_tuc&id=<?= $_GET['id'] ?>" enctype="multipart/form-data" method="post" class="tinTuc-wrapper">
                     <div class="form-group">
                         <label for="title">Title bài viết</label>
-                        <input type="text" value="<?= $tieu_de ?>" placeholder="Title bài viết" name="title" id="title" class="form-control">
+                        <input type="text" required value="<?= $tieu_de ?>" placeholder="Title bài viết" name="title" id="title" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="anh">Ảnh đại diện</label>
@@ -44,7 +44,7 @@
                     </div>
                     <div class="form-group">
                         <label for="noiDung">Nội dung</label>
-                        <textarea name="noiDung" placeholder="Nhập nội dung vào đây" id="noiDung" class="form-control" cols="30" rows="10"><?= $noi_dung ?></textarea>
+                        <textarea name="noiDung" required placeholder="Nhập nội dung vào đây" id="noiDung" class="form-control" cols="30" rows="10"><?= $noi_dung ?></textarea>
                     </div>
                     <script>
                         CKEDITOR.replace('noiDung');

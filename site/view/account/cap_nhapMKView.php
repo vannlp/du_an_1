@@ -7,7 +7,7 @@
             <h3>Cập nhập mật khẩu mới</h3>
 
             <div class="login">
-                <form action="?c=account&a=cap_nhap" method="post">
+                <form action="?c=account&a=cap_nhap" id="form-dk" method="post">
                     <div class="form-group">
                         <label for="">
                             Nhập tên đăng nhập
@@ -44,3 +44,34 @@
 
 </div>
 </div>
+<script>
+    $(document).ready(() => {
+        $("#form-dk").validate({
+            onfocusout: false,
+            onkeyup: false,
+            onclick: false,
+            rules: {
+                'mat_khau': {
+                    required: true,
+                    minlength: 8,
+                },
+                're_mat_khau': {
+                    required: true,
+                    minlength: 8,
+                    equalTo: "mat_khau",
+                }
+            },
+            messages: {
+                'mat_khau': {
+                    required: "Bắt buộc nhập mật khẩu",
+                    minlength: 'Mật khẩu phải có ít nhất 8 ký tự',
+                },
+                're_mat_khau': {
+                    required: 'Bắt buộc nhập lại mật khẩu',
+                    minlength: 'Mật khẩu phải có ít nhất 8 ký tự',
+                    equalTo: "Nhập lại mật khẩu sai",
+                }
+            },
+        });
+    });
+</script>

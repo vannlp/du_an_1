@@ -20,8 +20,22 @@
                     </div>
                     <div class="form-group">
                         <label>Thêm ảnh đại diện</label>
-                        <input required type="file" class="form-control" name="img">
+                        <input required type="file" class="form-control" id="files" name="img">
+                        <img style="width: 150px" src="" alt="" id="image">
                     </div>
+                    <script>
+                        document.getElementById("files").onchange = function() {
+                            var reader = new FileReader();
+
+                            reader.onload = function(e) {
+                                // get loaded data and render thumbnail.
+                                document.getElementById("image").src = e.target.result;
+                            };
+
+                            // read the image file as a data URL.
+                            reader.readAsDataURL(this.files[0]);
+                        };
+                    </script>
                     <div class="form-group">
                         <label>Nhập mô tả</label>
                         <textarea required name="noi_dung" id="mota" class="form-control" cols="30" rows="10" class></textarea>

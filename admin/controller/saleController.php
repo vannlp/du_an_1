@@ -25,4 +25,20 @@ class saleController
         }
         view("sale/addsaleView", "admin", []);
     }
+
+    public function list()
+    {
+        $maGiam = $this->ma_giam_giaModel->get_sale();
+
+        view("sale/listView", "admin", [
+            'ma_giam' => $maGiam
+        ]);
+    }
+
+    public function delete()
+    {
+        $id = $_GET['id'];
+        $this->ma_giam_giaModel->delete_sale($id);
+        header('location: ?c=sale&a=list');
+    }
 }

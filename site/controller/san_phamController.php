@@ -18,6 +18,7 @@ class san_phamController
 
     public function add_san_pham()
     {
+        $thong_bao = '';
         if (isset($_POST['btn-submit'])) {
             $id_sanpham = 'sp' . mt_rand(1, 999999);
             $data = [
@@ -42,13 +43,15 @@ class san_phamController
             $isSucces = $this->sanphamModel->insert_san_pham($data);
             // echo $isSucces;
             $this->imgsModel->update_img_sanpham($id_sanpham, $arrImg);
+            $thong_bao = "Thêm thành công";
         }
 
 
 
         $dm_sp = $this->dm_san_phamModel->get_dm_sp_all();
         view('san_pham/addSPView', 'site', [
-            'dm_sp' => $dm_sp
+            'dm_sp' => $dm_sp,
+            'thong_bao' => $thong_bao
         ]);
     }
 
@@ -97,5 +100,12 @@ class san_phamController
             'dataSP' => $data_san_pham,
             'dm_sp' => $dm_sp
         ]);
+    }
+
+    public function delete()
+    {
+        $id_sanpham = $_GET['id'];
+        $this->sanphamModel->delete_sp($id_sanpham);
+        header('location: ?c=san_pham&a=list_san_pham');
     }
 }

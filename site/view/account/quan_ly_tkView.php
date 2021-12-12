@@ -33,27 +33,27 @@
             <div class="user_text">
                 <div class="form-group">
                     <label for="">Họ và tên</label>
-                    <input value="<?= $data['nguoi_dung'][2] ?>" name="ho_ten" type="text" class="form-control" />
+                    <input required value="<?= $data['nguoi_dung'][2] ?>" name="ho_ten" type="text" class="form-control" />
                 </div>
                 <div class="form-group">
                     <label for="">Email</label>
-                    <input type="email" name="email" value="<?= $data['nguoi_dung'][6] ?>" class="form-control" />
+                    <input required type="email" name="email" value="<?= $data['nguoi_dung'][6] ?>" class="form-control" />
                 </div>
                 <div class="form-group">
                     <label for="">Số điện thoại</label>
-                    <input type="text" name="sdt" value="<?= $data['nguoi_dung'][4] ?>" class="form-control" />
+                    <input required type="text" name="sdt" value="<?= $data['nguoi_dung'][4] ?>" class="form-control" />
                 </div>
                 <div class="form-group">
                     <label for="">Địa chỉ</label>
-                    <input type="text" name="dia_chi" value="<?= $data['nguoi_dung'][3] ?>" class="form-control" />
+                    <input required type="text" name="dia_chi" value="<?= $data['nguoi_dung'][3] ?>" class="form-control" />
                 </div>
                 <div class="form-group">
                     <label for="">CMND</label>
-                    <input type="text" name="cmnd" value="<?= $data['nguoi_dung'][5] ?>" class="form-control" />
+                    <input required type="text" name="cmnd" value="<?= $data['nguoi_dung'][5] ?>" class="form-control" />
                 </div>
                 <div class="form-group">
                     <label for="">Ngày sinh</label>
-                    <input type="date" name="ngay_sinh" value="<?= $data['nguoi_dung'][7] ?>" class="form-control" />
+                    <input required type="date" name="ngay_sinh" value="<?= $data['nguoi_dung'][7] ?>" class="form-control" />
                 </div>
                 <div class="form-group">
                     <label for="">Giới tính</label><br>

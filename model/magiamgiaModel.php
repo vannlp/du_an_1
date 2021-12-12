@@ -33,16 +33,23 @@ class magiamgiaModel extends DB
         return $this->setData($sql);
     }
 
-    function addsale($data=[]){
-        extract ($data);
+    function addsale($data = [])
+    {
+        extract($data);
         $sql = "INSERT INTO ma_giam_gia
         VALUES ('$id_ma_giam_gia', null ,$phan_tram_giam_gia,0,'$ngay_bat_dau','$ngay_ket_thuc')";
         return $this->setData($sql);
-
     }
 
-    
+    function get_sale()
+    {
+        $sql = "SELECT * from ma_giam_gia where trang_thai=0 order by id_ma_giam_gia desc";
+        return $this->getData($sql);
+    }
 
-
-        
+    function delete_sale($id_ma_giam_gia)
+    {
+        $sql = "DELETE from ma_giam_gia where id_ma_giam_gia='$id_ma_giam_gia'";
+        return $this->setData($sql);
+    }
 }
