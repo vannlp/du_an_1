@@ -120,6 +120,20 @@
             ?>
             <!-- Kết thúc khung sản phẩm -->
         </div>
+
+        <div class="container">
+            <ul class="phanTrang-wrapper">
+                <?php
+                for ($i = 1; $i <= $data['so_luong_trang']; $i++) {
+                    echo '
+                    <li class="phanTrang-item">
+                        <a href="?page=' . $i . '" class="phanTrang-link">' . $i . '</a>
+                    </li>
+                    ';
+                }
+                ?>
+            </ul>
+        </div>
     </div>
     <!-- Sản Phẩm -->
 </div>

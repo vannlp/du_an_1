@@ -116,7 +116,7 @@ class giohangController
                         'id_hoa_don' => $id_hoa_don,
                         'id_sanpham' => $val3[0],
                         'so_luong' => $val3[3],
-                        'tong_tien' => $val3[3] * $val3[2]
+                        'tong_tien' => $val3[2]
                     ];
                     $this->san_phamModel->update_so_luong($val3[0], $val3[3]);
                     $this->hoaDonModel->insert_hdct($data2);

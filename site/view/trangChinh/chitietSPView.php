@@ -82,7 +82,7 @@
             </div>
             <div class="productMota__right">
                 <div class="product__right-title">
-                    <img src="https://vcdn.tikicdn.com/cache/w100/ts/seller/83/e1/c3/2c071fbb04d92608a1dbdf96f7269ca3.jpg.webp" alt="" />
+                    <img src="<?= URL_WEB ?>/public/site/img/<?= $data['sanPhamID'][21] ?>" alt="" />
                     <span><?php echo  $data['sanPhamID'][14] ?></span>
                 </div>
                 <div class="product__right-action">

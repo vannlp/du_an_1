@@ -14,8 +14,15 @@ class homeController
 
     public function index()
     {
+        $so_trang = 1;
+        if (isset($_GET['page'])) {
+            $so_trang = $_GET['page'];
+        }
+        $sp = $this->sanPhamModel->get_sanPham();
+        $sl_trang = count($sp);
+        $sl_trang = ceil($sl_trang / 10);
         $dmSP = $this->dmSPModel->get_dm_sp_all();
-        $sanPham = $this->sanPhamModel->get_sanPham();
+        $sanPham = $this->sanPhamModel->get_sanPham_phantrang($so_trang);
         $tin_tucData =  $this->tin_tucModel->get_tin_tuc_for_slider();
 
 
@@ -31,7 +38,8 @@ class homeController
         view('trangChinh/homeView', 'site', [
             'danhMuc' => $dmSP,
             'sanPham' => $sanPham,
-            'tinTucData' => $tin_tucData
+            'tinTucData' => $tin_tucData,
+            'so_luong_trang' => $sl_trang
         ]);
     }
 }

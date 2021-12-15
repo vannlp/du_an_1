@@ -6,6 +6,16 @@ class san_phamModel extends DB
         $sql = "SELECT * FROM san_pham WHERE trang_thai = 1 order by ngay_dang desc";
         return $this->getData($sql);
     }
+
+    function get_sanPham_phantrang($so_trang)
+    {
+        $start = ($so_trang - 1) * 10;
+
+        $sql = "SELECT * FROM san_pham WHERE trang_thai = 1 order by ngay_dang desc 
+        limit $start, 10";
+        return $this->getData($sql);
+    }
+
     function get_id_sanPham($id)
     {
         $sql = "SELECT * FROM san_pham sp JOIN nguoi_dung nd ON sp.ten_dang_nhap=nd.ten_dang_nhap

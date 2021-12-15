@@ -290,3 +290,18 @@
 .root img{
     width: 50px !important;
 }
+
+.phanTrang-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+
+.phanTrang-link{
+    text-decoration: none;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
