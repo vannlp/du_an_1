@@ -4,7 +4,7 @@
 
 <script src="<?= URL_PUBLIC ?>site/js/product.js"></script>
 <script src="<?= URL_PUBLIC ?>site/js/xulyanh.js"></script>
-    
+
 <section class="product container">
     <div class="productImg__wrapper">
         <div>
@@ -59,7 +59,6 @@
                 <div class="product__price-wrapper">
                     <span><?php echo number_format($data['sanPhamID'][7]) ?> VND</span>
                     <small><?php echo number_format($data['sanPhamID'][6]) ?> VND</small>
-                    <span>-4%</span>
                 </div>
                 <div class="product__muaHang">
                     <div class="product__soLuong-wrapper">
@@ -220,7 +219,7 @@
                                 <i class="fas fa-star  ' . $check[4] . '"></i>
                             </div>
                             <div class="danhGia-list-noiDung">
-                                <span>' . $binhluan[4] . ' |</span> 
+                                <span>' . $binhluan[4] . '</span>
                             </div>
                         </div>
                     </div>    

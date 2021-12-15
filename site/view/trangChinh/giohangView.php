@@ -1,12 +1,12 @@
-<link rel="stylesheet" href="<?= URL_PUBLIC ?>site/css/cart.css">
 <link rel="stylesheet" href="<?= URL_PUBLIC ?>site/css/index.css">
 <link rel="stylesheet" href="<?= URL_PUBLIC ?>site/css/product.css">
+<link rel="stylesheet" href="<?= URL_PUBLIC ?>site/css/cart.css">
 <script src="<?= URL_PUBLIC ?>site/js/product.js"></script>
 
 <h3 class="main__cart-h3 container">Giỏ hàng</h3>
 <section class="main__cart-wrapper container">
   <div class="main__cart-left">
-    <div class="main__cart-sp">
+    <div class="main__cart-sp main__cart-sp-1">
       <input type="checkbox" name="" id="" />
       <div class="main__cart-title">
         <span>Tất cả</span>
