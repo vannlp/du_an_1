@@ -154,13 +154,19 @@
 
 .btn-soLuong input{
     width: 60px;
-    padding: 10px 20px;
+    padding: 10px 10px;
     height: 45px;
     position: relative;
     top: -2px;
     border: 1px solid #eee;
     outline: none;
     margin: 0 -5px;
+}
+
+.btn-soLuong>input::-webkit-outer-spin-button,
+.btn-soLuong>input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .product__btn-mua{

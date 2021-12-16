@@ -89,8 +89,7 @@ window.addEventListener("load", () => {
                           <i class="fas fa-star ${arr[4]}"></i>
                       </div>
                       <div class="danhGia-list-noiDung">
-                          <span>${value[4]} |</span>
-                          <span>${value[5]}</span>
+                          <span>${value[4]}</span>
                       </div>
                   </div>
               </div>

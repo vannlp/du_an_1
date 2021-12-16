@@ -139,4 +139,9 @@ label.logo_nav{
     margin-bottom: 20px;
 }
 
+.error{
+    color: red;
+    font-weight: 400;
+}
+
 

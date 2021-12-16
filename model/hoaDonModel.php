@@ -22,6 +22,7 @@ class hoaDonModel extends DB
         JOIN san_pham sp ON sp.id_sanpham=hdct.id_sanpham 
         JOIN nguoi_dung nd ON hd.ten_dang_nhap = nd.ten_dang_nhap
         WHERE sp.ten_dang_nhap = '$tenshop'
+        group by sp.ten_dang_nhap
         order by hd.ngay_mua desc";
         return $this->getData($sql);
     }
@@ -53,6 +54,7 @@ class hoaDonModel extends DB
         on hdct.id_sanpham = sp.id_sanpham
         join hoa_don hd on hd.id_hoa_don = hdct.id_hoa_don
         where sp.ten_dang_nhap = '$ten_dang_nhap' and hd.trang_thai=3
+        GROUP by hdct.id_sanpham
         ";
         return $this->getData($sql);
     }

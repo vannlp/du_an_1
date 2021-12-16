@@ -42,18 +42,29 @@ window.addEventListener("load", () => {
         }
       }
 
+      function capnhapInput2() {
+        if (inputSoValue[i] == 10) {
+          btnPhai[i].setAttribute("disabled", "true");
+        } else {
+          btnPhai[i].removeAttribute("disabled");
+        }
+      }
+
       capnhapInput();
+      capnhapInput2();
 
       btnTrai[i].addEventListener("click", () => {
         inputSoValue[i]--;
         inputSo[i].value = inputSoValue[i];
         capnhapInput();
+        capnhapInput2();
       });
 
       btnPhai[i].addEventListener("click", () => {
         inputSoValue[i]++;
         inputSo[i].value = inputSoValue[i];
         capnhapInput();
+        capnhapInput2();
       });
     }
   }

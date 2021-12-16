@@ -64,20 +64,16 @@ class quan_lyController
 
     public function khach()
     {
-        if(isset($_POST['btn-khach'])){
+        if (isset($_POST['btn-khach'])) {
             $ten_dang_nhap = $_POST['id'];
             $idhd = $_POST['idhd'];
             $chitiet = $this->nguoi_dungModel->get_nguoi_dung_username($ten_dang_nhap);
             view('quan_ly/khachView', 'site', [
-            'khach' => $chitiet,
-            'hoadon' => $idhd
-        ]);
-        }
-        else{
+                'khach' => $chitiet,
+                'hoadon' => $idhd
+            ]);
+        } else {
             header('location: ?c=quan_ly&a=hoadon');
         }
-        
-
-        
     }
 }

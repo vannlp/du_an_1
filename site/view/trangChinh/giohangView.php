@@ -29,6 +29,11 @@
 
       <?php
       foreach ($data['gio_hang'] as $value) {
+        $isDisable = '';
+
+        if ($value[1] >= $value[9]) {
+          $isDisable = 'disabled';
+        }
         echo '
               <div class="main__cart-sp">
                 <input type="checkbox" name="" id="" />
@@ -45,7 +50,7 @@
                 <div class="main__cart-soLuong">
                   <div class="btn-soLuong">
                     <button>-</button>
-                    <input type="text" name="" id="soLuong-input" value="' . $value[1] . '" />
+                    <input type="number" readonly name="" id="soLuong-input" value="' . $value[1] . '" />
                     <button>+</button>
                   </div>
                 </div>

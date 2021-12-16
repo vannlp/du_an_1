@@ -24,7 +24,7 @@ class san_phamModel extends DB
     }
     function get_id_dm_by_id_sanPham($iddm)
     {
-        $sql = "SELECT * FROM san_pham sp WHERE id_dm_sp = $iddm";
+        $sql = "SELECT * FROM san_pham sp WHERE id_dm_sp = $iddm and trang_thai = 1";
         return $this->getData($sql);
     }
 

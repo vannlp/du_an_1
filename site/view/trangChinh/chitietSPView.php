@@ -62,15 +62,15 @@
                 </div>
                 <div class="product__muaHang">
                     <div class="product__soLuong-wrapper">
-                        <span>Số lượng còn lại: <?php echo $data['sanPhamID'][11] ?></span><br><br>
+                        <span>Số lượng còn lại: <span id="sp-con-lai"><?php echo $data['sanPhamID'][11] ?></span></span><br><br>
                         <p>Số lượng mua:</p><br>
                         <div class="btn-soLuong">
                             <button>-</button>
-                            <input type="text" name="" id="soLuong-input" value="1" />
-
+                            <input type="number" name="" readonly id="soLuong-input" value="1" />
                             <button>+</button>
                         </div>
                     </div>
+
                     <?php
                     if ($data['sanPhamID'][11] != 0) {
                         echo '<button id="btn-mua" class="product__btn-mua" type="button">Chọn mua</button>';
@@ -234,6 +234,7 @@
 </div>
 <script src="<?= URL_WEB ?>/public/site/js/xulybinhluan.js"></script>
 <script src="<?= URL_WEB ?>/public/site/js/xulygiohang.js"></script>
+
 
 <script>
     $(document).ready(() => {

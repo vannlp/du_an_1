@@ -22,7 +22,7 @@ class gio_hangModel extends DB
 
     function get_gio_hang_by_tenDN($ten_dang_nhap)
     {
-        $sql = "SELECT gh.id_sanpham, gh.so_luong, gh.tong_tien, gh.ten_dang_nhap, sp.tieu_de, sp.img, sp.gia_giam, gh.id_gio_hang ,sp.ten_dang_nhap
+        $sql = "SELECT gh.id_sanpham, gh.so_luong, gh.tong_tien, gh.ten_dang_nhap, sp.tieu_de, sp.img, sp.gia_giam, gh.id_gio_hang ,sp.ten_dang_nhap, sp.so_luong
                 FROM gio_hang gh JOIN san_pham sp ON gh.id_sanpham = sp.id_sanpham
                 WHERE gh.ten_dang_nhap = '$ten_dang_nhap'";
         return $this->getData($sql);
