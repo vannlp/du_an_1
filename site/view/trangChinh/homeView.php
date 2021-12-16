@@ -7,10 +7,16 @@
     <div class="slider-wrap">
         <div class="slider-main">
             <div class="slider-item">
-                <img src="<?= URL_PUBLIC ?>site/img/banner1.png" alt="" class="slider-item__img" />
+                <img src="<?= URL_PUBLIC ?>site/img/banner/banner1.png" alt="" class="slider-item__img" />
             </div>
             <div class="slider-item">
-                <img src="<?= URL_PUBLIC ?>site/img/banner2.png" alt="" class="slider-item__img" />
+                <img src="<?= URL_PUBLIC ?>site/img/banner/banner2.png" alt="" class="slider-item__img" />
+            </div>
+            <div class="slider-item">
+                <img src="<?= URL_PUBLIC ?>site/img/banner/banner3.png" alt="" class="slider-item__img" />
+            </div>
+            <div class="slider-item">
+                <img src="<?= URL_PUBLIC ?>site/img/banner/banner4.png" alt="" class="slider-item__img" />
             </div>
         </div>
 
