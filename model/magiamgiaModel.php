@@ -7,6 +7,11 @@ class magiamgiaModel extends DB
         return $this->getData($sql);
     }
 
+    function get_so_luong($date){
+        $sql = "SELECT COUNT(id_ma_giam_gia) FROM ma_giam_gia WHERE trang_thai = 0 and ngay_ket_thuc >= '$date'";
+        return $this->getValue($sql);
+    }
+
     function add_magiam($tenDN, $ma)
     {
         $sql = "UPDATE ma_giam_gia SET ten_dang_nhap = '$tenDN',

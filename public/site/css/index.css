@@ -113,9 +113,20 @@
 
 .icon_giamgia a img{
     display: block;
-    width: 100px;
+    width: 110px;
     border-radius: 45%;
     box-shadow: 0px 3px 10px 0px #ccc;
+}
+
+.icon_giamgia p{
+    position: absolute;
+    z-index: 1000;
+    right: 5px;
+    bottom: 5px;
+    padding: 4px;
+    color: white;
+    border-radius: 45%;
+    background-color: red;
 }
 
 .name{

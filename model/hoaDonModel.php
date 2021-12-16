@@ -27,6 +27,12 @@ class hoaDonModel extends DB
         return $this->getData($sql);
     }
 
+    function binhluan_hoadon($ten_dang_nhap, $id){
+        $sql = "SELECT  COUNT(hdct.id_sanpham) FROM hoa_don hd JOIN hoa_don_chi_tiet hdct ON hd.id_hoa_don=hdct.id_hoa_don
+                WHERE hdct.id_sanpham = '$id' AND hd.ten_dang_nhap = '$ten_dang_nhap'";
+        return $this->getValue($sql);
+    }
+
     function get_hoa_don_cua_toi($user)
     {
         $sql = "SELECT * FROM hoa_don WHERE ten_dang_nhap = '$user'";
