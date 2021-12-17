@@ -30,10 +30,22 @@
                 <ion-icon name="arrow-dropright"></ion-icon>
             </i>
         </div>
+        <div class="btn btn-slider btn-next">
+            <i class="">
+                <ion-icon name="arrow-dropright"></ion-icon>
+            </i>
+        </div>
+        <div class="btn btn-slider btn-next">
+            <i class="">
+                <ion-icon name="arrow-dropright"></ion-icon>
+            </i>
+        </div>
         <div class="dot-slider">
             <ul class="dot-list">
                 <li data-index="0" class="dot-item active"></li>
                 <li data-index="1" class="dot-item"></li>
+                <li data-index="2" class="dot-item"></li>
+                <li data-index="3" class="dot-item"></li>
             </ul>
         </div>
     </div>
@@ -62,6 +74,7 @@
 
 <div class="icon_giamgia">
     <a href="?c=giamgia&a=index"><img src="https://i.pinimg.com/originals/fd/2c/1a/fd2c1a96b654e220d09525f006482477.gif"></a>
+    <p> <?php echo $data['soluongmagiam'][0] ?> </p>
 </div>
 
 <section class="tintuc__top container">

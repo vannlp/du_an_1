@@ -169,6 +169,13 @@
 
         <?php
         if (isset($_SESSION['login'])) {
+            $button = '';
+            if($data['blkt'] == 'true'){
+                $button = '<button type="reset" name="btn-binhluan" id="btn-binhluan" class="btn-binhluan">Gửi bình luận</button>';
+            }
+            else{
+                $button = '<button type="reset" name="" id="" class="btn-disabled" disabled>Bạn cần mua sản phẩm này để bình luận</button>';
+            }
             echo '
             <form action="#" method="post">
             <div class="danhGia-wrapper">
@@ -181,8 +188,10 @@
                 </div>
                 <textarea name="binh-luan" id="binh-luan" class="text-binhluan" cols="30" rows="10"></textarea>
                 <textarea name="idSP" id="idSP" cols="30" rows="10" style="display:none">' . $data['sanPhamID'][0] . '</textarea>
-                <button type="reset" name="btn-binhluan" id="btn-binhluan" class="btn-binhluan">Gửi bình luận</button>
-            </div>
+                
+                '.$button.'
+            
+                </div>
             </form>
             ';
         } else {

@@ -4,12 +4,16 @@ class homeController
     private $dmSPModel;
     private $sanPhamModel;
     private $tin_tucModel;
+    private $magiamModel;
+    private $date;
 
     function __construct()
     {
         $this->dmSPModel = model('dm_san_phamModel');
         $this->sanPhamModel = model('san_phamModel');
         $this->tin_tucModel = model('tin_tucModel');
+        $this->magiamgiaModel = model('magiamgiaModel');
+        $this->date = new DateTime();
     }
 
     public function index()
@@ -24,7 +28,10 @@ class homeController
         $dmSP = $this->dmSPModel->get_dm_sp_all();
         $sanPham = $this->sanPhamModel->get_sanPham_phantrang($so_trang);
         $tin_tucData =  $this->tin_tucModel->get_tin_tuc_for_slider();
+
         $sp_top = $this->sanPhamModel->get_sanpham_top();
+        $date = date_format($this->date, 'Y-m-d');
+        $somagiamgia = $this->magiamgiaModel->get_so_luong($date);
 
 
         for ($i = 0; $i < count($sanPham); $i++) {
@@ -41,7 +48,10 @@ class homeController
             'sanPham' => $sanPham,
             'tinTucData' => $tin_tucData,
             'so_luong_trang' => $sl_trang,
-            'sp_top' => $sp_top
+
+            'sp_top' => $sp_top,
+
+            'soluongmagiam' => $somagiamgia
         ]);
     }
 }

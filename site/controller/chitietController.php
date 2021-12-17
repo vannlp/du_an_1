@@ -7,6 +7,7 @@ class chitietController
     private $binhluanModel;
     private $date;
     private $magiamModel;
+    private $hoadonModel;
 
 
     function __construct()
@@ -16,6 +17,7 @@ class chitietController
         $this->binhluanModel = model('binh_luanModel');
         $this->date = new DateTime();
         $this->magiamgiaModel = model('magiamgiaModel');
+        $this->hoadonModel = model('hoaDonModel');
     }
 
     public function index()
@@ -30,9 +32,18 @@ class chitietController
             $so_luong_ban = $this->sanPhamIDModel->get_so_luong_ban($id);
             $tenDM = $this->sanPhamIDModel->get_ten_dm($id);
             $magiam = '';
+            $binhluankt = '';
             if (isset($_SESSION['login'])) {
                 $ten_dang_nhap = $_SESSION['login'][0];
                 $magiam = $this->magiamgiaModel->get_magiam_by_tenDN($ten_dang_nhap);
+                //
+                $hoadon = $this->hoadonModel->binhluan_hoadon($ten_dang_nhap, $id);
+                if($hoadon > 0 ){
+                    $binhluankt = 'true';
+                }
+                else{
+                    $binhluankt = 'fales';
+                }
             }
 
             if ($so_luong_ban == null) {
@@ -47,7 +58,8 @@ class chitietController
                 'binhluan' => $binhluan,
                 'so_luong_ban' => $so_luong_ban,
                 'maGiam' => $magiam,
-                'tenDM' => $tenDM
+                'tenDM' => $tenDM,
+                'blkt' => $binhluankt
             ]);
         }
     }
