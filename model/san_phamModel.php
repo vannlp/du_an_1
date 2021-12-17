@@ -108,4 +108,12 @@ class san_phamModel extends DB
                 WHERE trang_thai = 1 order by ngay_dang desc";
         return $this->getData($sql);
     }
+
+    function get_sanpham_top()
+    {
+        $sql = "SELECT sp.*, hdct.so_luong from san_pham sp JOIN hoa_don_chi_tiet hdct on sp.id_sanpham = hdct.id_sanpham
+        GROUP by hdct.id_sanpham ORDER by hdct.so_luong desc limit 10";
+
+        return $this->getData($sql);
+    }
 }

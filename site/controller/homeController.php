@@ -24,6 +24,7 @@ class homeController
         $dmSP = $this->dmSPModel->get_dm_sp_all();
         $sanPham = $this->sanPhamModel->get_sanPham_phantrang($so_trang);
         $tin_tucData =  $this->tin_tucModel->get_tin_tuc_for_slider();
+        $sp_top = $this->sanPhamModel->get_sanpham_top();
 
 
         for ($i = 0; $i < count($sanPham); $i++) {
@@ -39,7 +40,8 @@ class homeController
             'danhMuc' => $dmSP,
             'sanPham' => $sanPham,
             'tinTucData' => $tin_tucData,
-            'so_luong_trang' => $sl_trang
+            'so_luong_trang' => $sl_trang,
+            'sp_top' => $sp_top
         ]);
     }
 }
