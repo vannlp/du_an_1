@@ -316,3 +316,12 @@
     padding: 10px;
     border: 1px solid #ccc;
 }
+
+.danhMuc .box{
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.danhMuc .box a{
+    text-decoration: none;
+}

@@ -89,7 +89,53 @@
     </div>
 </section>
 
+<div class="container sanPham">
+    <div class="danhMucAll">
+        <h1>Sản phẩm bán chạy</h1>
+        <div class="danhMuc">
+            <?php
 
+            foreach ($data['sp_top'] as $sanPham) {
+                $sosoa = $sanPham[9];
+                $check = [
+                    0 => '',
+                    1 => '',
+                    2 => '',
+                    3 => '',
+                    4 => '',
+                ];
+                for ($i = 0; $i < $sosoa; $i++) {
+                    $check[$i] = 'checked';
+                }
+                echo '
+                    <div class="box">
+                        <a href="' . URL_WEB . '?c=chitiet&a=index&id=' . $sanPham[0] . '">
+                            <img src="' . URL_PUBLIC . 'site/img/' . $sanPham[5] . '" class="product" />
+                            <div class="product__main">
+                                <h3 class="name">
+                                    <b>' . $sanPham[3] . '</b>
+                                </h3>
+                                <div class="rating">
+                                    <span class="fa fa-star ' . $check[0] . '"></span>
+                                    <span class="fa fa-star ' . $check[1] . '"></span>
+                                    <span class="fa fa-star ' . $check[2] . '"></span>
+                                    <span class="fa fa-star ' . $check[3] . '"></span>
+                                    <span class="fa fa-star ' . $check[4] . '"></span>
+                                    <p>Đã bán ' . $sanPham[12] . '</p>
+                                </div>
+                                <p class="buy1">
+                                    <b>' . number_format($sanPham[6]) . '</b>
+                                    <b>' . number_format($sanPham[7]) . '</b>
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                ';
+            }
+            ?>
+        </div>
+    </div>
+</div>
 
 <div class="container sanPham">
     <!-- Sản phẩm -->
